@@ -1,0 +1,9 @@
+# development function files
+webpack.mix.js
+mix-manifest.json
+mix.js.map
+node_modules
+
+# development compiled files
+assets/css/*
+assets/js/*
