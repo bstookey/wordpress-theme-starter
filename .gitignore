@@ -1,6 +1,7 @@
 # development function files
 webpack.mix.js
 mix-manifest.json
+package-lock.json
 mix.js.map
 node_modules
 
