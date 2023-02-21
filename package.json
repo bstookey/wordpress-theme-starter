@@ -10,16 +10,14 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "bootstrap": ">=5.0.2",
     "browser-sync": ">=2.26.12",
     "browser-sync-webpack-plugin": ">=2.2.2",
-    "cross-env": "^7.0.3",
+    "cross-env": ">=7.0.3",
     "laravel-mix": ">=5.0.5",
-    "sass": "^1.26.11",
-    "sass-loader": "^10.0.2"
+    "sass": ">=1.26.11",
+    "sass-loader": ">=10.0.2"
   },
   "dependencies": {
-    "jquery": ">=3.2.1",
-    "util": "^0.11.1"
+    "util": ">=0.11.1"
   }
 }

@@ -1,31 +1,31 @@
 // Variables
 
-$image-path: '../images/';
-$icon-path: '../icons/';
-$web-font-path: '../fonts/';
+$image-path: "../images/";
+$icon-path: "../icons/";
+$web-font-path: "../fonts/";
 
-//Site sizes
+// Site sizes
 $site-width: 1024px;
 $site-width-sm: 700px;
 $site-width-md: 900px;
 $site-width-lg: 1400px;
 
-$bs-gutter: 2.4rem;
+$global-gutter: 2.4rem;
 
 // Transition global-transition
 $transition: 0.25s ease-in-out;
 
-//Font stuff
-$base-font: 'Montserrat Regular';
-$base-font-size: 62.5%;
+// Font stuff
+$base-font: "Montserrat Regular"; // Sets the base font family
+$base-font-size: 62.5%; // Sets the base font size to 10px
 
 $text-base: #000000;
 $black: #000000;
-$white: #FFFFFF;
+$white: #ffffff;
 
-//colors
-$red: #E32127;
+// colors
+$red: #e32127;
 $grey: #999;
-$grey-md: #CCCCCC;
-$grey-lt: #EEEEEE;
+$grey-md: #cccccc;
+$grey-lt: #eeeeee;
 $grey-text: #666666;

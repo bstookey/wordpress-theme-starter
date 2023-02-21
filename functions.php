@@ -22,6 +22,12 @@ define('STARTER_THEME_VERSION', '1.0');
 
 function theme_init()
 {
+    // Custom Post Types
+    require_once(__DIR__ . '/inc/custom-post-types/cpt-models.php');
+
+    // Menus
+    require_once(__DIR__ . '/inc/menus.php');
+
     // Additional content type attrubutes
     add_post_type_support('page', 'excerpt');
     add_post_type_support('post', 'page-attributes');

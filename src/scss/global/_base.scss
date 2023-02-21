@@ -1,13 +1,14 @@
 // Base
 
 body {
-    background: #fff;
-    margin: 0;
-    font-family: $base-font;
-    font-size: 1.4rem;
-    line-height: 1.55;
-    color: $text-base;
-    overflow-x: hidden;
+  background: #fff;
+  margin: 0;
+  font-family: $base-font;
+  font-size: 1.4rem;
+  line-height: 1.55;
+  color: $text-base;
+  overflow-x: hidden;
+  @include media-breakpoint-only(xs) {
+    display: block;
   }
-  
-  
+}

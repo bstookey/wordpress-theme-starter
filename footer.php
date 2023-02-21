@@ -18,7 +18,15 @@
 </div>
 <!--#page-content-wrap-->
 <footer class="site-footer">
-  Footer code/content here.
+  <div class="footer-nav">
+    <?php get_template_part('/template-parts/menu/menu', 'footer'); ?>
+  </div>
+  <div class="footer-social-nav">
+    <?php get_template_part('/template-parts/menu/menu', 'footer-social'); ?>
+  </div>
+  <div class="copyright">
+    <?php printf('&copy; Copyright %s.', auto_copyright(2022)); ?>
+  </div>
 </footer>
 </div>
 </div>

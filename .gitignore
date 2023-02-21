@@ -1,9 +1,9 @@
-# development function files
+# development files
 mix-manifest.json
 package-lock.json
 mix.js.map
 node_modules
 
-# development compiled files
+# compiled files
 assets/css/*
 assets/js/*

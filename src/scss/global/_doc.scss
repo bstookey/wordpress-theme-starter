@@ -1,21 +1,22 @@
 // Doc and body init
 
+/***** Document/Base *****/
+
 html {
-    box-sizing: border-box;
-    font-size: $base-font-size;
-    margin-top: 0 !important;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-  
-  body,
-  html {
-    max-width: 100%;
-  }
-  
-  *,
-  *:after,
-  *:before {
-    box-sizing: inherit;
-  }
-  
+  box-sizing: border-box;
+  font-size: $base-font-size; /* Sets the base document font size */
+  margin-top: 0 !important;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  max-width: 100%;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
