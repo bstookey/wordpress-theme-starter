@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Register Menus
+ */
+
 register_nav_menus(
     array(
         'primary-menu' => __('Primary', 'starter'),

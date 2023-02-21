@@ -16,6 +16,7 @@ require_once('cpt-maker.php');
  * https://developer.wordpress.org/resource/dashicons/
  * 
  ********************************/
+
 global $students, $books;
 
 /* Students */

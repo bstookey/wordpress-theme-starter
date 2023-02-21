@@ -40,8 +40,8 @@
 		<!--.page-wrap-->
 		<div class="page-wrap">
 			<div class="skip-links">
-				<a class="skip_to_content_link" href="#content_skip_link_anchor" tabindex="1"><?php esc_html_e("Skip to content", 'raceschool'); ?></a>
-				<a class="skip_to_content_link" href="#footer_skip_link_anchor" tabindex="1"><?php esc_html_e("Skip to footer", 'raceschool'); ?></a>
+				<a href="#content_anchor" tabindex="1"><?php esc_html_e("Skip to content", 'starter'); ?></a>
+				<a href="#footer_anchor" tabindex="1"><?php esc_html_e("Skip to footer", 'starter'); ?></a>
 			</div>
 
 			<?php
@@ -51,6 +51,6 @@
 
 			?>
 			<!--.page-content-wrap-->
-			<div class="page-content-wrap">
+			<div id="content_anchor" class="page-content-wrap">
 				<!--.content-wrap-->
 				<div class="content-wrap">

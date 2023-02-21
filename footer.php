@@ -17,7 +17,7 @@
 <!--#content-wrap-->
 </div>
 <!--#page-content-wrap-->
-<footer class="site-footer">
+<footer id="footer_anchor" class="site-footer">
   <div class="footer-nav">
     <?php get_template_part('/template-parts/menu/menu', 'footer'); ?>
   </div>
@@ -25,7 +25,7 @@
     <?php get_template_part('/template-parts/menu/menu', 'footer-social'); ?>
   </div>
   <div class="copyright">
-    <?php printf('&copy; Copyright %s.', auto_copyright(2022)); ?>
+    <?php printf('&copy; Copyright %s.', auto_copyright(2022)); ?> <?php display_copyright_text(); ?>
   </div>
 </footer>
 </div>
