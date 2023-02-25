@@ -26,6 +26,8 @@
   </div>
   <div class="copyright">
     <?php printf('&copy; Copyright %s.', auto_copyright(2022)); ?> <?php display_copyright_text(); ?>
+
+    <?php if (get_theme_mod('ip_master_footer_checkbox') == 1) { ?><a href="https://www.inverseparadox.com/" target="_blank">Custom WordPress Development</a> by Inverse Paradox.<?php } ?>
   </div>
 </footer>
 </div>

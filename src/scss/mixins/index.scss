@@ -1,7 +1,9 @@
-/* Mixins */
+// Mixins
+
 @import "helpers";
 @import "flexbox";
-@import "buttons";
+//@import "buttons";
+@import "colors";
 
 // Mixins
 @mixin global-transition($trans_args: $transition) {

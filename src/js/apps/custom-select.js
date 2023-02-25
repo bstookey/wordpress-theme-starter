@@ -55,7 +55,7 @@ function customSelect(ele) {
       return false;
     }
 
-    $listItems.click(function (e) {
+    $listItems.click(function () {
       //e.stopPropagation();
       $styledSelect.text($(this).text()).removeClass("active");
       $this.val($(this).attr("rel"));

@@ -22,30 +22,39 @@ define('STARTER_THEME_VERSION', '1.0');
 
 function theme_init()
 {
-    // Customizer
-    require(__DIR__ . '/inc/customizer/customizer.php');
-    // SVG Support
-    require(__DIR__ . '/inc/svg-support.php');
-    // Copyright
-    require(__DIR__ . '/inc/copyright.php');
-    // REMOVE WP EMOJI
-    require_once(__DIR__ . '/inc/disable-emojis.php');
-    // Custom Post Types
-    require_once(__DIR__ . '/inc/custom-post-types/cpt-models.php');
-    // Menus
-    require_once(__DIR__ . '/inc/menus.php');
-    // Sidebars
-    require_once(__DIR__ . '/inc/sidebars.php');
-    // Image Sizes
-    require_once(__DIR__ . '/inc/image-sizes.php');
-    // Theme Colors
-    require_once(__DIR__ . '/inc/theme-colors.php');
+
     // WooCommerce
     require_once(__DIR__ . '/inc/woo-commerce.php');
     // ACF Custom Blocks
-    require_once(__DIR__ . '/inc/ACF/ACF_custom-blocks.php');
+    //require_once(__DIR__ . '/inc/ACF/ACF_custom-blocks.php');
 
+    function include_inc_files()
+    {
+        $files = [
+            'inc/customizer/customizer.php', // Customizer additions.
+            'inc/functions/', // Custom functions that act independently of the theme templates.
+            'inc/hooks/', // Load custom filters and hooks.
+            'inc/post-types/', // Load custom post types.
+            'inc/setup/', // Theme setup.
+            'inc/template-tags/', // Custom template tags for this theme.
+            'inc/ACF/', // Custom template tags for this theme.
+        ];
 
+        foreach ($files as $include) {
+            $include = trailingslashit(get_template_directory()) . $include;
+
+            // Allows inclusion of individual files or all .php files in a directory.
+            if (is_dir($include)) {
+                foreach (glob($include . '*.php') as $file) {
+                    require $file;
+                }
+            } else {
+                require $include;
+            }
+        }
+    }
+
+    include_inc_files();
 
     // Additional content type attrubutes
     add_post_type_support('page', 'excerpt');
@@ -83,6 +92,7 @@ function starter_enqueue_scripts()
 {
     if (!is_admin()) {
         wp_enqueue_script('jquery');
+        wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), STARTER_THEME_VERSION, false);
         wp_enqueue_script('theme-custom', get_stylesheet_directory_uri() . '/assets/js/starter.js', array(), STARTER_THEME_VERSION, false);
     }
 }

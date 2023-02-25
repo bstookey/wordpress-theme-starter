@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Get the theme colors for this project. Set these first in the Sass partial then migrate them over here.
+ * Get the theme colors for this project. Set these first in the Global variables partial then migrate them over here.
  *
  * @return array The array of our color names and hex values.
  * 
@@ -10,9 +10,9 @@
 function get_theme_colors()
 {
     return array(
-        esc_html__('Primary', 'ip_master')        => '#0093ff',
-        esc_html__('Secondary', 'ip_master')      => '#fced3c',
-        esc_html__('Black', 'ip_master')          => '#393C45',
+        esc_html__('IP Red', 'ip_master')          => '#d31020',
+        esc_html__('Black', 'ip_master')        => '#000',
+        esc_html__('White', 'ip_master')      => '#FFF',
     );
 }
 

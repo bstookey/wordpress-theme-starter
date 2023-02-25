@@ -9,31 +9,83 @@
  * @since Starter Theme 1.0
  */
 
-// Register Custom Blocks
-add_action('acf/init', 'my_register_blocks');
-function my_register_blocks()
-{
+// Make sure ACF is active.
+if (!function_exists('acf_register_block_type')) {
+  return;
+}
 
-  // check function exists.
+/**
+ * Init Custom blocks.
+ */
+
+add_action('acf/init', 'ip_master_acf_init');
+
+function ip_master_acf_init()
+{
+  $mode_default = 'preview';
+  $acf_block_path = '/template-parts/acf-custom-blocks/';
+
+  $supports = array(
+    'align' => array('full', 'wide'),
+    'mode' => true,
+    'anchor' => true,
+    'jsx' => true
+  );
+
+  /**
+   * check function exists.
+   */
+
   if (function_exists('acf_register_block_type')) {
 
+    // Accordion Block
     acf_register_block_type(array(
-      'name'              => 'first-read-video',
-      'title'             => __('Video Banner'),
-      'description'       => __('A block for custom full width video banner.'),
-      'render_template'   => '/template-parts/blocks/video-banner.php',
-      'category'          => 'common',
-      'icon'              => 'images-alt2',
-      'align'              => 'full',
-      'keywords'          => array('video', 'video-section', 'media'),
+      'name' => 'accordion-block',
+      'title' => __('Accordion Block'),
+      'description' => esc_html__('accordion-block', 'wdg-coe'),
+      'render_template' => $acf_block_path . 'accordion-block.php',
+      //'enqueue_style' => get_stylesheet_directory_uri() . $acf_block_path . '/accordion.css',
+      'category'        => 'wds-blocks',
+      'icon' => 'button',
+      'keywords' => array('dropdown', 'accordion', 'collapse'),
+      'align' => 'full',
+      'mode' => $mode_default,
+      'supports' => array_merge($supports, array('align' => false)),
     ));
+  }
+
+  /**
+   * Save ACF json point
+   */
+
+  add_filter('acf/settings/save_json', 'ip_acf_json_save_point');
+
+  function ip_acf_json_save_point($path)
+  {
+    $path = get_stylesheet_directory() . '/inc/ACF/acf-json';
+    return $path;
+  }
+
+  /** 
+   * Load ACF json point
+   */
+
+  add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+
+  function my_acf_json_load_point($paths)
+  {
+    unset($paths[0]);
+    $paths[] = get_stylesheet_directory() . '/inc/ACF/acf-json';
+    return $paths;
   }
 }
 
+/** 
+ * hide drafts for selecting posts via post post_status
+ */
 
-// hide drafts for selectin posts via post post_status
-add_filter('acf/fields/post_object/query', 'my_acf_fields_post_object_query', 10, 3);
-function my_acf_fields_post_object_query($args, $field, $post_id)
+add_filter('acf/fields/post_object/query', 'cf_fields_post_object_query', 10, 3);
+function acf_fields_post_object_query($args, $field, $post_id)
 {
 
   $args['post_status'] = 'publish';
@@ -43,7 +95,15 @@ function my_acf_fields_post_object_query($args, $field, $post_id)
   return $args;
 }
 
-add_action('enqueue_block_assets', 'acf_enqueue_scripts_and_styles');
+
+/**
+ *
+ * Enqueue scripts and styles for admin
+ * Uncomment to enqueue individually 
+ * 
+ */
+
+// add_action('enqueue_block_assets', 'acf_enqueue_scripts_and_styles');
 
 function acf_enqueue_scripts_and_styles()
 {
@@ -59,21 +119,4 @@ function acf_enqueue_scripts_and_styles()
       wp_enqueue_style("block-{$blockname}-css", get_stylesheet_directory_uri() . "/template-parts/blocks/css/{$style}.css");
     }
   }
-}
-
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-
-function my_wp_nav_menu_objects($items, $args)
-{
-  // loop
-  foreach ($items as &$item) {
-    // vars
-    $svg = htmlspecialchars_decode(get_field('svg', $item, true));
-    // append icon
-    if ($svg) {
-      $item->title .= '<span>' . $svg . '</span>';
-    }
-  }
-  // return
-  return $items;
 }

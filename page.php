@@ -17,7 +17,16 @@
 
 get_header(); ?>
 <div class="page-content">
+
     <?php
+
+    print_svg(
+        [
+            'icon'   => 'pause',
+            'width'  => '24',
+            'height' => '24',
+        ]
+    );
     if (have_posts()) {
 
         // Load posts loop.

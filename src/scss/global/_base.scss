@@ -4,9 +4,9 @@ body {
   background: #fff;
   margin: 0;
   font-family: $base-font;
-  font-size: 1.4rem;
+  font-size: $global-font-size;
   line-height: 1.55;
-  color: $text-base;
+  color: get-color(grey-md);
   overflow-x: hidden;
   @include media-breakpoint-only(xs) {
     display: block;

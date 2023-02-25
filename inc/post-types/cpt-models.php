@@ -7,7 +7,7 @@
  * license GPL v2
  */
 
-require_once('cpt-maker.php');
+//require_once('cpt-maker.php'); // included via the functions file
 
 /********************************
  * Simple Post Type Registration

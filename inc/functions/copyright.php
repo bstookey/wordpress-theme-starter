@@ -5,6 +5,7 @@
  *
  * @param string  $year
  */
+
 function auto_copyright($year = 'auto')
 {
     $output = '';

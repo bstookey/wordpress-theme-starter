@@ -1,4 +1,4 @@
-/* Helper Mixins */
+// Helper Mixins
 
 // Turn hex to rgba()
 @mixin rgba($color, $alpha) {
@@ -10,6 +10,7 @@
   -ms-filter: #{"progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb}, endColorstr=#{$argb})"};
 }
 
+// Gutter mixin for parent negative margin and child padding
 @mixin bs-gutter($bs-gutter, $sp: pos) {
   @if $sp == neg {
     margin-left: -$bs-gutter !important;
