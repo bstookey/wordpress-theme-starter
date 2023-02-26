@@ -33,8 +33,8 @@
 	<!--.site-wrapper-->
 	<div class="site-wrapper">
 		<?php
-		if (!is_front_page()) :
-		//get_template_part('template-parts/header/secondary', 'nav');
+		if (is_front_page()) :
+			get_template_part('template-parts/header/alert', 'banner');
 		endif;
 		?>
 		<!--.page-wrap-->

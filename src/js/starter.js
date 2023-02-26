@@ -1,4 +1,4 @@
-//$ = window.jQuery;
+$ = window.jQuery;
 // CREATE APP
 var APP = (window.APP = window.APP || {});
 
@@ -69,6 +69,66 @@ APP.Utilities = (function () {
     markSup();
     backgroundImage();
     //noWidows($("p"));
+  };
+
+  return {
+    init: init,
+  };
+})();
+
+APP.Banner = (function () {
+  var $cookie, $cookieId, $cookieContent, $acceptCookie, $cName;
+
+  var getCookie = function (cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i].trim();
+      if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+    }
+    return "";
+  };
+
+  var setCookie = function (cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+    $('[data-id="' + cname + '"]').removeClass("active");
+  };
+
+  var checkCookie = function (cname) {
+    var name = getCookie(cname);
+    if (name !== "") {
+      //alert('has cookie');
+      $cookie = true;
+    } else {
+      showCC();
+    }
+  };
+
+  var showCC = function () {
+    $cookieContent.addClass("active");
+  };
+
+  var initEvents = function () {
+    checkCookie($cookieId);
+    $acceptCookie.on("click", function () {
+      var $cName = $cookieContent.data("id");
+      var $cookieDays = $cookieContent.data("days");
+      setCookie($cName, "true", $cookieDays);
+    });
+  };
+
+  var init = function () {
+    $cookie = false;
+    $cookieContent = $(".cookie-banner");
+    $acceptCookie = $cookieContent.find(".accept");
+    $cookieId =
+      $cookieContent.data("id").length != ""
+        ? $cookieContent.data("id")
+        : "cookieAccept";
+    initEvents();
   };
 
   return {

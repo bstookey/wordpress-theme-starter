@@ -87,14 +87,14 @@ function ip_master_customize_social_icons($wp_customize)
 {
 
 	// Create an array of our social links for ease of setup.
-	$social_networks = array('facebook', 'instagram', 'linkedin', 'twitter');
+	$social_networks = array('Facebook', 'instagram', 'LinkedIn', 'twitter', 'YouTube');
 
 	// Loop through our networks to setup our fields.
 	foreach ($social_networks as $network) {
 
 		// Register a setting.
 		$wp_customize->add_setting(
-			'ip_master_' . $network . '_link',
+			'IP_' . sanitize_key($network) . '_link',
 			array(
 				'default'           => '',
 				'sanitize_callback' => 'esc_url',
@@ -103,7 +103,7 @@ function ip_master_customize_social_icons($wp_customize)
 
 		// Create the setting field.
 		$wp_customize->add_control(
-			'ip_master_' . $network . '_link',
+			'IP_' . sanitize_key($network) . '_link',
 			array(
 				'label'   => /* translators: the social network name. */ sprintf(esc_html__('%s URL', 'ip_master'), ucwords($network)),
 				'section' => 'ip_master_social_links_section',

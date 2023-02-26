@@ -21,6 +21,7 @@
   <div class="footer-nav">
     <?php get_template_part('/template-parts/menu/menu', 'footer'); ?>
   </div>
+  <div class="social"><?php print_social_network_links(); ?></div>
   <div class="footer-social-nav">
     <?php get_template_part('/template-parts/menu/menu', 'footer-social'); ?>
   </div>

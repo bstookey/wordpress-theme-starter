@@ -6,7 +6,6 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
 
 /**
  * Display the social links saved in the customizer.

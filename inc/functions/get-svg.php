@@ -16,6 +16,12 @@
  *
  * @return string Error string or SVG markup.
  */
+
+function display_svg($args = [])
+{
+	echo get_svg($args); // WPCS XSS Ok.
+}
+
 function get_svg($args = [])
 {
 	// Make sure $args are an array.
@@ -95,7 +101,7 @@ function get_svg($args = [])
 		// Use absolute path in the Customizer so that icons show up in there.
 		if (is_customize_preview()) :
 		?>
-			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri('/build/images/icons/sprite.svg#' . esc_html($args['icon']))); ?>"></use>
+			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri('/assets/images/icons/sprite.svg#' . esc_html($args['icon']))); ?>"></use>
 		<?php else : ?>
 			<use xlink:href="#<?php echo esc_html($args['icon']); ?>"></use>
 		<?php endif; ?>

@@ -13,6 +13,7 @@
  *
  * @param array $args The parameters needed to get the SVG.
  */
+
 function print_svg($args = [])
 {
 	$kses_defaults = wp_kses_allowed_html('post');

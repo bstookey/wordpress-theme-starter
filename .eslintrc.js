@@ -10,6 +10,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
+  ignorePatterns: ["jquery.touchSwipe.js"],
   rules: {
     "no-unused-vars": "off",
   },
