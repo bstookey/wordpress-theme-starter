@@ -53,22 +53,21 @@ function ip_master_acf_init()
       'supports' => array_merge($supports, array('align' => false)),
     ));
   }
+
+  /** 
+   * hide drafts for selecting posts via post post_status
+   */
+
+  add_filter('acf/fields/post_object/query', 'my_acf_fields_post_object_query', 10, 3);
+  function my_acf_fields_post_object_query($args, $field, $post_id)
+  {
+
+    $args['post_status'] = 'publish';
+
+    return $args;
+  }
 }
 
-/** 
- * hide drafts for selecting posts via post post_status
- */
-
-add_filter('acf/fields/post_object/query', 'cf_fields_post_object_query', 10, 3);
-function acf_fields_post_object_query($args, $field, $post_id)
-{
-
-  $args['post_status'] = 'publish';
-  $args['orderby'] = 'post_in';
-  $args['order'] = 'ASC';
-
-  return $args;
-}
 
 
 /**
