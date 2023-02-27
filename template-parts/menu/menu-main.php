@@ -7,7 +7,7 @@
                 'theme_location' => 'main-menu',
                 'menu_class'     => 'main-menu',
                 'items_wrap'     => '<ul id="%1$s" class="%2$s " role="menu-bar">%3$s</ul>',
-                'walker'  => new DD_Mega_Navwalker(),
+                //'walker'  => new DD_Mega_Navwalker(),
                 'use_excerpt' => false,
             )
         );
