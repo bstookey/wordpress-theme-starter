@@ -35,6 +35,7 @@ function theme_init()
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
             'inc/WOO/',
+            'inc/menu/',
         ];
 
         foreach ($files as $include) {

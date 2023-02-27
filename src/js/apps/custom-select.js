@@ -1,6 +1,7 @@
 ﻿/*
 Reference: http://jsfiddle.net/BB3JK/47/
 */
+
 function customSelect(ele) {
   $(ele).each(function () {
     var $this = $(this);
