@@ -1,4 +1,4 @@
-$ = window.jQuery;
+//$ = window.jQuery;
 // CREATE APP
 var APP = (window.APP = window.APP || {});
 
