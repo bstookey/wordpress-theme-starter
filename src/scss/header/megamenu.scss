@@ -3,10 +3,6 @@ header {
 }
 
 .navbar-megamenu {
-  background-color: #3c5071;
-  border-color: #2f415e;
-  border-radius: 2px;
-
   .navbar-nav {
     @include flexbox();
   }

@@ -20,14 +20,6 @@ get_header(); ?>
 
     <?php
 
-    print_svg(
-        [
-            'icon'   => 'facebook-square',
-            'width'  => '24',
-            'height' => '24',
-        ]
-    );
-
     if (have_posts()) {
 
         // Load posts loop.

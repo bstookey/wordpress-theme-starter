@@ -30,7 +30,15 @@
             "type": "checkbox",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61f285302ecf6",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -54,31 +62,15 @@
             "type": "checkbox",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "true": "Yes"
-            },
-            "default_value": [],
-            "return_format": "value",
-            "allow_custom": 0,
-            "layout": "vertical",
-            "toggle": 0,
-            "save_custom": 0
-        },
-        {
-            "key": "field_63fc2d709ab79",
-            "label": "Show Description",
-            "name": "show_description",
-            "aria-label": "",
-            "type": "checkbox",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61f285302ecf6",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -102,7 +94,15 @@
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61f285302ecf6",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -124,7 +124,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -172,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677472767
+    "modified": 1677555684
 }

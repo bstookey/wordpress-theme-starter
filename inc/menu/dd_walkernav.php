@@ -1,7 +1,7 @@
 <?php
 
 
-class walkernav extends Walker_Nav_Menu
+class dd_walkernav extends Walker_Nav_Menu
 {
 
     public $megaMenuID;
@@ -42,15 +42,12 @@ class walkernav extends Walker_Nav_Menu
         $hasColumnDivider = get_field('column_divider', $item);
         $hasDivider = get_field('row_divider', $item);
         $hasDescription = get_field('show_description', $item);
-
-
         $imagelink = get_field('imagelink', $item);
-        $column_count = 0;
-
-        $featuredImage = $imagelink['menu_image'];
+        $featuredImage = wp_get_attachment_image_url($imagelink['menu_image'], 'medium');
+        //$image = wp_get_attachment_image_src($featuredImage, 'thumbnail');
         $featuredLink = $imagelink['link'];
 
-        print_r($featuredLink);
+        //print_r($featuredLink);
 
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
@@ -82,7 +79,7 @@ class walkernav extends Walker_Nav_Menu
         }
 
         $classes[] = ($args->has_children) ? 'dropdown' : '';
-        $classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
+        //$classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
         $classes[] = 'menu-item-' . $item->ID;
         if ($depth && $args->has_children) {
             $classes[] = 'dropdown-submenu';
@@ -116,7 +113,8 @@ class walkernav extends Walker_Nav_Menu
         // Check if item has featured image
         // $has_featured_image = array_search('featured-image', $classes);
         if ($featuredImage && $this->megaMenuID != 0) {
-            $item_output .= "<img alt=\"" . esc_attr($item->attr_title) . "\" src=\"" . $featuredImage . "\"/>";
+            //$item_output .= "<span class=\"image-wrap\"><img alt=\"" . esc_attr($item->attr_title) . "\" src=" . $featuredImage . "/></span>";
+            $item_output .= "<span class=\"image-wrap\" style=\"background-image: url(" . $featuredImage . ");\"></span>";
         }
 
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
@@ -129,7 +127,7 @@ class walkernav extends Walker_Nav_Menu
         if (strlen($item->description) > 2) {
             $item_output .= '</a> <span class="sub">' . $item->description . '</span>';
         }
-        $item_output .= (($depth == 0 || 1) && $args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
+        $item_output .= (($depth == 0 || 1) && $args->has_children) ? ' </a><span class="caret btn-dd"></span>' : '</a>';
         $item_output .= $args->after;
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

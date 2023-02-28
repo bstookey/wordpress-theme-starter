@@ -7,6 +7,13 @@
  *
 */
 
+@import "asset/normalize";
+
+@import "asset/mixins";
+@import "asset/var";
+@import "element/header";
+@import "element/nav-new";
+
 @import "global/variables";
 @import "mixins/functions";
 @import "mixins/index";
@@ -14,7 +21,6 @@
 @import "grid/index";
 
 @import "global/index";
-@import "header/index";
 
 @import "utilities/index";
 

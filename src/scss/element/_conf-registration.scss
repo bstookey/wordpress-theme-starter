@@ -1,0 +1,91 @@
+form {
+    &.custom-reg {
+        .gform_fields {
+            list-style: none;
+            /*input, select {
+                background: #000;
+                width: 100% !important;
+                float: left;
+                max-width: 100% !important;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                height: 45px;
+                border: none;
+                border-bottom: 3px solid #878787;
+                font-weight: 300;
+                font-size: 18px;
+                font-family: "Roboto",sans-serif;
+                color: #b3b3b3;
+                display: block;
+                padding: 8px 13px;
+                position: relative;
+                margin-bottom: 14px;
+            }*/
+            .gfield.hidden {
+                opacity:0;
+                position: absolute;
+            }
+            .gf_first_quarter,
+            .gf_second_quarter,
+            .gf_third_quarter,
+            .gf_fourth_quarter {
+                width: 20%;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                clear: none;
+                margin-bottom: 20px;
+                @media only screen and (max-width: 640px) {
+                    clear:both;
+                    width:100%;
+                }
+                input, select {
+                    width: 100%;
+                }
+            }
+            .gf_first_quarter {
+                clear:left;
+            }
+            .gf_fourth_quarter {
+                width:37%;
+                label {
+                    width:100%;
+                }
+                select {
+                    width:50%;
+                }
+            }
+            li.gfield.gf_left_half, li.gfield.gf_right_half {
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                padding-right: 16px;
+                float: none;
+                input, select {
+                    width:100%!important;
+                }
+            }
+            .gfield_html_formatted {
+                ul.half {
+                    width:40%;
+                    float: left;
+                }
+                .form-col {
+                    width:20%;
+                    float:left;
+                    margin-bottom: 20px;
+                    &.first {
+                        width:40%;
+                        @media only screen and (max-width: 640px) {
+                            width:100%;
+                        }
+                    }
+                    @media only screen and (max-width: 640px) {
+                        float:none;
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}

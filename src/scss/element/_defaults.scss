@@ -1,0 +1,65 @@
+body {
+  font: 300 $default-font-size $default-font-family;
+  line-height: 1.5;
+  color: $default-font-color;
+  background-color: #fff;
+  margin-top: 109px;
+  overflow-x: hidden;
+  &.page-template-tpl_fullwidth_page {
+    margin-top: 120px;
+  }
+  &.franchisee-page {
+    margin-top: 130px;
+  }
+  &.bchc-transparent {
+    margin-top: 0;
+  }
+  &.blog,
+  &.archive {
+    background: $c-blog-bg;
+  }
+  &.page-template-tpl-puzzle {
+    margin-top: 0px;
+  }
+  @include bp($bp-XL) {
+    margin-top: 0;
+    &.franchisee-page,
+    &.page-template-tpl_fullwidth_page{
+      margin-top: 0;
+    }
+  }
+}
+a {
+  color: $c-gray;
+  text-decoration: underline;
+  &:hover,
+  &:active {
+    color: $default-font-color;
+  }
+}
+strong {
+  font-weight: 600;
+}
+input,
+select,
+textarea {
+  padding: 3px;
+  font: $default-font-family $default-font-size;
+  color: $default-font-color;
+  background: #fff;
+  border: 1px #ccc solid;
+}
+input[type="submit"] {
+  padding: 3px 6px;
+  font: $default-font-family $default-font-size;
+  color: $default-font-color;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  @include linear-gradient-svg("to bottom", "ffffff", "0", "eeeeee", "100");
+  cursor: pointer;
+}
+br.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}

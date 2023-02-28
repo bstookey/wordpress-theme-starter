@@ -35,8 +35,8 @@ function theme_init()
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
             'inc/WOO/',
-            //'inc/menu/megamenu-custom-fields.php',
-            'inc/menu/walkernav.php',
+            //'inc/menu/menu',
+            'inc/menu/dd_walkernav.php',
             'inc/menu/menus.php',
         ];
 
@@ -94,6 +94,7 @@ function starter_enqueue_scripts()
         wp_enqueue_script('jquery');
         wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), STARTER_THEME_VERSION, false);
         wp_enqueue_script('theme-custom', get_stylesheet_directory_uri() . '/assets/js/starter.js', array(), STARTER_THEME_VERSION, false);
+        wp_enqueue_script('theme-apps', get_stylesheet_directory_uri() . '/assets/js/apps.js', array(), STARTER_THEME_VERSION, false);
     }
 }
 add_action('wp_enqueue_scripts', 'starter_enqueue_scripts');

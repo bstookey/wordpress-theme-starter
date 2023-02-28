@@ -1,0 +1,23 @@
+#tribe-events-bar {
+  display: none;
+}
+.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
+  display: inline !important;
+}
+.tribe-events-calendar .tribe-events-has-events::after {
+  display: none !important;
+}
+#tribe-events-content .tribe-events-calendar div[id*="tribe-events-event-"] h3.tribe-events-month-event-title {
+  padding: 0 10px;
+}
+@media only screen and (max-width: 1240px) {
+  .tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
+    display: none !important;
+  }
+  .tribe-events-calendar .tribe-events-has-events::after {
+    display: block !important;
+  }
+  #tribe-events-content .tribe-events-calendar div[id*="tribe-events-event-"] h3.tribe-events-month-event-title {
+    padding: 0;
+  }
+}

@@ -1,0 +1,77 @@
+/* ===========================================================
+   BREAKPOINTS
+=========================================================== */
+$bp-XXL: 1500px;
+$bp-XL: 1240px;
+$bp-L: 1024px;
+$bp-M: 992px;
+$bp-S: 768px;
+$bp-XS: 600px;
+$bp-XXS: 500px;
+
+/* ===========================================================
+   FONTS
+=========================================================== */
+$default-font-family: 'Raleway', 'Source Sans Pro', Arial, Helvetica, sans-serif;
+$f-merriweather: 'Merriweather', sans-serif;
+$default-font-size: 16px;
+$default-font-color: #727272;
+$c-gray:#3a3a3a;
+$c-gray2: #646363;
+$c-gray3: #ccc;
+$c-gray4: #e0e0e0;
+$c-gray5: #d2d2d2;
+$c-gray6: #a9a9a9;
+$c-gray7: #d7d7d7;
+$c-gray8: #f6f6f6;
+$c-gray9: #c2c2c2;
+$c-fgray:#222222;
+$c-fgray2: #202020;
+$c-lgray:#f1f1f1;
+$c-white: #fff;
+$c-red: #c00;
+$c-gold-yellow: #d5be83;
+$c-gold-yellow-darker: #948B72;
+$c-shadow-blue: #2a5e69;
+$c-blue: #589ce1;
+
+$f-raleway: 'Raleway', sans-serif;
+$f-roboto: 'Roboto', sans-serif;
+$f-yesteryear: 'lucky_fellasregular', cursive;
+
+$heading-font-family: $default-font-family;
+
+/* ===========================================================
+   BRANDING COLORS
+=========================================================== */
+$default-link-color: #0000ff;
+$c-green: #b1b711;
+$c-green2: #7ac22c;
+$c-border: #a7a7a7;
+$c-black: #000;
+/* ===========================================================
+   BLOG COLORS
+=========================================================== */
+$post-meta-bg: #f2f2f2;
+$post-meta-border: #e5e5e5;
+$post-meta-color: #7c7c7c;
+$post-color: $c-fgray;
+$comment-bg: #fafafa;
+$comment-border: $c-gray4;
+$comment-alt-bg: #f2f2f2;
+$comment-alt-border: #d9d9d9;
+$comment-meta-border: #e5e5e5;
+$input-border: #a2a2a2;
+$c-input-placeholder: #797979;
+$c-side-border: #efefef;
+$c-blog: #565656;
+$c-blog-bg: #f9f9f9;
+$c-blog-tags: #707070;
+
+$c-bg-button: rgba(34,34,34,0.9);
+$color-background-screen-reader:$post-color;
+$border-radius-medium: 5px;
+$color-box-shadow: $post-color;
+$color-text-screen-reader:$c-white;
+
+$c-error: #f00;

@@ -1,0 +1,317 @@
+.contacts {
+  padding-left: 45px;
+  @include bp($bp-XL) {
+    padding-left: 0;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    .socials {
+      @include bp($bp-M) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__title {
+    @include title($font-size: 20px, $color: $c-black, $font-weight: 700);
+
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    @include title(
+      $font-size: 18px,
+      $color: $c-black,
+      $font-weight: 300,
+      $font-family: $f-roboto
+    );
+  }
+
+  &__content {
+    @include title(
+      $color: $c-black,
+      $font-weight: 300,
+      $font-family: $f-roboto
+    );
+
+    &_big {
+      font-size: 24px;
+    }
+
+    &_default {
+      font-size: 18px;
+    }
+  }
+}
+
+.contact-form {
+  &__field {
+    width: 50%;
+    padding: 0 6px;
+    margin-bottom: 13px;
+
+    @include boxsize();
+
+    @include bp($bp-XXS) {
+      width: 100%;
+    }
+
+    input,
+    select {
+      background: $c-white;
+      color: $c-black;
+      border: 1px solid #a6a6a6;
+    }
+  }
+
+  &__field_fullwidth {
+    width: 100%;
+  }
+
+  &__fields--register {
+    .wpcf7-form-control-wrap {
+      width: 100%;
+    }
+    .wpcf7-form-control-wrap input,
+    .wpcf7-form-control-wrap select,
+    .wpcf7-form-control-wrap textarea,
+    .contact-form__input,
+    .select2-selection--single {
+      background: #000;
+    }
+  }
+
+  &__input_medium {
+    width: 56% !important;
+    display: inline-block;
+
+    @include bp($bp-XL) {
+      width: 61% !important;
+    }
+
+    @include bp($bp-XXS) {
+      width: 100% !important;
+    }
+  }
+
+  &__captcha-img {
+    height: 45px !important;
+    margin-right: 10px;
+    vertical-align: middle;
+    @include bp($bp-XXS) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__textarea {
+    height: 120px;
+    resize: none;
+  }
+}
+
+.cta-block__form {
+  &-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    padding: 0 6px;
+    margin-bottom: 20px;
+
+    @include bp($bp-M) {
+      text-align: center;
+    }
+  }
+
+  &-subtitle {
+    @include title(
+      $font-size: 18px,
+      $font-family: $f-roboto,
+      $color: $c-black,
+      $font-weight: 300
+    );
+
+    padding: 0 6px;
+    margin-bottom: 20px;
+
+    @include bp($bp-M) {
+      text-align: center;
+    }
+  }
+}
+
+.cta-block__right {
+  .contact-form__field {
+    .contact-form__submit {
+      @include button(
+        $border-width: 2px,
+        $border-color: $c-black,
+        $bg: $c-fgray,
+        $font-weight: 700,
+        $padding: 10px 58px
+      );
+      @include border-radius(0);
+
+      height: auto;
+
+      &:hover {
+        background: $c-white;
+        color: $c-black;
+      }
+    }
+  }
+}
+
+.contact-forms__contact {
+  input[type="submit"] {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .wpcf7-form-control-wrap textarea {
+    height: auto;
+  }
+}
+
+.wpcf7-form-control-wrap {
+  width: 50%;
+  padding: 0 6px;
+  @include boxsize();
+  margin-bottom: 13px;
+  float: left;
+  @include bp($bp-XXS) {
+    width: 100%;
+  }
+  &.zip-code {
+    width: 100%;
+  }
+  &.Howmanyyearshaveyoubeenintheindustry {
+    width: 100%;
+  }
+  &.support {
+    width: 100%;
+  }
+  &.textarea-731 {
+    width: 100%;
+  }
+  &.text-639 {
+    margin-bottom: 0px;
+  }
+}
+
+.wpcf7-form-control-wrap input,
+.wpcf7-form-control-wrap select,
+.wpcf7-form-control-wrap textarea,
+.contact-form__input,
+.select2-selection--single {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 45px;
+  border: none;
+  border-bottom: 3px solid #878787;
+  background: rgba(#000, 0.728);
+  padding: 8px 13px;
+  position: relative;
+
+  @include boxsize();
+  @include title(
+    $font-family: $f-roboto,
+    $font-size: 18px,
+    $color: #b3b3b3,
+    $font-weight: 300
+  );
+
+  &.hidden {
+    display: none;
+  }
+
+  @include placeholder {
+    color: #b3b3b3;
+    opacity: 1;
+  }
+
+  @include bp($bp-XXS) {
+    min-height: 45px;
+    height: auto;
+  }
+}
+
+.main .wpcf7 input[type="submit"] {
+  clear: both;
+  float: left;
+  margin-top: 10px;
+  margin-left: 7px;
+  @include button(
+    $border-width: 3px,
+    $border-color: $c-white,
+    $bg: $c-fgray,
+    $font-weight: 700,
+    $padding: 16px 58px
+  );
+  @include border-radius(0);
+  height: auto;
+  &:hover {
+    background: $c-black;
+  }
+}
+
+.lead-source-details {
+  & + .select2 {
+    display: none;
+  }
+  &.active + .select2 {
+    display: block;
+    width: 100% !important;
+  }
+}
+
+.g-recaptcha {
+  clear: both;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+.c-errors p {
+  background: #fff;
+  padding: 10px;
+  margin: 0 0 20px 5px;
+  color: #f00;
+}
+
+#wpcf7-f980-p961-o1 {
+  .wpcf7-form-control-wrap {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: none;
+  }
+
+  .wpcf7-form {
+    @extend %clearfix;
+    margin-bottom: 15px;
+  }
+
+  p.left {
+    width: 50%;
+    padding: 0 6px 0 0;
+    @include boxsize();
+    margin-bottom: 13px;
+    float: left;
+    @include bp($bp-XXS) {
+      width: 100%;
+    }
+  }
+
+  p.right {
+    width: 50%;
+    padding: 0 0 0 6px;
+    @include boxsize();
+    margin-bottom: 13px;
+    float: right;
+    @include bp($bp-XXS) {
+      width: 100%;
+    }
+  }
+}
+
+@import "select2";

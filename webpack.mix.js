@@ -48,10 +48,10 @@ mix
   .options({
     processCssUrls: false,
   })
-  .eslint({
-    fix: true,
-    extensions: ["js"],
-  })
+  // .eslint({
+  //   fix: true,
+  //   extensions: ["js"],
+  // })
   .browserSync({
     proxy: "http://localhost:8888/Wordpress-Starter/",
   });
