@@ -266,6 +266,7 @@
 
   .dealer-locator__input[type="text"] {
     border: 1px solid #000;
+    box-sizing: border-box;
   }
 
   .dealer-locator__input[type="submit"] {
