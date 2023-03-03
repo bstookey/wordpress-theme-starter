@@ -22,7 +22,7 @@
     <?php get_template_part('/template-parts/menu/menu', 'footer'); ?>
   </div>
   <div class="address">
-    <?php get_template_part('template-parts/acf-custom-blocks/address', 'schema'); ?>
+    <?php get_template_part('template-parts/footer/address', 'schema'); ?>
   </div>
   <div class="social"><?php print_social_network_links(); ?></div>
   <div class="footer-social-nav">

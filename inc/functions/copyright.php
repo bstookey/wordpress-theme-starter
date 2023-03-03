@@ -4,6 +4,7 @@
  * Dynamic copyright year creation
  *
  * @param string  $year
+ * 
  */
 
 function auto_copyright($year = 'auto')
@@ -27,7 +28,6 @@ function auto_copyright($year = 'auto')
  */
 function display_copyright_text()
 {
-
     // Grab our customizer settings.
     $copyright_text = get_theme_mod('ip_master_copyright_text');
 

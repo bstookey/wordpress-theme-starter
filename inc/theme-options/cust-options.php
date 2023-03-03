@@ -290,7 +290,7 @@ class Cust_Theme_Options
                 break;
 
             case 'textarea':
-                echo '<textarea class="' . $field_class . '" id="' . $id . '" name="cust_theme_options[' . $id . ']" placeholder="' . $std . '" rows="5" cols="30">' . format_for_editor($options[$id]) . '</textarea>';
+                echo '<textarea class="' . $field_class . '" id="' . $id . '" name="cust_theme_options[' . $id . ']" placeholder="' . $std . '" rows="5" cols="30">' . format_for_editor($options[$id] ?: $std) . '</textarea>';
 
                 if ($desc != '') echo '<br /><span class="description">' . $desc . '</span>';
 
@@ -305,7 +305,7 @@ class Cust_Theme_Options
 
             case 'text':
                 //default:
-                echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="cust_theme_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr($options[$id]) . '" />';
+                echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="cust_theme_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr($options[$id] ?: $std) . '" />';
 
                 if ($desc != '') echo '<br /><span class="description">' . $desc . '</span>';
 
@@ -494,7 +494,7 @@ class Cust_Theme_Options
             'title' => __('Alert Bar Copy'),
             'desc' => __('The text displayed in the cookie bar.'),
             'type' => 'textarea',
-            'std' => '',
+            'std' => 'Hi, Welcome to ' . get_bloginfo('name') . '',
         );
 
         $this->settings['alertbar_link'] = array(
@@ -510,6 +510,7 @@ class Cust_Theme_Options
             'title' => __('CTA Text'),
             'type' => 'text',
             'desc' => __(''),
+            'std' => 'Learn More',
             'section' => 'alertbar'
         );
 
@@ -552,7 +553,7 @@ class Cust_Theme_Options
             'desc'    => __('This is a description for the text input.'),
             'std'     => 'Default value',
             'type'    => 'text',
-            'section' => 'general'
+            'section' => 'examples'
         );
 
 
@@ -561,7 +562,7 @@ class Cust_Theme_Options
             'desc'    => __('This is a description for the textarea input.'),
             'std'     => 'Default value',
             'type'    => 'textarea',
-            'section' => 'general'
+            'section' => 'examples'
         );
 
         $this->settings['date1'] = array(

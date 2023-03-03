@@ -24,7 +24,8 @@ function setup()
 	 * README.md file in this theme to find and replace all
 	 * references of IP
 	 */
-	load_theme_textdomain('IP', get_template_directory() . '/build/languages');
+
+	// load_theme_textdomain('IP', get_template_directory() . '/build/languages');
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');

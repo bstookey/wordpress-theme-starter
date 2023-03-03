@@ -32,6 +32,7 @@
 <body <?php body_class(); ?> tabindex="0">
 	<!--.site-wrapper-->
 	<div class="site-wrapper">
+		<?php display_announcement_text(); ?>
 		<?php
 		if (is_front_page()) :
 			get_template_part('template-parts/header/alert', 'banner');

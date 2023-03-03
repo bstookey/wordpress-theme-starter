@@ -6,35 +6,44 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
-
 /**
  * Enqueue scripts and styles.
  *
  * @author WebDevStudios
  */
-function scripts()
+
+/*******************************
+  Enqueue Styles
+ ********************************/
+function starter_enqueue_styles()
 {
-	$asset_file_path = dirname(__DIR__) . '/build/index.asset.php';
-
-	if (is_readable($asset_file_path)) {
-		$asset_file = include $asset_file_path;
-	} else {
-		$asset_file = [
-			'version'      => '1.0.0',
-			'dependencies' => ['wp-polyfill'],
-		];
-	}
-
-	// Register styles & scripts.
-	wp_enqueue_style('IP-styles', get_stylesheet_directory_uri() . '/build/index.css', [], $asset_file['version']);
-	wp_enqueue_script('IP-scripts', get_stylesheet_directory_uri() . '/build/index.js', $asset_file['dependencies'], $asset_file['version'], true);
-
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
+	if (!is_admin()) {
+		wp_enqueue_style('starter-styles', get_stylesheet_directory_uri() . '/assets/css/starter.css', array(), STARTER_THEME_VERSION, false);
 	}
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\scripts');
+add_action('wp_enqueue_scripts', 'starter_enqueue_styles', 100);
+
+// Custom Admin Styles
+function load_admin_style()
+{
+	if (is_admin()) {
+		wp_enqueue_style('admin_css', get_stylesheet_directory_uri() . '/assets/css/wp-admin.css', array(), STARTER_THEME_VERSION, false);
+	}
+}
+add_action('admin_enqueue_scripts', 'load_admin_style');
+
+/*******************************
+  Enqueue Scripts
+ ********************************/
+function starter_enqueue_scripts()
+{
+	if (!is_admin()) {
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), STARTER_THEME_VERSION, false);
+		wp_enqueue_script('theme-custom', get_stylesheet_directory_uri() . '/assets/js/starter.js', array(), STARTER_THEME_VERSION, false);
+	}
+}
+add_action('wp_enqueue_scripts', 'starter_enqueue_scripts');
 
 /**
  * Dequeue WordPress core Block Library styles.
@@ -55,4 +64,4 @@ function deregister_core_block_styles()
 		wp_deregister_style('wp-block-' . $block_style);
 	}
 }
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\deregister_core_block_styles');
+add_action('wp_enqueue_scripts', 'deregister_core_block_styles');

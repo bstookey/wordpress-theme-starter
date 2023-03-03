@@ -122,7 +122,7 @@ APP.Banner = (function () {
 
   var init = function () {
     $cookie = false;
-    $cookieContent = $(".cookie-banner");
+    $cookieContent = $("#announcement-banner");
     $acceptCookie = $cookieContent.find(".accept");
     $cookieId =
       $cookieContent.data("id").length != ""

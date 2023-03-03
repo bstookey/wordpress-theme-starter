@@ -245,6 +245,30 @@ add_action('customize_register', 'ip_master_customize_copyright_text');
  */
 function ip_master_customize_announcement_text($wp_customize)
 {
+	// Register a setting.
+	$wp_customize->add_setting(
+		'ip_master_announcement_checkbox',
+		array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'themeslug_announce_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ip_master_announcement_checkbox',
+		array(
+			'label'       => esc_html__('Show Announcement', 'ip_master'),
+			'type' => 'checkbox',
+			'description' => esc_html__('The announcement bar will be diplayed with the below option of using a cookie name.', 'ip_master'),
+			'section' => 'ip_master_header_section',
+		)
+	);
+
+	function themeslug_announce_checkbox($checked)
+	{
+		// Boolean check.
+		return ((isset($checked) && true == $checked) ? true : false);
+	}
 
 	// Register a setting.
 	$wp_customize->add_setting(
@@ -279,7 +303,7 @@ function ip_master_customize_header_button($wp_customize)
 
 	// Register a setting.
 	$wp_customize->add_setting(
-		'ip_master_header_button',
+		'ip_master_link_type',
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'ip_master_sanitize_select',
@@ -288,23 +312,23 @@ function ip_master_customize_header_button($wp_customize)
 
 	// Create the setting field.
 	$wp_customize->add_control(
-		'ip_master_header_button',
+		'ip_master_link_type',
 		array(
-			'label'       => esc_html__('Header Button', 'ip_master'),
+			'label'       => esc_html__('Announcement Link', 'ip_master'),
 			'description' => esc_html__('Display a custom button in the header.', 'ip_master'),
 			'section'     => 'ip_master_header_section',
 			'type'        => 'select',
 			'choices'     => array(
-				'none'   => esc_html__('No button', 'ip_master'),
-				'search' => esc_html__('Trigger a search field', 'ip_master'),
+				'none'   => esc_html__('No link', 'ip_master'),
 				'link'   => esc_html__('Link to a custom URL', 'ip_master'),
+				'page'   => esc_html__('Link to a page', 'ip_master'),
 			),
 		)
 	);
 
 	// Register a setting for the URL.
 	$wp_customize->add_setting(
-		'ip_master_header_button_url',
+		'ip_master_link_type_url',
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'esc_url',
@@ -313,36 +337,110 @@ function ip_master_customize_header_button($wp_customize)
 
 	// Display the URL field... maybe!
 	$wp_customize->add_control(
-		'ip_master_header_button_url',
+		'ip_master_link_type_url',
 		array(
-			'label'           => esc_html__('Header Button URL', 'ip_master'),
-			'description'     => esc_html__('Enter the URL or email address to be used by the button in the header.', 'ip_master'),
+			'label'           => esc_html__('Announcement Link URL', 'ip_master'),
+			'description'     => esc_html__('Enter the URL or email address to be used by the link in the header.', 'ip_master'),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'url',
+			'active_callback' => 'ip_master_customizer_is_header_button_url', // Only displays if the Link option is selected above.
+		)
+	);
+
+	$wp_customize->add_setting(
+		'ip_announcement_selected_page_id',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		'ip_announcement_selected_page_id',
+		array(
+			'label'    => __('Select a Page', 'ip_master'),
+			'description'     => esc_html__('Select a page address to be used by the link in the header.', 'ip_master'),
+			'section'         => 'ip_master_header_section',
+			'type'     => 'dropdown-pages',
+			'active_callback' => 'ip_master_customizer_is_header_button_page', // Only displays if the Link option is selected above.
+		)
+	);
+
+	// Register a setting for the link text.
+	$wp_customize->add_setting(
+		'ip_master_link_type_text',
+		array(
+			'default'           => 'Learn More',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	// Display the text field... maybe!
+	$wp_customize->add_control(
+		'ip_master_link_type_text',
+		array(
+			'label'           => esc_html__('Link Text', 'ip_master'),
+			'description'     => esc_html__('Enter the text to be displayed in the button in the announcement.', 'ip_master'),
+			'section'         => 'ip_master_header_section',
+			'type'            => 'text',
 			'active_callback' => 'ip_master_customizer_is_header_button_link', // Only displays if the Link option is selected above.
 		)
 	);
 
 	// Register a setting for the link text.
 	$wp_customize->add_setting(
-		'ip_master_header_button_text',
+		'ip_master_cookie_name',
 		array(
-			'default'           => '',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'default'           => 'announcement-cookie',
+			'sanitize_callback' => 'custom_sanitize_callback',
 		)
 	);
 
 	// Display the text field... maybe!
 	$wp_customize->add_control(
-		'ip_master_header_button_text',
+		'ip_master_cookie_name',
 		array(
-			'label'           => esc_html__('Header Button Text', 'ip_master'),
-			'description'     => esc_html__('Enter the text to be displayed in the button in the header.', 'ip_master'),
+			'label'           => esc_html__('Cookie Name', 'ip_master'),
+			'description'     => esc_html__('Changing the name of the cookie will allow display of new announcements regardles of the users current set cookie.', 'ip_master'),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'text',
-			'active_callback' => 'ip_master_customizer_is_header_button_link', // Only displays if the Link option is selected above.
 		)
 	);
+
+	// Register a setting for the link text.
+	$wp_customize->add_setting(
+		'ip_master_cookie_duration',
+		array(
+			'default'           => 7,
+			'sanitize_callback' => 'themeslug_sanitize_number_absint',
+		)
+	);
+
+	// Display the text field... maybe!
+	$wp_customize->add_control(
+		'ip_master_cookie_duration',
+		array(
+			'label'           => esc_html__('Cookie Duration', 'ip_master'),
+			'description'     => esc_html__('The ammount of days the user can hide the announcement.', 'ip_master'),
+			'section'         => 'ip_master_header_section',
+			'type'            => 'number',
+		)
+	);
+
+	function custom_sanitize_callback($input)
+	{
+		//returns true if checkbox is checked
+		return (isset($input) && $input == true ? sanitize_title($input) : 'announcement-cookie');
+	}
+
+	function themeslug_sanitize_number_absint($number, $setting)
+	{
+		// Ensure $number is an absolute integer (whole number, zero or greater).
+		$number = absint($number);
+
+		// If the input is an absolute integer, return it; otherwise, return the default
+		return ($number ? $number : $setting->default);
+	}
 }
 add_action('customize_register', 'ip_master_customize_header_button');
 
@@ -375,15 +473,41 @@ function ip_master_sanitize_select($input, $setting)
  * @return boolean True/False whether or not the Link radio is selected.
  * @author Corey Collins
  */
-function ip_master_customizer_is_header_button_link()
+function ip_master_customizer_is_header_button_url()
 {
 
 	// Get our button setting.
-	$button_setting = get_theme_mod('ip_master_header_button');
+	$button_setting = get_theme_mod('ip_master_link_type');
 
 	if ('link' !== $button_setting) {
 		return false;
 	}
 
 	return true;
+}
+
+function ip_master_customizer_is_header_button_page()
+{
+
+	// Get our button setting.
+	$button_setting = get_theme_mod('ip_master_link_type');
+
+	if ('page' !== $button_setting) {
+		return false;
+	}
+
+	return true;
+}
+
+function ip_master_customizer_is_header_button_link()
+{
+
+	// Get our button setting.
+	$button_setting = get_theme_mod('ip_master_link_type');
+
+	if (('link' === $button_setting) || ('page' === $button_setting)) {
+		return true;
+	}
+
+	return false;
 }
