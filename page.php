@@ -19,7 +19,7 @@ get_header(); ?>
 <div class="page-content">
 
     <?php
-
+    //display_icons();
     print_svg(
         [
             'icon'   => 'facebook-square',

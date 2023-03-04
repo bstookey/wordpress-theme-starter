@@ -37,6 +37,10 @@ mix
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
     `${staticAssetsDir}/js/`
   )
+  .copy(
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+    `${staticAssetsDir}/js/`
+  )
   .js("src/js/apps/*.js", `${staticAssetsDir}/js/apps.js`) // concat, in order, all files in dir top to bottom
   .js(
     ["src/js/apps/jquery.touchSwipe.js", "src/js/apps/custom-select.js"],

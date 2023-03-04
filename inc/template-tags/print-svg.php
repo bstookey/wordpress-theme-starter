@@ -4,12 +4,6 @@
  * Display SVG Markup.
  *
  * @package IP
- */
-
-/**
- * Display SVG Markup.
- *
- * @author WebDevStudios
  *
  * @param array $args The parameters needed to get the SVG.
  */

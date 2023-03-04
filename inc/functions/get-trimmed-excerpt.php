@@ -6,12 +6,10 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
 
 /**
  * Limit the excerpt length.
  *
- * @author WebDevStudios
  *
  * @param array $args Parameters include length and more.
  *

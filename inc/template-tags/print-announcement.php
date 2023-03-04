@@ -14,10 +14,6 @@ function display_announcement_text()
     $announcement_text = get_theme_mod('ip_master_announcement_text') ?: cust_theme_option('alertbar_copy');
     $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id'));
     $type =  get_theme_mod('ip_master_link_type');
-    echo $type;
-
-    echo get_theme_mod('ip_master_announcement_checkbox') . '<br />';
-
 
     $announce_link = '';
     switch ($type) {
@@ -42,7 +38,7 @@ function display_announcement_text()
                 <?php printf('%s', $announcement_text); ?>
                 <?= $announce_link ?>
             </div>
-            <a href="javascript:void(0);" id="banner-accept" class="accept"><span class="fas fa-times"><span class="sr-only">Accept Cookies and close banner</span></span></a>
+            <a href="javascript:void(0);" id="banner-accept" class="accept"><span class="fa fa-times"></span><span class="sr-only">Accept Cookies and close banner </span>Close</a>
         </div><!--/container-->
     </div><!--/announcement-->
 <?php }

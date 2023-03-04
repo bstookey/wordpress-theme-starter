@@ -6,15 +6,10 @@
  * @package IP
  */
 
-/**
- * Enqueue scripts and styles.
- *
- * @author WebDevStudios
- */
+define('STARTER_THEME_VERSION', '1.0');
 
-/*******************************
-  Enqueue Styles
- ********************************/
+// Enqueue Styles
+
 function starter_enqueue_styles()
 {
 	if (!is_admin()) {
@@ -32,9 +27,8 @@ function load_admin_style()
 }
 add_action('admin_enqueue_scripts', 'load_admin_style');
 
-/*******************************
-  Enqueue Scripts
- ********************************/
+// Enqueue Scripts
+
 function starter_enqueue_scripts()
 {
 	if (!is_admin()) {

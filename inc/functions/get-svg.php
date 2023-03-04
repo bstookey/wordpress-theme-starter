@@ -103,7 +103,7 @@ function get_svg($args = [])
 		?>
 			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri('/assets/images/icons/sprite.svg#' . esc_html($args['icon']))); ?>"></use>
 		<?php else : ?>
-			<use xlink:href="#<?php echo esc_html($args['icon']); ?>"></use>
+			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri('/assets/images/icons/sprite.svg#' . esc_html($args['icon']))); ?>"></use>
 		<?php endif; ?>
 
 	</svg>

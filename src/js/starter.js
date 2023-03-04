@@ -2,13 +2,15 @@ $ = window.jQuery;
 // CREATE APP
 var APP = (window.APP = window.APP || {});
 
-const debug = true;
+const debug = false;
 
 function consoleLog(logMessage) {
   if (debug) {
     console.log(logMessage);
   }
 }
+
+consoleLog("Debug true");
 
 APP.Utilities = (function () {
   const markSup = () => {
@@ -65,10 +67,10 @@ APP.Utilities = (function () {
   };
 
   var init = function () {
-    consoleLog("APP.Utilities");
     markSup();
     backgroundImage();
     //noWidows($("p"));
+    consoleLog("APP.Utilities");
   };
 
   return {
@@ -100,10 +102,11 @@ APP.Banner = (function () {
   var checkCookie = function (cname) {
     var name = getCookie(cname);
     if (name !== "") {
-      //alert('has cookie');
+      //alert("has cookie");
       $cookie = true;
     } else {
       showCC();
+      //alert("no cookie");
     }
   };
 
@@ -123,12 +126,13 @@ APP.Banner = (function () {
   var init = function () {
     $cookie = false;
     $cookieContent = $("#announcement-banner");
-    $acceptCookie = $cookieContent.find(".accept");
+    $acceptCookie = $cookieContent.find("#banner-accept");
     $cookieId =
       $cookieContent.data("id").length != ""
         ? $cookieContent.data("id")
-        : "cookieAccept";
+        : "AnnouncementCookieAccept";
     initEvents();
+    consoleLog("APP.Banner");
   };
 
   return {
@@ -138,4 +142,5 @@ APP.Banner = (function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   APP.Utilities.init();
+  APP.Banner.init();
 });

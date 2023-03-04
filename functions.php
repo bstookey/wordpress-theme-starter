@@ -14,8 +14,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define('STARTER_THEME_VERSION', '1.0');
-
 /*******************************
   Init Functions
  ********************************/
@@ -35,7 +33,7 @@ function theme_init()
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
             //'inc/WOO/',
-            //'inc/menu/',
+            'inc/menu/',
         ];
 
         foreach ($files as $include) {
