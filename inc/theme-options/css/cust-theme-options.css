@@ -93,6 +93,16 @@ textarea {
   display: none;
 }
 
+.wrap h1 {
+  margin-bottom: 20px;
+}
+
+.wrap h1 span {
+  font-size: 2rem;
+  margin-right: 20px;
+  display: inline-block;
+}
+
 .upload-url {
   width: 55%;
 }

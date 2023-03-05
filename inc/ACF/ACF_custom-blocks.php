@@ -4,9 +4,9 @@
  *
  * Adds theme custom blocks
  *
- * @package WordPress
+ * @package WordPress Starter
  * @subpackage Starter Theme
- * @since Starter Theme 1.0
+ * @since  1.0
  */
 
 // Make sure ACF is active.
@@ -94,3 +94,21 @@ function acf_enqueue_scripts_and_styles()
     }
   }
 }
+
+// add_action('acf/init', 'my_acf_op_init');
+// function my_acf_op_init()
+// {
+
+//   // Check function exists.
+//   if (function_exists('acf_add_options_page')) {
+
+//     // Register options page.
+//     $option_page = acf_add_options_page(array(
+//       'page_title'    => __('Theme General Settings'),
+//       'menu_title'    => __('Theme Settings'),
+//       'menu_slug'     => 'theme-general-settings',
+//       'capability'    => 'edit_posts',
+//       'redirect'      => false
+//     ));
+//   }
+// }

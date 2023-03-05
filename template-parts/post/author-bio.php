@@ -3,9 +3,9 @@
 /**
  * The template for displaying author info below posts.
  *
- * @package WordPress
+ * @package WordPress Starter
  * @subpackage Starter Theme
- * @since Starter Theme 1.0
+ * @since  1.0
  */
 
 ?>

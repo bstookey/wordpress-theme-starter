@@ -1,5 +1,7 @@
 /*
- * Mix Asset Management
+ *
+ * Webpack/ Laravel Mix Asset Management
+ *
  */
 
 const mix = require("laravel-mix");
@@ -57,7 +59,7 @@ mix
     extensions: ["js"],
   })
   .browserSync({
-    proxy: "http://localhost:8888/Wordpress-Starter/",
+    proxy: "http://localhost:8888/Wordpress-Starter/", // set to your local instance url
   });
 
 if (!mix.inProduction()) {

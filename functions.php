@@ -3,17 +3,21 @@
 /**
  * Functions
  *
- * Adds custom functions to the WordPress install
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
+ * @package WordPress Starter
  * @subpackage Starter Theme
- * @since Starter Theme 1.0
+ * @since  1.0
+ * 
  */
 
+
+// display all php errors
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// change this to 'your_domain'
 define('THEME_DOMAIN', 'ip_master');
 
 /*******************************

@@ -5,9 +5,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress
+ * @package WordPress Starter
  * @subpackage Starter Theme
- * @since Starter Theme 1.0
+ * @since  1.0
  */
 $content = get_the_content();
 $featured_img = (get_the_post_thumbnail_url($post->ID, 'full') != '') ? 'style="' . esc_attr(winterthur_background_image_style($id, 'full')) . ';"' : '';

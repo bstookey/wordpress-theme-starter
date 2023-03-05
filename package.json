@@ -1,5 +1,14 @@
 {
+  "name": "fs_dev",
+  "version": "3.0.0",
   "private": true,
+  "description": "A starter theme from FishlegStudios.",
+  "author": "Fishleg Studios <contact@fishlegtudios.com>",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",

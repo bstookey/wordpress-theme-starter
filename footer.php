@@ -7,9 +7,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
+ * @package WordPress Starter
  * @subpackage Starter Theme
- * @since Starter Theme 1.0
+ * @since  1.0
  */
 ?>
 

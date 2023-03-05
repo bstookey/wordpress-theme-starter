@@ -3,11 +3,17 @@
 /**
  * Custom theme class
  *
- * @package Wordpress
+ * @package WordPress Starter
  * @since 1.0
+ * 
+ * 
+ * 
  */
 
+// Include this in your functions file: require get_template_directory() . '/theme-options.cust-options.php';
+
 $cust_theme_settings = new Cust_Theme_Options();
+define('options_icon', 'dashicons-admin-tools'); //leave blank for generic. See https://developer.wordpress.org/resource/dashicons/#admin-tools
 
 class Cust_Theme_Options
 {
@@ -65,7 +71,7 @@ class Cust_Theme_Options
                 &$this,
                 'display_page'
             ),
-            'dashicons-admin-tools',  // comment out for generic or see https://developer.wordpress.org/resource/dashicons/#admin-tools
+            options_icon,
             99,
         );
 
@@ -126,10 +132,11 @@ class Cust_Theme_Options
      */
     public function display_page()
     {
+        $dash_icon = options_icon ?: 'dashicons-admin-generic';
+        echo '<div class="wrap options-page-wrap">
+		<h1><span class="dashicons ' . $dash_icon . '"></span> ' . __(wp_get_theme()->get('Name') . ' Options') . '</h1>';
 
-        echo '<div class="wrap">
-		<div class="icon32" id="icon-options-general"></div>
-		<h2>' . __(wp_get_theme()->get('Name') . ' Options') . '</h2>';
+        print_r(acf_get_options_pages());
 
         if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == true) echo '<div class="updated fade"><p>' . __('Theme options updated.') . '</p></div>';
 
@@ -771,5 +778,12 @@ function load_media_files()
     wp_enqueue_media();
 }
 add_action('admin_enqueue_scripts', 'load_media_files');
+
+/* Add Dashicons in WordPress Front-end */
+add_action('wp_enqueue_scripts', 'load_dashicons_front_end');
+function load_dashicons_front_end()
+{
+    wp_enqueue_style('dashicons');
+}
 
 ?>
