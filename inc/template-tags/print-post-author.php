@@ -13,7 +13,7 @@
 /**
  * Prints HTML with author information for the current post.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $args Configuration args.
  */
@@ -22,7 +22,7 @@ function print_post_author($args = [])
 
 	// Set defaults.
 	$defaults = [
-		'author_text' => esc_html__('by', 'IP'),
+		'author_text' => esc_html__('by', THEME_DOMAIN),
 	];
 
 	// Parse args.

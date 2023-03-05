@@ -1,15 +1,10 @@
 // Variables
 
 $image-path: "../images/";
-$icon-path: "../icons/";
+$icon-path: "../images/icons/";
 $web-font-path: "../fonts/";
 
-// Site sizes
-$site-width: 1024px;
-$site-width-sm: 700px;
-$site-width-md: 900px;
-$site-width-lg: 1400px;
-
+// global element padding
 $global-gutter: 2.4rem;
 
 // Transition global-transition
@@ -20,7 +15,15 @@ $base-font: "Montserrat Regular"; // Sets the base font family
 $base-font-size: 62.5%; // Sets the base font size to 10px
 $global-font-size: 1.6rem;
 
-// colors, used in colors mixin. Should match theme colors in Set Up
+// Site sizes used in container-sizes mixin. Should also be set for registers block styles.
+$container-sizes: (
+  container: 1200,
+  container-xs: 700,
+  container-sm: 900,
+  container-lg: 1400,
+);
+
+// colors, used in colors mixin. Should match theme colors in inc/setup
 $colors: (
   black: #000000,
   white: #fff,

@@ -11,7 +11,7 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $classes Classes for the body element.
  *

@@ -10,7 +10,7 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @author WebDevStudios
+ *
  */
 function print_social_network_links()
 {
@@ -49,7 +49,7 @@ function print_social_network_links()
 						<span class="screen-reader-text">
 							<?php
 							/* translators: the social network name */
-							printf(esc_attr__('Link to %s', 'IP'), ucwords(esc_html($network))); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+							printf(esc_attr__('Link to %s', THEME_DOMAIN), ucwords(esc_html($network))); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
 							?>
 						</span>
 					</a>

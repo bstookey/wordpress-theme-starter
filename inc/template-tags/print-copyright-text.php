@@ -11,7 +11,7 @@
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @author WebDevStudios
+ *
  */
 function print_copyright_text()
 {

@@ -42,7 +42,7 @@ add_action('wp_enqueue_scripts', 'starter_enqueue_scripts');
 /**
  * Dequeue WordPress core Block Library styles.
  *
- * @author WebDevStudios
+ *
  */
 function deregister_core_block_styles()
 {

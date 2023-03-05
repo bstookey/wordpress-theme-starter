@@ -34,7 +34,7 @@ function theme_init()
             'inc/setup/', // Theme setup.
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
-            //'inc/WOO/', // Custom functions/actions for Woocommerce.
+            'inc/WOO/', // Custom functions/actions for Woocommerce.
             'inc/menu/', // Custom menus for this theme.
             'inc/ip-patterns/block-patterns.php', // Custom patterns for this theme.
         ];

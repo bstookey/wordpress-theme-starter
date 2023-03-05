@@ -10,7 +10,7 @@
 /**
  * Return SVG markup.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $args The parameters needed to display the SVG.
  *
@@ -26,12 +26,12 @@ function get_svg($args = [])
 {
 	// Make sure $args are an array.
 	if (empty($args)) {
-		return esc_attr__('Please define default parameters in the form of an array.', 'IP');
+		return esc_attr__('Please define default parameters in the form of an array.', THEME_DOMAIN);
 	}
 
 	// Define an icon.
 	if (false === array_key_exists('icon', $args)) {
-		return esc_attr__('Please define an SVG icon filename.', 'IP');
+		return esc_attr__('Please define an SVG icon filename.', THEME_DOMAIN);
 	}
 
 	// Set defaults.

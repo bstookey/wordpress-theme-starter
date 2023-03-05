@@ -11,7 +11,7 @@
 /**
  * Display the comments if the count is more than 0.
  *
- * @author WebDevStudios
+ *
  */
 function print_comments()
 {

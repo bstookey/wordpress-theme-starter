@@ -17,14 +17,14 @@ get_header(); ?>
 		<div class="wp-block-cover__inner-container">
 			<div class="container">
 				<div class="wp-block-group__inner-container">
-					<h1 class="page-title"><?php esc_html_e('Sorry, this page doesn\'t exist.', 'ip_master'); ?></h1>
+					<h1 class="page-title"><?php esc_html_e('Sorry, this page doesn\'t exist.', THEME_DOMAIN); ?></h1>
 				</div>
 			</div>
 		</div>
 		</div>
 		<div class="page-content">
 
-			<p><?php esc_html_e('It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'ip_master'); ?></p>
+			<p><?php esc_html_e('It seems we can\'t find what you\'re looking for. Perhaps searching can help.', THEME_DOMAIN); ?></p>
 
 			<?php get_search_form(); ?>
 

@@ -4,17 +4,11 @@
  * Display the customizer header scripts.
  *
  * @package IP
- */
-
-
-
-/**
- * Display the customizer header scripts.
  *
- * @author Greg Rickaby
  *
  * @return string Header scripts.
  */
+
 function print_customizer_header_scripts()
 {
 	// Check for header scripts.
@@ -30,4 +24,4 @@ function print_customizer_header_scripts()
 	echo get_post_content($scripts);
 }
 
-add_action('wp_head', '\print_customizer_header_scripts', 999);
+add_action('wp_head', 'print_customizer_header_scripts', 999);

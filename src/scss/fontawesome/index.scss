@@ -1,14 +1,6 @@
-//@import 'regular';
-//@import "solid";
-@import "mixins";
-@import "core";
-@import "brands";
-//@import 'larger';
-//@import 'fixed-width';
-//@import 'list';
-//@import 'bordered-pulled';
-//@import 'animated';
-//@import 'rotated-flipped';
-//@import 'stacked';
-@import "icons";
-@import "screen-reader";
+// importing core styling file
+@import "fontawesome.scss";
+
+@import "solid.scss";
+@import "brands.scss";
+@import "regular.scss";

@@ -11,7 +11,7 @@
 /**
  * Prints HTML with taxonomies for the current post.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $args Configuration args.
  */

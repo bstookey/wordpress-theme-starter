@@ -9,7 +9,7 @@
 /**
  * Trim the title length.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $args Parameters include length and more.
  *

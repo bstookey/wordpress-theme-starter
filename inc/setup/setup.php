@@ -13,7 +13,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  *
- * @author WebDevStudios
+ *
  */
 function setup()
 {

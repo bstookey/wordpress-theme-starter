@@ -11,7 +11,7 @@
 /**
  * Enable custom mime types.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $mimes Current allowed mime types.
  *
@@ -25,4 +25,4 @@ function custom_mime_types($mimes)
 	return $mimes;
 }
 
-add_filter('upload_mimes', '\custom_mime_types');
+add_filter('upload_mimes', 'custom_mime_types');

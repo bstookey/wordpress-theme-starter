@@ -37,6 +37,12 @@
           "name": "Huge"
         }
       ]
+    },
+    "color": {
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "gradients": []
     }
   }
 }

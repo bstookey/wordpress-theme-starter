@@ -1,6 +1,9 @@
 // Mixins
 
-@import "helpers";
+@import "functions"; // Required
+@import "helpers"; // Required
+
+@import "container-sizes";
 @import "flexbox";
 //@import "buttons";
 @import "colors";

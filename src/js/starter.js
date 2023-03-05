@@ -1,4 +1,7 @@
+/* eslint-disable */
 $ = window.jQuery;
+/* eslint-enable */
+
 // CREATE APP
 var APP = (window.APP = window.APP || {});
 

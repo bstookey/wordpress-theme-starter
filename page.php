@@ -22,7 +22,7 @@ get_header(); ?>
     //display_icons();
     print_svg(
         [
-            'icon'   => 'facebook-square',
+            'icon'   => 'bell',
             'width'  => '24',
             'height' => '24',
         ]

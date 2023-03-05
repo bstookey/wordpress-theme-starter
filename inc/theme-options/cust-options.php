@@ -56,10 +56,18 @@ class Cust_Theme_Options
     public function add_pages()
     {
 
-        $admin_page = add_menu_page(__('Theme Options'), __('Theme Options'), 'manage_options', 'cust-theme-options', array(
-            &$this,
-            'display_page'
-        ));
+        $admin_page = add_menu_page(
+            __('Theme Options'), // Note: string $page_title is overridden in the belowfunction display_page()
+            __('Theme Options'),
+            'manage_options',
+            'cust-theme-options',
+            array(
+                &$this,
+                'display_page'
+            ),
+            'dashicons-admin-tools',  // comment out for generic or see https://developer.wordpress.org/resource/dashicons/#admin-tools
+            99,
+        );
 
         add_action('admin_print_scripts-' . $admin_page, array(
             &$this,
@@ -121,7 +129,7 @@ class Cust_Theme_Options
 
         echo '<div class="wrap">
 		<div class="icon32" id="icon-options-general"></div>
-		<h2>' . __('Theme Options') . '</h2>';
+		<h2>' . __(wp_get_theme()->get('Name') . ' Options') . '</h2>';
 
         if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == true) echo '<div class="updated fade"><p>' . __('Theme options updated.') . '</p></div>';
 
@@ -262,7 +270,7 @@ class Cust_Theme_Options
 
             case 'checkbox':
 
-                echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="cust_theme_options[' . $id . ']" value="1" ' . checked($options[$id], 1, false) . ' /> <label for="' . $id . '">' . $desc . '</label>';
+                echo '<div class="checkbox"><input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="cust_theme_options[' . $id . ']" value="1" ' . checked($options[$id], 1, false) . ' /> <label for="' . $id . '">' . $desc . '</label></div>';
 
                 break;
 
@@ -387,7 +395,7 @@ class Cust_Theme_Options
             'title' => __('Address'),
             'type' => 'text',
             'desc' => __(''),
-            'section' => 'general'
+            'section' => 'general',
         );
 
         $this->settings['org_address2'] = array(

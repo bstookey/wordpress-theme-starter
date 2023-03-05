@@ -67,8 +67,8 @@ get_header();
 				</div>
 				<?php the_posts_pagination(array(
 					'mid_size'  => 2,
-					'prev_text' => __('<span class="fas fa-chevron-left"></span>', 'textdomain'),
-					'next_text' => __('<span class="fas fa-chevron-right"></span>', 'textdomain'),
+					'prev_text' => __('<span class="fas fa-chevron-left"></span>', THEME_DOMAIN),
+					'next_text' => __('<span class="fas fa-chevron-right"></span>', THEME_DOMAIN),
 				)); ?>
 			</div>
 		</div>

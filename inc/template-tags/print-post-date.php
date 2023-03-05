@@ -13,7 +13,7 @@
 /**
  * Prints HTML with date information for the current post.
  *
- * @author WebDevStudios
+ *
  *
  * @param array $args Configuration args.
  */
@@ -22,7 +22,7 @@ function print_post_date($args = [])
 
 	// Set defaults.
 	$defaults = [
-		'date_text'   => esc_html__('Posted on', 'IP'),
+		'date_text'   => esc_html__('Posted on', THEME_DOMAIN),
 		'date_format' => get_option('date_format'),
 	];
 

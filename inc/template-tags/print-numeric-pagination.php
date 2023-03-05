@@ -11,7 +11,7 @@
 /**
  * Displays numeric pagination on archive pages.
  *
- * @author WebDevStudios
+ *
  *
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
@@ -42,7 +42,7 @@ function print_numeric_pagination($args = [], $query = null)
 	}
 ?>
 
-	<nav class="pagination-container" aria-label="<?php esc_attr_e('numeric pagination', 'IP'); ?>">
+	<nav class="pagination-container" aria-label="<?php esc_attr_e('numeric pagination', THEME_DOMAIN); ?>">
 		<?php echo paginate_links($args); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK. 
 		?>
 	</nav>

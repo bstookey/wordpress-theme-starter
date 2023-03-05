@@ -12,5 +12,5 @@ function removeCorePatterns()
 
     unregister_block_pattern_category('query');
     unregister_block_pattern_category('buttons');
-    //unregister_block_pattern_category('uncategorized');
+    //unregister_block_pattern_category('uncategorized'); // this one is a mystery and causes a php error.
 }

@@ -11,7 +11,7 @@
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @author WebDevStudios
+ *
  *
  * @return string An empty string if no menus are found at all.
  */
@@ -31,7 +31,7 @@ function print_mobile_menu()
 	}
 ?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_attr_e('Mobile Menu', 'IP'); ?>" aria-hidden="true" tabindex="-1">
+	<nav class="off-canvas-container" aria-label="<?php esc_attr_e('Mobile Menu', THEME_DOMAIN); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		// Mobile menu args.
 		$mobile_args = [
