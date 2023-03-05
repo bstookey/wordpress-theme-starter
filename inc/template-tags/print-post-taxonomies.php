@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Prints HTML with taxonomies for the current post.

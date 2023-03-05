@@ -4,14 +4,10 @@
  * Customizer settings.
  *
  * @package IP
- */
-
-/**
- * Register additional scripts.
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
- * @author WDS
  */
+
 function ip_master_customize_additional_scripts($wp_customize)
 {
 
@@ -28,8 +24,8 @@ function ip_master_customize_additional_scripts($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_header_scripts',
 		array(
-			'label'       => esc_html__('Header Scripts', 'ip_master'),
-			'description' => esc_html__('Additional scripts to add to the header. Basic HTML tags are allowed.', 'ip_master'),
+			'label'       => esc_html__('Header Scripts', THEME_DOMAIN),
+			'description' => esc_html__('Additional scripts to add to the header. Basic HTML tags are allowed.', THEME_DOMAIN),
 			'section'     => 'ip_master_additional_scripts_section',
 			'type'        => 'textarea',
 		)
@@ -48,8 +44,8 @@ function ip_master_customize_additional_scripts($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_body_scripts',
 		array(
-			'label'       => esc_html__('Body Scripts', 'ip_master'),
-			'description' => esc_html__('Additional scripts to add to after the <body>. Basic HTML tags are allowed.', 'ip_master'),
+			'label'       => esc_html__('Body Scripts', THEME_DOMAIN),
+			'description' => esc_html__('Additional scripts to add to after the <body>. Basic HTML tags are allowed.', THEME_DOMAIN),
 			'section'     => 'ip_master_additional_scripts_section',
 			'type'        => 'textarea',
 		)
@@ -68,8 +64,8 @@ function ip_master_customize_additional_scripts($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_footer_scripts',
 		array(
-			'label'       => esc_html__('Footer Scripts', 'ip_master'),
-			'description' => esc_html__('Additional scripts to add to the footer. Basic HTML tags are allowed.', 'ip_master'),
+			'label'       => esc_html__('Footer Scripts', THEME_DOMAIN),
+			'description' => esc_html__('Additional scripts to add to the footer. Basic HTML tags are allowed.', THEME_DOMAIN),
 			'section'     => 'ip_master_additional_scripts_section',
 			'type'        => 'textarea',
 		)
@@ -80,7 +76,6 @@ add_action('customize_register', 'ip_master_customize_additional_scripts');
 /**
  * Register a social icons setting.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function ip_master_customize_social_icons($wp_customize)
@@ -105,7 +100,7 @@ function ip_master_customize_social_icons($wp_customize)
 		$wp_customize->add_control(
 			'IP_' . sanitize_key($network) . '_link',
 			array(
-				'label'   => /* translators: the social network name. */ sprintf(esc_html__('%s URL', 'ip_master'), ucwords($network)),
+				'label'   => /* translators: the social network name. */ sprintf(esc_html__('%s', THEME_DOMAIN), ucwords($network)),
 				'section' => 'ip_master_social_links_section',
 				'type'    => 'text',
 			)
@@ -115,67 +110,68 @@ function ip_master_customize_social_icons($wp_customize)
 add_action('customize_register', 'ip_master_customize_social_icons');
 
 /**
- * Register a phone general setting.
+ * Register a default Banner Image.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
-function ip_master_customize_general_phone($wp_customize)
+function ip_master_default_image_section($wp_customize)
 {
-	// Register a setting.
+	// Register a default banner image.
 	$wp_customize->add_setting(
-		'ip_master_phone_text',
+		'deafult_banner_image',
 		array(
-			'default'           => '',
-			'sanitize_callback' => 'wp_kses_post',
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'esc_url_raw',
+			'transport' => 'refresh',
 		)
 	);
 
 	// Create the setting field.
-	$wp_customize->add_control(
-		'ip_master_phone_text',
+	$wp_customize->add_control(new WP_Customize_Image_Control(
+		$wp_customize,
+		'deafult_banner_image',
 		array(
-			'label'       => esc_html__('Phone Number', 'ip_master'),
-			'section' => 'ip_master_general_section',
-			'type'    => 'text',
+			'label' => __('Default Banner Image', THEME_DOMAIN),
+			'description' => esc_html__('This, in some cases will be used in some patterns and custom blocks FPO.', THEME_DOMAIN),
+			'section' => 'ip_master_default_image_section',
+			'settings' => 'deafult_banner_image',
+			'height'      => 250,
+			'width'       => 500,
 		)
-	);
-}
-add_action('customize_register', 'ip_master_customize_general_phone');
+	));
 
-/**
- * Register a email general setting.
- *
- * @author WDS
- * @param object $wp_customize Instance of WP_Customize_Class.
- */
-function ip_master_customize_general_email($wp_customize)
-{
-	// Register a setting.
+	// Register a default banner image.
 	$wp_customize->add_setting(
-		'ip_master_email_text',
+		'deafult_post_image',
 		array(
-			'default'           => '',
-			'sanitize_callback' => 'wp_kses_post',
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'esc_url_raw',
+			'transport' => 'refresh',
 		)
 	);
 
 	// Create the setting field.
-	$wp_customize->add_control(
-		'ip_master_email_text',
+	$wp_customize->add_control(new WP_Customize_Image_Control(
+		$wp_customize,
+		'deafult_post_image',
 		array(
-			'label'       => esc_html__('Email', 'ip_master'),
-			'section' => 'ip_master_general_section',
-			'type'    => 'text',
+			'label' => __('Default Post Image', THEME_DOMAIN),
+			'description' => esc_html__('This can be used, if needed, when a post image is not available', THEME_DOMAIN),
+			'section' => 'ip_master_default_image_section',
+			'settings' => 'deafult_post_image',
+			'height'      => 250,
+			'width'       => 500,
 		)
-	);
+	));
 }
-add_action('customize_register', 'ip_master_customize_general_email');
+add_action('customize_register', 'ip_master_default_image_section');
+
 
 /**
  * Register a checkbox footer setting.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function ip_master_customize_footer_checkbox($wp_customize)
@@ -209,7 +205,6 @@ add_action('customize_register', 'ip_master_customize_footer_checkbox');
 /**
  * Register copyright text setting.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function ip_master_customize_copyright_text($wp_customize)
@@ -228,8 +223,8 @@ function ip_master_customize_copyright_text($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_copyright_text',
 		array(
-			'label'       => esc_html__('Copyright Text', 'ip_master'),
-			'description' => esc_html__('The copyright text will be displayed in the footer. Basic HTML tags allowed.', 'ip_master'),
+			'label'       => esc_html__('Copyright Text', THEME_DOMAIN),
+			'description' => esc_html__('The copyright text will be displayed in the footer. Basic HTML tags allowed.', THEME_DOMAIN),
 			'section' => 'ip_master_footer_section',
 			'type'    => 'textarea',
 		)
@@ -240,7 +235,6 @@ add_action('customize_register', 'ip_master_customize_copyright_text');
 /**
  * Register copyright text setting.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 function ip_master_customize_announcement_text($wp_customize)
@@ -257,9 +251,9 @@ function ip_master_customize_announcement_text($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_announcement_checkbox',
 		array(
-			'label'       => esc_html__('Show Announcement', 'ip_master'),
+			'label'       => esc_html__('Show Announcement', THEME_DOMAIN),
 			'type' => 'checkbox',
-			'description' => esc_html__('The announcement bar will be diplayed with the below option of using a cookie name.', 'ip_master'),
+			'description' => esc_html__('The announcement bar will be diplayed with the below option of using a cookie name.', THEME_DOMAIN),
 			'section' => 'ip_master_header_section',
 		)
 	);
@@ -283,8 +277,8 @@ function ip_master_customize_announcement_text($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_announcement_text',
 		array(
-			'label'       => esc_html__('Announcement Text', 'ip_master'),
-			'description' => esc_html__('The announcement text will be displayed in the header. Basic HTML tags allowed.', 'ip_master'),
+			'label'       => esc_html__('Announcement Text', THEME_DOMAIN),
+			'description' => esc_html__('The announcement text will be displayed in the header. Basic HTML tags allowed.', THEME_DOMAIN),
 			'section' => 'ip_master_header_section',
 			'type'    => 'textarea',
 		)
@@ -293,12 +287,11 @@ function ip_master_customize_announcement_text($wp_customize)
 add_action('customize_register', 'ip_master_customize_announcement_text');
 
 /**
- * Register header button setting.
+ * Register site announcement setting.
  *
- * @author WDS
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
-function ip_master_customize_header_button($wp_customize)
+function ip_master_customize_header_announcement($wp_customize)
 {
 
 	// Register a setting.
@@ -314,14 +307,14 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_link_type',
 		array(
-			'label'       => esc_html__('Announcement Link', 'ip_master'),
-			'description' => esc_html__('Display a custom button in the header.', 'ip_master'),
+			'label'       => esc_html__('Announcement Link', THEME_DOMAIN),
+			'description' => esc_html__('Display a custom button in the header.', THEME_DOMAIN),
 			'section'     => 'ip_master_header_section',
 			'type'        => 'select',
 			'choices'     => array(
-				'none'   => esc_html__('No link', 'ip_master'),
-				'link'   => esc_html__('Link to a custom URL', 'ip_master'),
-				'page'   => esc_html__('Link to a page', 'ip_master'),
+				'none'   => esc_html__('No link', THEME_DOMAIN),
+				'link'   => esc_html__('Link to a custom URL', THEME_DOMAIN),
+				'page'   => esc_html__('Link to a page', THEME_DOMAIN),
 			),
 		)
 	);
@@ -339,11 +332,11 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_link_type_url',
 		array(
-			'label'           => esc_html__('Announcement Link URL', 'ip_master'),
-			'description'     => esc_html__('Enter the URL or email address to be used by the link in the header.', 'ip_master'),
+			'label'           => esc_html__('Announcement Link URL', THEME_DOMAIN),
+			'description'     => esc_html__('Enter the URL or email address to be used by the link in the header.', THEME_DOMAIN),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'url',
-			'active_callback' => 'ip_master_customizer_is_header_button_url', // Only displays if the Link option is selected above.
+			'active_callback' => 'ip_master_customizer_is_header_announcement_url', // Only displays if the Link option is selected above.
 		)
 	);
 
@@ -358,11 +351,11 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_announcement_selected_page_id',
 		array(
-			'label'    => __('Select a Page', 'ip_master'),
-			'description'     => esc_html__('Select a page address to be used by the link in the header.', 'ip_master'),
+			'label'    => __('Select a Page', THEME_DOMAIN),
+			'description'     => esc_html__('Select a page address to be used by the link in the header.', THEME_DOMAIN),
 			'section'         => 'ip_master_header_section',
 			'type'     => 'dropdown-pages',
-			'active_callback' => 'ip_master_customizer_is_header_button_page', // Only displays if the Link option is selected above.
+			'active_callback' => 'ip_master_customizer_is_header_announcement_page', // Only displays if the Link option is selected above.
 		)
 	);
 
@@ -379,11 +372,11 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_link_type_text',
 		array(
-			'label'           => esc_html__('Link Text', 'ip_master'),
-			'description'     => esc_html__('Enter the text to be displayed in the button in the announcement.', 'ip_master'),
+			'label'           => esc_html__('Link Text', THEME_DOMAIN),
+			'description'     => esc_html__('Enter the text to be displayed in the button in the announcement.', THEME_DOMAIN),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'text',
-			'active_callback' => 'ip_master_customizer_is_header_button_link', // Only displays if the Link option is selected above.
+			'active_callback' => 'ip_master_customizer_is_header_announcement_link', // Only displays if the Link option is selected above.
 		)
 	);
 
@@ -400,8 +393,8 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_cookie_name',
 		array(
-			'label'           => esc_html__('Cookie Name', 'ip_master'),
-			'description'     => esc_html__('Changing the name of the cookie will allow display of new announcements regardles of the users current set cookie.', 'ip_master'),
+			'label'           => esc_html__('Cookie Name', THEME_DOMAIN),
+			'description'     => esc_html__('Changing the name of the cookie will allow display of new announcements regardles of the users current set cookie.', THEME_DOMAIN),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'text',
 		)
@@ -420,8 +413,8 @@ function ip_master_customize_header_button($wp_customize)
 	$wp_customize->add_control(
 		'ip_master_cookie_duration',
 		array(
-			'label'           => esc_html__('Cookie Duration', 'ip_master'),
-			'description'     => esc_html__('The ammount of days the user can hide the announcement.', 'ip_master'),
+			'label'           => esc_html__('Cookie Duration', THEME_DOMAIN),
+			'description'     => esc_html__('The ammount of days the user can hide the announcement.', THEME_DOMAIN),
 			'section'         => 'ip_master_header_section',
 			'type'            => 'number',
 		)
@@ -442,16 +435,15 @@ function ip_master_customize_header_button($wp_customize)
 		return ($number ? $number : $setting->default);
 	}
 }
-add_action('customize_register', 'ip_master_customize_header_button');
+add_action('customize_register', 'ip_master_customize_header_announcement');
 
 /**
  * Sanitizes the select dropdown in the customizer.
  *
- * @author WDS
  * @param string $input  The input.
  * @param string $setting The setting.
  * @return string
- * @author Corey Collins
+ *
  */
 function ip_master_sanitize_select($input, $setting)
 {
@@ -467,45 +459,44 @@ function ip_master_sanitize_select($input, $setting)
 }
 
 /**
- * Checks to see if the link option is selected in our button settings.
+ * Checks to see if option selected in our link type settings.
  *
- * @author WDS
- * @return boolean True/False whether or not the Link radio is selected.
- * @author Corey Collins
+ * @return boolean True/False whether or not Link is selected.
+ *
  */
-function ip_master_customizer_is_header_button_url()
+function ip_master_customizer_is_header_announcement_url()
 {
 
 	// Get our button setting.
-	$button_setting = get_theme_mod('ip_master_link_type');
+	$link_type = get_theme_mod('ip_master_link_type');
 
-	if ('link' !== $button_setting) {
+	if ('link' !== $link_type) {
 		return false;
 	}
 
 	return true;
 }
 
-function ip_master_customizer_is_header_button_page()
+function ip_master_customizer_is_header_announcement_page()
 {
 
 	// Get our button setting.
-	$button_setting = get_theme_mod('ip_master_link_type');
+	$link_type = get_theme_mod('ip_master_link_type');
 
-	if ('page' !== $button_setting) {
+	if ('page' !== $link_type) {
 		return false;
 	}
 
 	return true;
 }
 
-function ip_master_customizer_is_header_button_link()
+function ip_master_customizer_is_header_announcement_link()
 {
 
 	// Get our button setting.
-	$button_setting = get_theme_mod('ip_master_link_type');
+	$link_type = get_theme_mod('ip_master_link_type');
 
-	if (('link' === $button_setting) || ('page' === $button_setting)) {
+	if (('link' === $link_type) || ('page' === $link_type)) {
 		return true;
 	}
 

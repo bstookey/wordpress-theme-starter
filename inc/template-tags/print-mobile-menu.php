@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Displays the mobile menu with off-canvas background layer.

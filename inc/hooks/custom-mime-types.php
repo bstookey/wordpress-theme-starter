@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Enable custom mime types.
@@ -25,4 +25,4 @@ function custom_mime_types($mimes)
 	return $mimes;
 }
 
-add_filter('upload_mimes', __NAMESPACE__ . '\custom_mime_types');
+add_filter('upload_mimes', '\custom_mime_types');

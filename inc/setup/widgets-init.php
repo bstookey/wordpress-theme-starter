@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Register widget area.
@@ -39,4 +39,4 @@ function widgets_init()
 	}
 }
 
-add_action('widgets_init', __NAMESPACE__ . '\widgets_init');
+add_action('widgets_init', '\widgets_init');

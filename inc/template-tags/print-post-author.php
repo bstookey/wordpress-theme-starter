@@ -8,7 +8,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Prints HTML with author information for the current post.

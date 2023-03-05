@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Display the customizer header scripts.
@@ -30,4 +30,4 @@ function print_customizer_header_scripts()
 	echo get_post_content($scripts);
 }
 
-add_action('wp_head', __NAMESPACE__ . '\print_customizer_header_scripts', 999);
+add_action('wp_head', '\print_customizer_header_scripts', 999);

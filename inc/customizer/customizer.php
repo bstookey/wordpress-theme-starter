@@ -43,7 +43,7 @@ add_action('customize_register', 'ip_master_remove_default_customizer_sections',
 /**
  * Include other customizer files.
  *
- * @author WDS
+
  */
 function ip_master_include_custom_controls()
 {
@@ -57,7 +57,7 @@ add_action('customize_register', 'ip_master_include_custom_controls', -999);
 /**
  * Enqueue customizer related scripts.
  *
- * @author WDS
+
  */
 function ip_master_customize_scripts()
 {
@@ -70,7 +70,7 @@ add_action('customize_preview_init', 'ip_master_customize_scripts');
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  *
- * @author WDS
+
  * @link https://make.wordpress.org/core/2016/02/16/selective-refresh-in-the-customizer/.
  */
 function ip_master_selective_refresh_support($wp_customize)
@@ -96,7 +96,7 @@ add_action('customize_register', 'ip_master_selective_refresh_support');
  *
  * Note: You will need to hook this up via livepreview.js
  *
- * @author WDS
+
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29.

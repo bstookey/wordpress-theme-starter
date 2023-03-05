@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Display the customizer footer scripts.
@@ -30,4 +30,4 @@ function print_customizer_footer_scripts()
 	echo get_post_content($scripts);
 }
 
-add_action('wp_footer', __NAMESPACE__ . '\print_customizer_footer_scripts', 999);
+add_action('wp_footer', '\print_customizer_footer_scripts', 999);

@@ -6,12 +6,10 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
-
 /**
  * Adds OG tags to the head for better social sharing.
  *
- * @author Corey Collins
+ *
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */
@@ -148,4 +146,4 @@ function add_og_tags()
 <?php
 }
 
-add_action('wp_head', __NAMESPACE__ . '\add_og_tags');
+add_action('wp_head', '\add_og_tags');

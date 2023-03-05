@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Flush out the transients used in IP_categorized_blog.
@@ -25,5 +25,5 @@ function category_transient_flusher()
 	return delete_transient('IP_categories');
 }
 
-add_action('delete_category', __NAMESPACE__ . '\category_transient_flusher');
-add_action('save_post', __NAMESPACE__ . '\category_transient_flusher');
+add_action('delete_category', '\category_transient_flusher');
+add_action('save_post', '\category_transient_flusher');

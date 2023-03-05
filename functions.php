@@ -14,6 +14,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+define('THEME_DOMAIN', 'ip_master');
+
 /*******************************
   Init Functions
  ********************************/
@@ -32,8 +34,9 @@ function theme_init()
             'inc/setup/', // Theme setup.
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
-            //'inc/WOO/',
-            'inc/menu/',
+            //'inc/WOO/', // Custom functions/actions for Woocommerce.
+            'inc/menu/', // Custom menus for this theme.
+            'inc/ip-patterns/block-patterns.php', // Custom patterns for this theme.
         ];
 
         foreach ($files as $include) {
@@ -51,30 +54,6 @@ function theme_init()
     }
 
     include_inc_files();
-
-    // Additional content type attrubutes
-    add_post_type_support('page', 'excerpt');
-    add_post_type_support('post', 'page-attributes');
-    add_theme_support('title-tag');
-    // 
-    remove_filter('the_content', 'wpautop');
 }
+
 theme_init();
-
-/**
- * Add SVG definitions to footer.
- *
- * @author WDS
- */
-function ip_master_include_svg_icons()
-{
-
-    // Define SVG sprite file.
-    $svg_icons = get_template_directory() . 'assts/images/icons';
-
-    // If it exists, include it.
-    if (file_exists($svg_icons)) {
-        require_once $svg_icons;
-    }
-}
-add_action('wp_footer', 'ip_master_include_svg_icons', 9999);

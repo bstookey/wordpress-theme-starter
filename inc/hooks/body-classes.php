@@ -6,7 +6,7 @@
  * @package IP
  */
 
-namespace WebDevStudios\IP;
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -63,4 +63,4 @@ function body_classes($classes)
 	return $classes;
 }
 
-add_filter('body_class', __NAMESPACE__ . '\body_classes');
+add_filter('body_class', '\body_classes');

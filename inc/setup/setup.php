@@ -17,25 +17,30 @@
  */
 function setup()
 {
-	/**
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on IP, refer to the
-	 * README.md file in this theme to find and replace all
-	 * references of IP
-	 */
+	// Add theme support for selective refresh for widgets.
+	add_theme_support('customize-selective-refresh-widgets');
 
-	// load_theme_textdomain('IP', get_template_directory() . '/build/languages');
+	// Gutenberg support for full-width/wide alignment of supported blocks.
+	add_theme_support('align-wide');
+
+	// Gutenberg editor styles support.
+	add_theme_support('editor-styles');
+
+	// Gutenberg responsive embed support.
+	add_theme_support('responsive-embeds');
+
+	// Site Featured Image support.
+	add_theme_support('post-thumbnails');
+	//add_image_size('key-visual', 2560, 460, false);
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
 
-	/**
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	// Additional content type attrubutes
+	add_post_type_support('page', 'excerpt');
+	add_post_type_support('post', 'page-attributes');
+
+	// Add title tag support
 	add_theme_support('title-tag');
 
 
@@ -53,18 +58,6 @@ function setup()
 			'caption',
 		]
 	);
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support('customize-selective-refresh-widgets');
-
-	// Gutenberg support for full-width/wide alignment of supported blocks.
-	add_theme_support('align-wide');
-
-	// Gutenberg editor styles support.
-	add_theme_support('editor-styles');
-
-	// Gutenberg responsive embed support.
-	add_theme_support('responsive-embeds');
 }
 
 add_action('after_setup_theme', 'setup');

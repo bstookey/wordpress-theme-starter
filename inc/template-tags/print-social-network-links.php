@@ -36,7 +36,7 @@ function print_social_network_links()
 			if (!empty($network_url)) :
 		?>
 				<li class="social-icon <?php echo esc_attr($network); ?> mr-2">
-					<a href="<?php echo esc_url($network_url); ?>">
+					<a href="<?php echo esc_url($network_url); ?>" title="<?php echo ucwords(esc_attr($network)); ?> ">
 						<?php
 						print_svg(
 							[

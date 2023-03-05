@@ -1,16 +1,18 @@
 <?php
+
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
  * @package IP
  */
 
-if ( class_exists( 'WP_Customize_Control' ) ) :
+if (class_exists('WP_Customize_Control')) :
 
 	/**
 	 * Class to create a custom text editor control
 	 */
-	class Text_Editor_Custom_Control extends WP_Customize_Control {
+	class Text_Editor_Custom_Control extends WP_Customize_Control
+	{
 
 		/**
 		 * Keep track of how many editors are added.
@@ -22,13 +24,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 		/**
 		 * Render the content on the theme customizer page
 		 *
-		 * @author WDS
+		
 		 */
-		public function render_content() {
-			?>
+		public function render_content()
+		{
+?>
 			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+				<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+				<span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
 			</label>
 			<div class="wds-customize-text-editor">
 				<?php
@@ -40,10 +43,10 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 				);
 
 				// Add the editor.
-				wp_editor( $this->value(), $this->id, $settings );
+				wp_editor($this->value(), $this->id, $settings);
 
 				// Only enqueue scripts once.
-				if ( 0 === self::$count ) {
+				if (0 === self::$count) {
 					$this->enqueue_scripts();
 				}
 
@@ -54,26 +57,28 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 				++self::$count;
 				?>
 			</div>
-			<?php
+<?php
 		}
 
 		/**
 		 * Enqueue scripts.
 		 *
-		 * @author WDS
+		
 		 */
-		protected function enqueue_scripts() {
-			wp_enqueue_script( 'tiny_mce' );
-			wp_enqueue_script( 'wds-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', array( 'jquery' ), '1.0.0', true );
+		protected function enqueue_scripts()
+		{
+			wp_enqueue_script('tiny_mce');
+			wp_enqueue_script('wds-customize-editor-js', get_template_directory_uri() . '/inc/customizer/assets/scripts/tinymce.js', array('jquery'), '1.0.0', true);
 		}
 
 		/**
 		 * Add footer scripts for Tinymce.
 		 *
-		 * @author WDS
+		
 		 */
-		protected function add_footer_scripts() {
-			do_action( 'admin_print_footer_scripts' );
+		protected function add_footer_scripts()
+		{
+			do_action('admin_print_footer_scripts');
 		}
 	}
 endif;
