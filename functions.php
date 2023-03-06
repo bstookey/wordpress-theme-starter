@@ -18,7 +18,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // change this to 'your_domain'
-define('THEME_DOMAIN', 'ip_master');
+define('THEME_DOMAIN', 'fs_master');
 
 /*******************************
   Init Functions

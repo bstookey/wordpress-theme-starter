@@ -11,18 +11,18 @@ function display_announcement_text()
 {
 
     // Grab our customizer settings.
-    $announcement_text = get_theme_mod('ip_master_announcement_text') ?: cust_theme_option('alertbar_copy');
+    $announcement_text = get_theme_mod('fs_master_announcement_text') ?: cust_theme_option('alertbar_copy');
     $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id'));
-    $type =  get_theme_mod('ip_master_link_type');
+    $type =  get_theme_mod('fs_master_link_type');
 
     $announce_link = '';
     switch ($type) {
 
         case 'link':
-            $announce_link = '<a href="' . get_theme_mod('ip_master_link_type_url') . '" target="_blank" class="cb-link">' .  get_theme_mod('ip_master_link_type_text') . '</a>';
+            $announce_link = '<a href="' . get_theme_mod('fs_master_link_type_url') . '" target="_blank" class="cb-link">' .  get_theme_mod('fs_master_link_type_text') . '</a>';
             break;
         case 'page':
-            $announce_link = '<a href="' . $selected_page_url . '" class="cb-link">' .  get_theme_mod('ip_master_link_type_text') . '</a>';
+            $announce_link = '<a href="' . $selected_page_url . '" class="cb-link">' .  get_theme_mod('fs_master_link_type_text') . '</a>';
             break;
     }
 
@@ -32,7 +32,7 @@ function display_announcement_text()
         return false;
     } ?>
 
-    <div id="announcement-banner" class="announcement-banner" data-id="<?= get_theme_mod('ip_master_cookie_name') ?>" data-days="<?= get_theme_mod('ip_master_cookie_duration') ?>">
+    <div id="announcement-banner" class="announcement-banner" data-id="<?= get_theme_mod('fs_master_cookie_name') ?>" data-days="<?= get_theme_mod('fs_master_cookie_duration') ?>">
         <div class="container">
             <div class="announcement">
                 <?php printf('%s', $announcement_text); ?>

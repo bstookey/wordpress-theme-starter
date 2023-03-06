@@ -6,7 +6,7 @@
  * @package IP
  */
 
-function ip_master_customize_panels($wp_customize)
+function fs_master_customize_panels($wp_customize)
 {
 
 	// Register a new panel.
@@ -21,4 +21,4 @@ function ip_master_customize_panels($wp_customize)
 		)
 	);
 }
-add_action('customize_register', 'ip_master_customize_panels');
+add_action('customize_register', 'fs_master_customize_panels');
