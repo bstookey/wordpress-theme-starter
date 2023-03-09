@@ -12,7 +12,7 @@ function display_announcement_text()
 
     // Grab our customizer settings.
     $announcement_text = get_theme_mod('fs_master_announcement_text') ?: cust_theme_option('alertbar_copy');
-    $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id'));
+    $selected_page_url = get_the_permalink(get_theme_mod('fs_announcement_selected_page_id'));
     $type =  get_theme_mod('fs_master_link_type');
 
     $announce_link = '';

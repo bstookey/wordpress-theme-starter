@@ -1,0 +1,60 @@
+// Font sizing at different breakpoints based on grid breakpoints
+
+/* responsive font sizes */
+
+// EG. @include font-size(1.6, '', 1.8, 2.4, 3.6);
+// On the body tag
+// @media (min-width: 768px) {
+//   body {
+//     font-size: 1.8rem;
+//   }
+// }
+// @media (min-width: 992px) {
+//   body {
+//     font-size: 2.4rem;
+//   }
+// }
+// @media (min-width: 1200px) {
+//   body {
+//     font-size: 3.6rem;
+//   }
+// }
+
+@mixin font-size(
+  $base-size,
+  $sm-size: "",
+  $md-size: "",
+  $lg-size: "",
+  $xl-size: "",
+  $xxl-size: ""
+) {
+  font-size: $base-size;
+
+  @if $sm-size != "" {
+    @include media-breakpoint-up(sm) {
+      font-size: $sm-size + rem;
+    }
+  }
+  @if $md-size != "" {
+    @include media-breakpoint-up(md) {
+      font-size: $md-size + rem;
+    }
+  }
+
+  @if $lg-size != "" {
+    @include media-breakpoint-up(lg) {
+      font-size: $lg-size + rem;
+    }
+  }
+
+  @if $xl-size != "" {
+    @include media-breakpoint-up(xl) {
+      font-size: $xl-size + rem;
+    }
+  }
+  @if $xxl-size != "" {
+    @include media-breakpoint-up(xxl) {
+      font-size: $md-size + rem;
+    }
+  }
+}

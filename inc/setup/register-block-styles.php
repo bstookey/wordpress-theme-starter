@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Register Block Styles
+ * 
+ * See src > js directory for block-styles.js
+ *
+ * @package fs_dev
+ */
+
 if (function_exists('register_block_style')) {
     register_block_style(
         'core/group',

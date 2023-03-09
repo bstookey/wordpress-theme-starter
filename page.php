@@ -19,14 +19,8 @@ get_header(); ?>
 <div class="page-content">
 
     <?php
-    //display_icons();
-    print_svg(
-        [
-            'icon'   => 'bell',
-            'width'  => '24',
-            'height' => '24',
-        ]
-    );
+    //display an icon function;
+    print_svg(['icon' => 'circle-check']);
 
     if (have_posts()) {
 

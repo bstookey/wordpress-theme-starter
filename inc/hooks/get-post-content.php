@@ -3,19 +3,13 @@
 /**
  * Filters WYSIWYG content with the_content filter.
  *
- * @package IP
- */
-
-
-/**
- * Filters WYSIWYG content with the_content filter.
- *
- * @author Jo Murgel
+ * @package fs_dev
  *
  * @param string $content content dump from WYSIWYG.
  *
  * @return string|bool Content string if content exists, else empty.
  */
+
 function get_post_content($content)
 {
 	return !empty($content) ? $content : false;

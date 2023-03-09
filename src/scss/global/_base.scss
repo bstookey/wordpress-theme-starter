@@ -11,4 +11,6 @@ body {
   @include media-breakpoint-only(xs) {
     display: block;
   }
+
+  @include font-size(1.6, "", 1.8, 2.4, 3.6);
 }

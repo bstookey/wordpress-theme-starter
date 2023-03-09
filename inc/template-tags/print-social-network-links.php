@@ -3,7 +3,7 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @package IP
+ * @package fs_dev
  */
 
 
@@ -30,7 +30,7 @@ function print_social_network_links()
 		foreach ($social_networks as $network) :
 
 			// Look for the social network's URL.
-			$network_url = get_theme_mod('IP_' . $network . '_link');
+			$network_url = get_theme_mod('fs_' . $network . '_link');
 
 			// Only display the list item if a URL is set.
 			if (!empty($network_url)) :

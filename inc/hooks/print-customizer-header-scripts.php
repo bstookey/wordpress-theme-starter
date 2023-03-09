@@ -3,8 +3,7 @@
 /**
  * Display the customizer header scripts.
  *
- * @package IP
- *
+ * @package fs_dev
  *
  * @return string Header scripts.
  */
@@ -12,7 +11,7 @@
 function print_customizer_header_scripts()
 {
 	// Check for header scripts.
-	$scripts = get_theme_mod('IP_header_scripts');
+	$scripts = get_theme_mod('fs_header_scripts');
 
 	// None? Bail...
 	if (!$scripts) {

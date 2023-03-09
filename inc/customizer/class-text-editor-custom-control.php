@@ -3,7 +3,7 @@
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
- * @package IP
+ * @package fs_dev
  */
 
 if (class_exists('WP_Customize_Control')) :

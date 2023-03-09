@@ -5,6 +5,7 @@
  *
  * @param string  $year
  * 
+ * @package fs_dev
  */
 
 function auto_copyright($year = 'auto')

@@ -3,14 +3,13 @@
 /**
  * Set up the theme customizer.
  *
- * @package IP
+ * @package fs_dev
  */
 
 /**
  * Removes default customizer fields that we generally don't use.
  *
  * @param object $wp_customize The default Customizer settings.
- * 
  */
 
 /** Add widgets support to current theme **/
@@ -95,8 +94,6 @@ add_action('customize_register', 'fs_master_selective_refresh_support');
  * Add live preview support via postMessage.
  *
  * Note: You will need to hook this up via livepreview.js
- *
-
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  * @link https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29.

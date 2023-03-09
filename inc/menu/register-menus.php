@@ -2,6 +2,8 @@
 
 /**
  * Register Menus
+ *
+ * @package fs_dev
  */
 
 register_nav_menus(

@@ -3,20 +3,13 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @package IP
- */
-
-
-
-/**
- * Adds custom classes to the array of body classes.
- *
- *
+ * @package fs_dev
  *
  * @param array $classes Classes for the body element.
  *
  * @return array Body classes.
  */
+
 function body_classes($classes)
 {
 	// Allows for incorrect snake case like is_IE to be used without throwing errors.

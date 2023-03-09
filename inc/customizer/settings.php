@@ -3,9 +3,13 @@
 /**
  * Customizer settings.
  *
- * @package IP
+ * @package fs_dev
+ */
+
+/**
+ * Register additional scripts.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 
 function fs_master_customize_additional_scripts($wp_customize)
@@ -76,7 +80,7 @@ add_action('customize_register', 'fs_master_customize_additional_scripts');
 /**
  * Register a social icons setting.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function fs_master_customize_social_icons($wp_customize)
 {
@@ -89,7 +93,7 @@ function fs_master_customize_social_icons($wp_customize)
 
 		// Register a setting.
 		$wp_customize->add_setting(
-			'IP_' . sanitize_key($network) . '_link',
+			'fs_' . sanitize_key($network) . '_link',
 			array(
 				'default'           => '',
 				'sanitize_callback' => 'esc_url',
@@ -98,7 +102,7 @@ function fs_master_customize_social_icons($wp_customize)
 
 		// Create the setting field.
 		$wp_customize->add_control(
-			'IP_' . sanitize_key($network) . '_link',
+			'fs_' . sanitize_key($network) . '_link',
 			array(
 				'label'   => /* translators: the social network name. */ sprintf(esc_html__('%s', THEME_DOMAIN), ucwords($network)),
 				'section' => 'fs_master_social_links_section',
@@ -112,7 +116,7 @@ add_action('customize_register', 'fs_master_customize_social_icons');
 /**
  * Register a default Banner Image.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function fs_master_default_image_section($wp_customize)
 {
@@ -172,7 +176,7 @@ add_action('customize_register', 'fs_master_default_image_section');
 /**
  * Register a checkbox footer setting.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function fs_master_customize_footer_checkbox($wp_customize)
 {
@@ -235,7 +239,7 @@ add_action('customize_register', 'fs_master_customize_copyright_text');
 /**
  * Register copyright text setting.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function fs_master_customize_announcement_text($wp_customize)
 {
@@ -289,7 +293,7 @@ add_action('customize_register', 'fs_master_customize_announcement_text');
 /**
  * Register site announcement setting.
  *
- * @param object $wp_customize Instance of WP_Customize_Class.
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
  */
 function fs_master_customize_header_announcement($wp_customize)
 {
@@ -341,7 +345,7 @@ function fs_master_customize_header_announcement($wp_customize)
 	);
 
 	$wp_customize->add_setting(
-		'ip_announcement_selected_page_id',
+		'fs_announcement_selected_page_id',
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'absint',
@@ -349,7 +353,7 @@ function fs_master_customize_header_announcement($wp_customize)
 	);
 
 	$wp_customize->add_control(
-		'ip_announcement_selected_page_id',
+		'fs_announcement_selected_page_id',
 		array(
 			'label'    => __('Select a Page', THEME_DOMAIN),
 			'description'     => esc_html__('Select a page address to be used by the link in the header.', THEME_DOMAIN),

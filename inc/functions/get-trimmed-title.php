@@ -3,13 +3,7 @@
 /**
  * Trim the title length.
  *
- * @package IP
- */
-
-/**
- * Trim the title length.
- *
- *
+ * @package fs_dev
  *
  * @param array $args Parameters include length and more.
  *

@@ -3,7 +3,7 @@
 /**
  * Customizer sections.
  *
- * @package IP
+ * @package fs_dev
  */
 
 /**
@@ -11,6 +11,7 @@
  *
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
+
 function fs_master_customize_sections($wp_customize)
 {
 	// Register a header section.

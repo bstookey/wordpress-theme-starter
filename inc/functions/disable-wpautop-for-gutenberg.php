@@ -3,12 +3,7 @@
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
  *
- * @package IP
- */
-
-/**
- * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
- *
+ * @package fs_dev
  */
 
 function disable_wpautop_for_gutenberg()

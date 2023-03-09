@@ -54,6 +54,10 @@ mix
   .options({
     processCssUrls: false,
   })
+  .then(() => {
+    // This code will run after the compilation has finished
+    mix.version();
+  })
   .eslint({
     fix: true,
     extensions: ["js"],

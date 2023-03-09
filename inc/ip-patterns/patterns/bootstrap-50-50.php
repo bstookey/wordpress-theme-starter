@@ -2,7 +2,10 @@
 
 /**
  * Bootstrap 50/50
+ *
+ * @package fs_dev
  */
+
 return array(
 	'title'      => __('Bootstrap 50/50', THEME_DOMAIN),
 	'categories' => array('theme_patterns'),

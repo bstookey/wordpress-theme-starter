@@ -3,7 +3,13 @@
 /**
  * Customizer panels.
  *
- * @package IP
+ * @package fs_dev
+ */
+
+/**
+ * Add a custom panels to attach sections too.
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Class.
  */
 
 function fs_master_customize_panels($wp_customize)

@@ -3,14 +3,12 @@
 /**
  * Return SVG markup.
  *
- * @package IP
+ * @package fs_dev
  */
 
 
 /**
  * Return SVG markup.
- *
- *
  *
  * @param array $args The parameters needed to display the SVG.
  *

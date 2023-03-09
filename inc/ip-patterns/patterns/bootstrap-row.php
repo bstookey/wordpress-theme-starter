@@ -2,7 +2,10 @@
 
 /**
  * Bootstrap row
+ *
+ * @package fs_dev
  */
+
 return array(
     'title'      => __('Bootstrap Row', THEME_DOMAIN),
     'categories' => array('theme_patterns'),

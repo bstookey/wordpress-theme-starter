@@ -1,7 +1,9 @@
 <?php
 
 /**
- * REMOVE WP EMOJI
+ * Disable emojis
+ * 
+ * @package fs_dev
  */
 
 function disable_emojis()

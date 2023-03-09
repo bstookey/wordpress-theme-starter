@@ -3,20 +3,13 @@
 /**
  * Enable custom mime types.
  *
- * @package IP
- */
-
-
-
-/**
- * Enable custom mime types.
- *
- *
+ * @package fs_dev
  *
  * @param array $mimes Current allowed mime types.
  *
  * @return array Mime types.
  */
+
 function custom_mime_types($mimes)
 {
 	$mimes['svg']  = 'image/svg+xml';

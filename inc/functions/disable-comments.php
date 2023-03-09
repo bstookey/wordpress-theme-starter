@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Disable comments
+ * 
+ * @package fs_dev
+ */
+
 add_action('admin_init', function () {
     // Redirect any user trying to access comments page
     global $pagenow;

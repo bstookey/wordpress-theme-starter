@@ -1,7 +1,9 @@
 <?php
 
 /**
- * REMOVE WP Core Patterns
+ * Disable block patterns
+ * 
+ * @package fs_dev
  */
 
 add_action('init', 'removeCorePatterns');

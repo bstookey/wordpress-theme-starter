@@ -3,7 +3,7 @@
 /**
  * Display SVG Markup.
  *
- * @package IP
+ * @package fs_dev
  *
  * @param array $args The parameters needed to get the SVG.
  */

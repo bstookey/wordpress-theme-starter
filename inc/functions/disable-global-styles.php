@@ -3,7 +3,7 @@
 /**
  * Disables Gutenburg style in header.
  *
- * @package IP
+ * @package fs_dev
  */
 
 function wps_deregister_styles()

@@ -1,13 +1,16 @@
 <?php
 
 /**
- * IP: Block Patterns
+ * Adds custom pattern category and registers patterns.
+ *
+ * @package fs_dev
+ *
  */
 
-function ip_register_block_patterns()
+function fs_register_block_patterns()
 {
 	$block_pattern_categories = array(
-		'theme_patterns' => array('label' => __('IP Patterns', THEME_DOMAIN)),
+		'theme_patterns' => array('label' => __('FS Patterns', THEME_DOMAIN)),
 	);
 
 	/**
@@ -34,7 +37,7 @@ function ip_register_block_patterns()
 		'theme-cover',
 	);
 
-	$block_patterns = apply_filters('ip_block_patterns', $block_patterns);
+	$block_patterns = apply_filters('fs_block_patterns', $block_patterns);
 
 	foreach ($block_patterns as $block_pattern) {
 		$pattern_file = 'patterns/' . $block_pattern . '.php';
@@ -45,4 +48,4 @@ function ip_register_block_patterns()
 		);
 	}
 }
-add_action('init', 'ip_register_block_patterns', 9);
+add_action('init', 'fs_register_block_patterns', 9);

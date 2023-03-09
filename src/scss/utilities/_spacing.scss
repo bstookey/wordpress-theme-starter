@@ -1,13 +1,13 @@
-/***** Utility Spacing *****/
-
 // Ads utility for spacing classes up to 100px @for $i from 1 through 10, change 10 to 5 for up to 50px
 
-$spacer: 10px;
+/***** Responsive Utility Spacing *****/
+$spacer: 10px; // 10 pixel increments
 $spacers: (
   0: 0,
 );
 
 @for $i from 1 through 10 {
+  // 10px x 10 == 100px.
   $spacers: map-merge(
     $spacers,
     (

@@ -3,7 +3,7 @@
 /**
  * Display the customizer footer scripts.
  *
- * @package IP
+ * @package fs_dev
  *
  * @author Greg Rickaby
  *
@@ -12,7 +12,7 @@
 function print_customizer_footer_scripts()
 {
 	// Check for footer scripts.
-	$scripts = get_theme_mod('IP_footer_scripts');
+	$scripts = get_theme_mod('fs_footer_scripts');
 
 	// None? Bail...
 	if (!$scripts) {
