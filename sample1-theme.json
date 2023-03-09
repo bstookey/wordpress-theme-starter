@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "settings": {
+    "color": {
+      "primary": "#007cba",
+      "secondary": "#6c757d",
+      "success": "#28a745",
+      "warning": "#ffc107",
+      "danger": "#dc3545",
+      "light": "#f8f9fa",
+      "dark": "#343a40"
+    },
+    "font": {
+      "base": [
+        "Open Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "heading": [
+        "Montserrat",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "typography": {
+      "fontSize": "16px",
+      "lineHeight": "1.5",
+      "letterSpacing": "0.01em",
+      "headingSizes": {
+        "h1": "4rem",
+        "h2": "3rem",
+        "h3": "2.5rem",
+        "h4": "2rem",
+        "h5": "1.5rem",
+        "h6": "1.25rem"
+      }
+    },
+    "spacing": {
+      "base": "1rem",
+      "small": "0.5rem",
+      "medium": "2rem",
+      "large": "4rem"
+    },
+    "border": {
+      "width": "1px",
+      "style": "solid",
+      "color": "#dee2e6",
+      "radius": "0.25rem"
+    },
+    "global": {
+      "bodyBackground": "#fff",
+      "bodyColor": "#333",
+      "linkColor": "#007cba",
+      "linkHoverColor": "#0056b3"
+    }
+  },
+  "blockStyles": {
+    "my-style": {
+      "label": "My Block Style",
+      "name": "my-style",
+      "isDefault": true,
+      "styles": {
+        "color": "#fff",
+        "backgroundColor": "#007cba"
+      }
+    }
+  },
+  "blockVariations": {
+    "my-variation": {
+      "label": "My Block Variation",
+      "name": "my-variation",
+      "parent": "core/paragraph",
+      "attributes": {
+        "className": "my-variation-class"
+      },
+      "styles": {
+        "color": "#007cba",
+        "backgroundColor": "#fff"
+      }
+    }
+  },
+  "settingsLayout": {
+    "contentWidth": "1200px",
+    "sidebarPosition": "right"
+  },
+  "media": {
+    "small": "(max-width: 576px)",
+    "medium": "(max-width: 768px)",
+    "large": "(max-width: 992px)",
+    "extraLarge": "(max-width: 1200px)"
+  }
+}
