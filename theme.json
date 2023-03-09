@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "version": 2,
+  "version": 1,
   "settings": {
     "appearanceTools": false,
     "typography": {
@@ -19,7 +19,7 @@
         {
           "slug": "normal",
           "size": "1.6rem",
-          "name": "Normal"
+          "name": "Base"
         },
         {
           "slug": "large",
@@ -42,7 +42,8 @@
       "customGradient": false,
       "defaultPalette": false,
       "defaultGradients": false,
-      "gradients": []
+      "gradients": [],
+      "link": true
     }
   }
 }

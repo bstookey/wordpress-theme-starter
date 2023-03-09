@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Disables Gutenburg style in header.
+ * Disables Gutenburg style in header. 
+ * Note: Some of the custom configuration in the theme.json file could be lost.
+ * Some attributes configured in theme.json could be used in the theme stylesheet.
  *
  * @package fs_dev
  */
