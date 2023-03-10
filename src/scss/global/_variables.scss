@@ -12,7 +12,8 @@ $transition: 0.25s ease-in-out;
 
 // Font stuff
 $base-font: "Montserrat Regular"; // Sets the base font family
-$base-font-size: 62.5%; // Sets the base font size to 10px
+//$base-font-size: 62.5%; // Sets the base font size to 10px
+$base-font-size: 10px; // Sets the base font size to 10px
 $global-font-size: 1.6rem;
 
 // Site sizes used in container-sizes mixin. Should also be set for registers block styles.
@@ -33,3 +34,12 @@ $colors: (
   grey-lt: #eee,
   grey-text: #666,
 );
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;

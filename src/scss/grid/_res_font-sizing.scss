@@ -20,7 +20,7 @@
 //   }
 // }
 
-@mixin font-size(
+@mixin res-font-size(
   $base-size,
   $sm-size: "",
   $md-size: "",
@@ -28,7 +28,7 @@
   $xl-size: "",
   $xxl-size: ""
 ) {
-  font-size: $base-size;
+  font-size: $base-size + rem;
 
   @if $sm-size != "" {
     @include media-breakpoint-up(sm) {

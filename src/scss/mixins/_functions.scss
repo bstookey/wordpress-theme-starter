@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // include variables
 @import "../global/variables";
 
@@ -19,4 +21,8 @@
   }
   // else do nothing
   @return null;
+}
+
+@function fs($size) {
+  @return math.div($size, 10) + rem;
 }
