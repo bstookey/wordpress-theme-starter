@@ -45,9 +45,9 @@ mix
   )
   //.copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
   //.js("src/js/apps/*.js", `${staticAssetsDir}/js/apps.js`) // concat, in order, all files in dir top to bottom
-  .js(
+  .scripts(
     ["src/js/apps/jquery.touchSwipe.js", "src/js/apps/js.cookie.js"],
-    `${staticAssetsDir}/js/apps2.js`
+    `${staticAssetsDir}/js/apps.js`
   ) // concat in custom order, file choices
   .js(["src/js/starter.js"], `${staticAssetsDir}/js/starter.js`)
   //.copy("node_modules/bootstrap/scss", "src/scss/bootstrap")

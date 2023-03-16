@@ -8,7 +8,7 @@ $icon-path: "../images/icons/";
 $web-font-path: "../webfonts/";
 
 // global element padding to match the Knowall theme
-$global-gutter: 1.5rem;
+$global-gutter: 2.4rem;
 
 // Transition global-transition
 $transition: 0.25s ease-in-out;
@@ -16,7 +16,7 @@ $transition: 0.25s ease-in-out;
 // Font stuff
 $base-font: "acumin-pro,sans-serif"; // Sets the base font family
 //$base-font-size: 62.5%; // Sets the base font size to 10px
-$base-font-size: 10px; // Sets the base font size to 10px
+$base-font-size: 10px; // Sets the base font size to 10px. This should always stay 10 to make things easy on your self.
 $global-font-size: 1.8rem; // base font size in the design
 
 // Site sizes used in container-sizes mixin. Should also be set for registers block styles.

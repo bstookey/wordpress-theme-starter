@@ -136,7 +136,7 @@ class Cust_Theme_Options
         echo '<div class="wrap options-page-wrap">
 		<h1><span class="dashicons ' . $dash_icon . '"></span> ' . __(wp_get_theme()->get('Name') . ' Options') . '</h1>';
 
-        print_r(acf_get_options_pages());
+        //print_r(acf_get_options_pages());
 
         if (isset($_GET['settings-updated']) && $_GET['settings-updated'] == true) echo '<div class="updated fade"><p>' . __('Theme options updated.') . '</p></div>';
 

@@ -11,6 +11,7 @@ function display_announcement_text()
 {
 
     // Grab our customizer settings.
+    $announcement_show = get_theme_mod('fs_master_announcement_checkbox');
     $announcement_text = get_theme_mod('fs_master_announcement_text') ?: cust_theme_option('alertbar_copy');
     $selected_page_url = get_the_permalink(get_theme_mod('fs_announcement_selected_page_id'));
     $type =  get_theme_mod('fs_master_link_type');
@@ -28,7 +29,7 @@ function display_announcement_text()
 
 
     // Stop if there's nothing to display.
-    if (!$announcement_text) {
+    if ((!$announcement_text) || (!$announcement_show)) {
         return false;
     } ?>
 
