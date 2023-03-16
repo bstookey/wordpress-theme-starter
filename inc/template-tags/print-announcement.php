@@ -38,7 +38,7 @@ function display_announcement_text()
                 <?php printf('%s', $announcement_text); ?>
                 <?= $announce_link ?>
             </div>
-            <a href="javascript:void(0);" id="banner-accept" class="accept"><span class="fa fa-times"></span><span class="sr-only">Accept Cookies and close banner </span>Close</a>
+            <a href="javascript:void(0);" id="banner-accept" class="accept"><span class="fa fa-times"></span><span class="sr-only">Accept Cookies and close banner </span></a>
         </div><!--/container-->
     </div><!--/announcement-->
 <?php }

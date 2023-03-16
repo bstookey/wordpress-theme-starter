@@ -82,47 +82,32 @@ APP.Utilities = (function () {
 })();
 
 APP.Banner = (function () {
-  var $cookie, $cookieId, $cookieContent, $acceptCookie, $cName;
-
-  var getCookie = function (cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(";");
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i].trim();
-      if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
-    }
-    return "";
-  };
-
-  var setCookie = function (cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-    $('[data-id="' + cname + '"]').removeClass("active");
-  };
+  var $cookie, $cookieId, $cookieContent, $acceptCookie, $cookieDays;
 
   var checkCookie = function (cname) {
-    var name = getCookie(cname);
-    if (name !== "") {
-      //alert("has cookie");
-      $cookie = true;
-    } else {
-      showCC();
-      //alert("no cookie");
+    var cookieSet = Cookies.get($cookieId) == "true";
+    if (!cookieSet) {
+      //alert("not accepted");
+      $cookieContent.addClass("active");
     }
   };
 
-  var showCC = function () {
-    $cookieContent.addClass("active");
+  var setAlertCookie = function (cname, cvalue, exdays) {
+    Cookies.set($cookieId, "true", {
+      expires: $cookieDays,
+    });
+  };
+
+  var hideCookieBar = function () {
+    $cookieContent.removeClass("active");
   };
 
   var initEvents = function () {
     checkCookie($cookieId);
-    $acceptCookie.on("click", function () {
-      var $cName = $cookieContent.data("id");
-      var $cookieDays = $cookieContent.data("days");
-      setCookie($cName, "true", $cookieDays);
+    $acceptCookie.on("touchstart click", function () {
+      setAlertCookie();
+      hideCookieBar();
+      return false;
     });
   };
 
@@ -134,6 +119,7 @@ APP.Banner = (function () {
       $cookieContent.data("id").length != ""
         ? $cookieContent.data("id")
         : "AnnouncementCookieAccept";
+    $cookieDays = $cookieContent.data("days");
     initEvents();
     consoleLog("APP.Banner");
   };

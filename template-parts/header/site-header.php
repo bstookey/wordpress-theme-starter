@@ -27,7 +27,7 @@ $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
                     <?php get_template_part('/template-parts/menu/menu', 'main'); ?>
                 </div>
             </div>
-            <?php echo do_shortcode("[ip_woocommerce_cart_icon]"); ?>
+            <?php echo do_shortcode("[fs_woocommerce_cart_icon]"); ?>
         </div>
         <div class="header mobile">
             <?php get_template_part('/template-parts/menu/menu', 'mobile'); ?>

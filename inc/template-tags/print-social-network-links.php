@@ -21,6 +21,7 @@ function print_social_network_links()
 		'instagram',
 		'linkedin',
 		'twitter',
+		'youtube',
 	];
 
 ?>

@@ -43,9 +43,10 @@ mix
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
     `${staticAssetsDir}/js/`
   )
-  .js("src/js/apps/*.js", `${staticAssetsDir}/js/apps.js`) // concat, in order, all files in dir top to bottom
+  //.copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
+  //.js("src/js/apps/*.js", `${staticAssetsDir}/js/apps.js`) // concat, in order, all files in dir top to bottom
   .js(
-    ["src/js/apps/jquery.touchSwipe.js", "src/js/apps/custom-select.js"],
+    ["src/js/apps/jquery.touchSwipe.js", "src/js/apps/js.cookie.js"],
     `${staticAssetsDir}/js/apps2.js`
   ) // concat in custom order, file choices
   .js(["src/js/starter.js"], `${staticAssetsDir}/js/starter.js`)
@@ -53,10 +54,6 @@ mix
   .sass("src/scss/starter.scss", `${staticAssetsDir}/css/`)
   .options({
     processCssUrls: false,
-  })
-  .then(() => {
-    // This code will run after the compilation has finished
-    mix.version();
   })
   .eslint({
     fix: true,

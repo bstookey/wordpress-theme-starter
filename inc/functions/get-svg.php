@@ -99,9 +99,9 @@ function get_svg($args = [])
 		// Use absolute path in the Customizer so that icons show up in there.
 		if (is_customize_preview()) :
 		?>
-			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri(icon_path . esc_html($args['icon']))); ?>"></use>
+			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri(ICON_PATH . esc_html($args['icon']))); ?>"></use>
 		<?php else : ?>
-			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri(icon_path . esc_html($args['icon']))); ?>"></use>
+			<use xlink:href="<?php echo esc_url(get_parent_theme_file_uri(ICON_PATH . esc_html($args['icon']))); ?>"></use>
 		<?php endif; ?>
 
 	</svg>

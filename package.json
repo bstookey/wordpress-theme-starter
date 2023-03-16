@@ -32,7 +32,8 @@
     "sass-loader": "^10.0.2",
     "sass-math": "^1.0.0",
     "svg-spritemap-webpack-plugin": "^4.5.0",
-    "svg-transform-loader": "^2.0.13"
+    "svg-transform-loader": "^2.0.13",
+    "js-cookie": "^3.0.1"
   },
   "dependencies": {
     "util": "^0.11.1"

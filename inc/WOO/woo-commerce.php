@@ -9,7 +9,7 @@ add_shortcode('fs_woocommerce_cart_icon', 'fs_woo_cart_icon');
 /**
  * Check if WooCommerce is activated
  */
-function ip_woo_cart_icon()
+function fs_woo_cart_icon()
 {
     if (class_exists('woocommerce')) {
 

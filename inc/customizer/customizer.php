@@ -46,10 +46,10 @@ add_action('customize_register', 'fs_master_remove_default_customizer_sections',
  */
 function fs_master_include_custom_controls()
 {
-	require get_template_directory() . '/inc/customizer/panels.php';
-	require get_template_directory() . '/inc/customizer/sections.php';
-	require get_template_directory() . '/inc/customizer/settings.php';
-	require get_template_directory() . '/inc/customizer/class-text-editor-custom-control.php';
+	require get_stylesheet_directory() . '/inc/customizer/panels.php';
+	require get_stylesheet_directory() . '/inc/customizer/sections.php';
+	require get_stylesheet_directory() . '/inc/customizer/settings.php';
+	require get_stylesheet_directory() . '/inc/customizer/class-text-editor-custom-control.php';
 }
 add_action('customize_register', 'fs_master_include_custom_controls', -999);
 
@@ -60,7 +60,7 @@ add_action('customize_register', 'fs_master_include_custom_controls', -999);
  */
 function fs_master_customize_scripts()
 {
-	wp_enqueue_script('fs_master-customize-livepreview', get_template_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', array('jquery', 'customize-preview'), '1.0.0', true);
+	wp_enqueue_script('fs_master-customize-livepreview', get_stylesheet_directory() . '/inc/customizer/assets/scripts/livepreview.js', array('jquery', 'customize-preview'), '1.0.0', true);
 }
 add_action('customize_preview_init', 'fs_master_customize_scripts');
 

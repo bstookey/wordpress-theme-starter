@@ -10,7 +10,7 @@
  * 
  */
 
-// Include this in your functions file: require get_template_directory() . '/theme-options.cust-options.php';
+// Include this in your functions file: require get_stylesheet_directory() . '/theme-options.cust-options.php';
 
 $cust_theme_settings = new Cust_Theme_Options();
 define('options_icon', 'dashicons-admin-tools'); //leave blank for generic. See https://developer.wordpress.org/resource/dashicons/#admin-tools

@@ -14,7 +14,7 @@
 // color: get-color(red);
 // background-color: get-color(red, dark);
 
-// @import "../global/variables"; // Included in mixins functions
+@import "../global/variables"; // Included in mixins functions
 
 /***** Theme specific utility colors  *****/
 
@@ -29,4 +29,8 @@
   .has-#{"" + $color}-background-color {
     background-color: $value;
   }
+}
+
+@function clr($color) {
+  @return map-get($colors, $color);
 }

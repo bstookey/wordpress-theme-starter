@@ -1,39 +1,49 @@
+// Based off of the following design:
+// https://xd.adobe.com/view/ca974c20-6b2d-428e-b654-7e161546eaa3-9fc4/screen/604f146b-9ccc-45ff-b35c-343257fc2b05/specs/
+
 // Variables
 
 $image-path: "../images/";
 $icon-path: "../images/icons/";
-$web-font-path: "../fonts/";
+$web-font-path: "../webfonts/";
 
-// global element padding
-$global-gutter: 2.4rem;
+// global element padding to match the Knowall theme
+$global-gutter: 1.5rem;
 
 // Transition global-transition
 $transition: 0.25s ease-in-out;
 
 // Font stuff
-$base-font: "Montserrat Regular"; // Sets the base font family
+$base-font: "acumin-pro,sans-serif"; // Sets the base font family
 //$base-font-size: 62.5%; // Sets the base font size to 10px
 $base-font-size: 10px; // Sets the base font size to 10px
-$global-font-size: 1.6rem;
+$global-font-size: 1.8rem; // base font size in the design
 
 // Site sizes used in container-sizes mixin. Should also be set for registers block styles.
+// 1468 is the width of the global site content plus padding
+// 1548 is the width of the widest designed fixed width element in the xd
 $container-sizes: (
-  container: 1200,
+  container: 1480,
   container-xs: 700,
   container-sm: 900,
-  container-lg: 1400,
+  container-md: 1200,
+  container-lg: 1548,
 );
 
 // colors, used in colors mixin. Should match theme colors in inc/setup
 $colors: (
-  black: #000000,
+  teal: #13bbb2,
+  orange: #ff583d,
+  grey-5: #f5f5f5,
+  base-text: #4b5057,
+  ss-black: #192232,
+  border-black: #232528,
+  btn-grey: #e9e9e9,
   white: #fff,
-  ip-red: #d31020,
-  grey: #999,
-  grey-md: #ccc,
-  grey-lt: #eee,
-  grey-text: #666,
+  grey-7: #7c8085,
 );
+// Note: Knowall theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
+// the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
 
 $grid-breakpoints: (
   xs: 0,
