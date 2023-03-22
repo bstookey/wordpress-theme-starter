@@ -30,23 +30,31 @@
 </head>
 
 <body <?php body_class(); ?> tabindex="0">
+	<?php print_customizer_body_scripts(); ?>
 	<!--.site-wrapper-->
 	<div class="site-wrapper">
+		<div class="skip-links">
+			<a href="#content_anchor" tabindex="1"><?php esc_html_e("Skip to content", 'starter'); ?></a>
+			<a href="#footer_anchor" tabindex="1"><?php esc_html_e("Skip to footer", 'starter'); ?></a>
+		</div>
 		<?php display_announcement_text(); ?>
-		<!--.page-wrap-->
-		<div class="page-wrap">
-			<div class="skip-links">
-				<a href="#content_anchor" tabindex="1"><?php esc_html_e("Skip to content", 'starter'); ?></a>
-				<a href="#footer_anchor" tabindex="1"><?php esc_html_e("Skip to footer", 'starter'); ?></a>
-			</div>
+		<header class="site-header">
+			<?php get_template_part('template-parts/menu/menu', 'courtesy'); ?>
 
-			<?php
+			<div class="display-flex container">
+				<?php get_template_part('template-parts/header/site', 'branding'); ?>
+			</div><!-- .container -->
 
-			// Header
-			get_template_part('template-parts/header/site', 'header');
+			<div class="bottom display-flex container">
+				<?php if (has_nav_menu('primary') || has_nav_menu('mobile')) : ?>
+					<button type="button" class="mobile-menu off-canvas-open" aria-expanded="false" aria-label="<?php esc_html_e('Open Menu', 'ip_master'); ?>">
+						<span class="hamburger"></span>
+					</button>
+				<?php endif; ?>
 
-			?>
-			<!--.page-content-wrap-->
-			<div id="content_anchor" class="page-content-wrap">
-				<!--.content-wrap-->
-				<div class="content-wrap">
+				<?php get_template_part('template-parts/menu/menu', 'primary'); ?>
+
+				<?php ip_master_display_header_search(); ?>
+			</div><!-- #bottom -->
+		</header>
+		<!-- *site-header-->

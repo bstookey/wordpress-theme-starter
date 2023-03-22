@@ -10,8 +10,8 @@
 function get_theme_colors()
 {
     return array(
-        esc_html__('IP Red', THEME_DOMAIN)  => '#d31020',
-        esc_html__('Black', THEME_DOMAIN)   => '#000',
+        esc_html__('Red', THEME_DOMAIN)  => '#d31020',
+        esc_html__('Theme Black', THEME_DOMAIN)   => '#192232',
         esc_html__('White', THEME_DOMAIN)   => '#FFF',
     );
 }

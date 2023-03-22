@@ -1,15 +1,18 @@
-<!-- site-navigation -->
-<nav role="navigation" aria-label="Main Navigation">
-    <?php if (has_nav_menu('primary-menu')) : ?>
+<!-- primary-navigation -->
+<?php if (has_nav_menu('primary-menu')) : ?>
+    <nav id="primary-navigation" role="navigation" aria-label="Primary Navigation">
         <?php
         wp_nav_menu(
             array(
-                'theme_location' => 'primary-menu',
+                'theme_location' => 'primary',
                 'menu_class'     => 'primary-menu',
-                'items_wrap'     => '<ul id="%1$s" class="%2$s " role="menu-bar">%3$s</ul>',
+                'menu_id'        => 'primary-menu',
+                //'walker'  => new DD_Mega_Navwalker(),
+                'use_excerpt' => false,
+                'container'      => false,
             )
         );
         ?>
-    <?php endif; ?>
-</nav>
-<!-- #site-navigation -->
+    </nav>
+    <!-- #primary-navigation -->
+<?php endif; ?>

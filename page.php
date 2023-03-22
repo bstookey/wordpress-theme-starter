@@ -16,23 +16,22 @@
  */
 
 get_header(); ?>
-<div class="page-content">
+<!-- main -->
+<main id="main" class="site-main <?php if (get_field('hide_title')) : ?>hide-title<?php endif; ?>">
 
     <?php
-    //display an icon function;
-    print_svg(['icon' => 'circle-check']);
 
     if (have_posts()) {
 
-        // Load posts loop.
         while (have_posts()) {
             the_post();
-            the_content();
+
+            get_template_part('template-parts/content/content', 'page');
         }
     } else {
 
-        // If no content, include the "No posts found" template.
         get_template_part('template-parts/content/content-none');
     } ?>
-</div>
+</main>
+<!-- #main -->
 <?php get_footer(); ?>

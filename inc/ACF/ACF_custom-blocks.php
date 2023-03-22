@@ -39,6 +39,28 @@ function fs_master_acf_init()
 
   if (function_exists('acf_register_block_type')) {
 
+    // Carousel Block
+    acf_register_block_type(
+      array(
+        'name'            => 'ip-carousel',
+        'title'           => esc_html__('Carousel', 'ip_master'),
+        'description'     => esc_html__('A carousel with a call to action for each slide.', 'ip_master'),
+        'render_callback' => 'ip_master_acf_block_registration_callback',
+        'category'        => 'ip-blocks',
+        'icon'            => 'slides',
+        'keywords'        => array('carousel', 'slider', 'ip'),
+        'mode'            => 'preview',
+        'enqueue_assets'  => 'ip_master_acf_enqueue_carousel_scripts',
+        'align'           => 'wide',
+        'supports'        => $supports,
+        'example'         => array(
+          'attributes' => array(
+            'data' => array(),
+          ),
+        ),
+      )
+    );
+
     // Accordion Block
     acf_register_block_type(array(
       'name' => 'accordion-block',
@@ -46,7 +68,7 @@ function fs_master_acf_init()
       'description' => esc_html__('accordion-block', 'wdg-coe'),
       'render_template' => $acf_block_path . 'accordion-block.php',
       //'enqueue_style' => get_stylesheet_directory_uri() . $acf_block_path . '/accordion.css',
-      'category'        => 'wds-blocks',
+      'category'        => 'ip-blocks',
       'icon' => 'button',
       'keywords' => array('dropdown', 'accordion', 'collapse'),
       'align' => 'full',
@@ -68,6 +90,28 @@ function fs_master_acf_init()
     return $args;
   }
 }
+
+/**
+ * Adds a WDS Block category to the Gutenberg category list.
+ *
+ * @param array  $categories The existing categories.
+ * @param object $post The current post.
+ * @return array The updated array of categories.
+ */
+function ip_master_add_block_categories($categories, $post)
+{
+
+  return array_merge(
+    $categories,
+    array(
+      array(
+        'slug'  => 'ip-blocks',
+        'title' => esc_html__('IP Blocks', 'ip_master'),
+      ),
+    )
+  );
+}
+add_filter('block_categories', 'ip_master_add_block_categories', 10, 2);
 
 
 
@@ -95,21 +139,3 @@ function acf_enqueue_scripts_and_styles()
     }
   }
 }
-
-// add_action('acf/init', 'my_acf_op_init');
-// function my_acf_op_init()
-// {
-
-//   // Check function exists.
-//   if (function_exists('acf_add_options_page')) {
-
-//     // Register options page.
-//     $option_page = acf_add_options_page(array(
-//       'page_title'    => __('Theme General Settings'),
-//       'menu_title'    => __('Theme Settings'),
-//       'menu_slug'     => 'theme-general-settings',
-//       'capability'    => 'edit_posts',
-//       'redirect'      => false
-//     ));
-//   }
-// }

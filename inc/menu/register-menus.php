@@ -8,10 +8,10 @@
 
 register_nav_menus(
     array(
-        'primary-menu' => __('Primary', 'starter'),
-        'main-menu' => __('Main', 'starter'),
-        'footer-menu' => __('Footer Menu', 'starter'),
-        'footer-social' => __('Footer Social', 'starter'),
-        'mobile'  => __('Mobile Menu', 'starter'),
+        'courtesy-menu' => __('Courtesy', THEME_DOMAIN),
+        'primary-menu' => __('Primary', THEME_DOMAIN),
+        'footer-menu' => __('Footer Menu', THEME_DOMAIN),
+        'footer-social' => __('Footer Social', THEME_DOMAIN),
+        'mobile'  => __('Mobile Menu', THEME_DOMAIN),
     )
 );

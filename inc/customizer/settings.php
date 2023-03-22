@@ -14,27 +14,6 @@
 
 function fs_master_customize_additional_scripts($wp_customize)
 {
-
-	// Register a setting.
-	$wp_customize->add_setting(
-		'fs_master_header_scripts',
-		array(
-			'default'           => '',
-			'sanitize_callback' => 'force_balance_tags',
-		)
-	);
-
-	// Create the setting field.
-	$wp_customize->add_control(
-		'fs_master_header_scripts',
-		array(
-			'label'       => esc_html__('Header Scripts', THEME_DOMAIN),
-			'description' => esc_html__('Additional scripts to add to the header. Basic HTML tags are allowed.', THEME_DOMAIN),
-			'section'     => 'fs_master_additional_scripts_section',
-			'type'        => 'textarea',
-		)
-	);
-
 	// Register a setting.
 	$wp_customize->add_setting(
 		'fs_master_body_scripts',
@@ -76,6 +55,43 @@ function fs_master_customize_additional_scripts($wp_customize)
 	);
 }
 add_action('customize_register', 'fs_master_customize_additional_scripts');
+
+/**
+ * Register copyright text setting.
+ *
+ * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Manager.
+ */
+function fs_master_customize_header_search($wp_customize)
+{
+	// Register a setting.
+	$wp_customize->add_setting(
+		'fs_master_search_checkbox',
+		array(
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'themeslug_search_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'fs_master_search_checkbox',
+		array(
+			'label'       => esc_html__('Show Header Search', THEME_DOMAIN),
+			'type' => 'checkbox',
+			'description' => esc_html__('The search icon will display and will trigger a search form.', THEME_DOMAIN),
+			'section' => 'fs_master_header_section',
+		)
+	);
+
+	function themeslug_search_checkbox($checked)
+	{
+		// Boolean check.
+		return ((isset($checked) && true == $checked) ? true : false);
+	}
+}
+add_action('customize_register', 'fs_master_customize_header_search');
+
+
+
 
 /**
  * Register a social icons setting.
@@ -258,7 +274,7 @@ function fs_master_customize_announcement_text($wp_customize)
 			'label'       => esc_html__('Show Announcement', THEME_DOMAIN),
 			'type' => 'checkbox',
 			'description' => esc_html__('The announcement bar will be diplayed with the below option of using a cookie name.', THEME_DOMAIN),
-			'section' => 'fs_master_header_section',
+			'section' => 'fs_master_announcement_section',
 		)
 	);
 
@@ -283,7 +299,7 @@ function fs_master_customize_announcement_text($wp_customize)
 		array(
 			'label'       => esc_html__('Announcement Text', THEME_DOMAIN),
 			'description' => esc_html__('The announcement text will be displayed in the header. Basic HTML tags allowed.', THEME_DOMAIN),
-			'section' => 'fs_master_header_section',
+			'section' => 'fs_master_announcement_section',
 			'type'    => 'textarea',
 		)
 	);
@@ -313,7 +329,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'       => esc_html__('Announcement Link', THEME_DOMAIN),
 			'description' => esc_html__('Display a custom button in the header.', THEME_DOMAIN),
-			'section'     => 'fs_master_header_section',
+			'section'     => 'fs_master_announcement_section',
 			'type'        => 'select',
 			'choices'     => array(
 				'none'   => esc_html__('No link', THEME_DOMAIN),
@@ -338,7 +354,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'           => esc_html__('Announcement Link URL', THEME_DOMAIN),
 			'description'     => esc_html__('Enter the URL or email address to be used by the link in the header.', THEME_DOMAIN),
-			'section'         => 'fs_master_header_section',
+			'section'         => 'fs_master_announcement_section',
 			'type'            => 'url',
 			'active_callback' => 'fs_master_customizer_is_header_announcement_url', // Only displays if the Link option is selected above.
 		)
@@ -357,7 +373,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'    => __('Select a Page', THEME_DOMAIN),
 			'description'     => esc_html__('Select a page address to be used by the link in the header.', THEME_DOMAIN),
-			'section'         => 'fs_master_header_section',
+			'section'         => 'fs_master_announcement_section',
 			'type'     => 'dropdown-pages',
 			'active_callback' => 'fs_master_customizer_is_header_announcement_page', // Only displays if the Link option is selected above.
 		)
@@ -378,7 +394,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'           => esc_html__('Link Text', THEME_DOMAIN),
 			'description'     => esc_html__('Enter the text to be displayed in the button in the announcement.', THEME_DOMAIN),
-			'section'         => 'fs_master_header_section',
+			'section'         => 'fs_master_announcement_section',
 			'type'            => 'text',
 			'active_callback' => 'fs_master_customizer_is_header_announcement_link', // Only displays if the Link option is selected above.
 		)
@@ -399,7 +415,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'           => esc_html__('Cookie Name', THEME_DOMAIN),
 			'description'     => esc_html__('Changing the name of the cookie will allow display of new announcements regardles of the users current set cookie.', THEME_DOMAIN),
-			'section'         => 'fs_master_header_section',
+			'section'         => 'fs_master_announcement_section',
 			'type'            => 'text',
 		)
 	);
@@ -419,7 +435,7 @@ function fs_master_customize_header_announcement($wp_customize)
 		array(
 			'label'           => esc_html__('Cookie Duration', THEME_DOMAIN),
 			'description'     => esc_html__('The ammount of days the user can hide the announcement.', THEME_DOMAIN),
-			'section'         => 'fs_master_header_section',
+			'section'         => 'fs_master_announcement_section',
 			'type'            => 'number',
 		)
 	);

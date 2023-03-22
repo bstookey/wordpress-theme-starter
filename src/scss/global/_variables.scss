@@ -31,16 +31,33 @@ $container-sizes: (
 );
 
 // colors, used in colors mixin. Should match theme colors in inc/setup
+//the mixin @ mixins > colors will create the appropriate color classes for Gutenburg colors
+// gutenburg colors used in the admin need to be added to theme.json color pallette
 $colors: (
-  teal: #13bbb2,
-  orange: #ff583d,
-  grey-5: #f5f5f5,
-  base-text: #4b5057,
-  ss-black: #192232,
-  border-black: #232528,
-  btn-grey: #e9e9e9,
+  red: #d31020,
+  secondary: #6e6c6c,
+  theme-black: #192232,
   white: #fff,
-  grey-7: #7c8085,
+  blue: #20739a,
+  light-yellow: #fff9c0,
+  alto: #ddd,
+  cod-gray: #111,
+  dove-gray: #666,
+  gallery: #eee,
+  gray-alt: #929292,
+  gray: #808080,
+  mineshaft: #333,
+  silver-chalice: #aaa,
+  silver: #ccc,
+  tundora: #454545,
+  whitesmoke: #f1f1f1,
+  facebook: #3b5998,
+  instagram: #517fa4,
+  linkedin: #007bb6,
+  pinterest: #cb2027,
+  rss: #f90,
+  twitter: #00aced,
+  youtube: #b00,
 );
 // Note: Knowall theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
 // the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
