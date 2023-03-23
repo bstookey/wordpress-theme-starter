@@ -6,13 +6,6 @@ body {
   font-family: $base-font;
   font-size: $global-font-size;
   line-height: 1.55;
-  color: get-color(grey-md);
+  color: clr(grey-md);
   overflow-x: hidden;
-  @include media-breakpoint-only(xs) {
-    display: block;
-  }
-
-  @include res-font-size(1.6, "", 1.8, 2.4, 3.6);
-
-  font-size: fs(14);
 }

@@ -1,0 +1,19 @@
+//--------------------------------------------------------------
+// Global Link Styles
+//--------------------------------------------------------------
+a {
+  color: clr(red);
+  opacity: 1;
+  @include global-transition();
+
+  &:visited {
+    color: #000;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: clr(secondary);
+    opacity: 0.6;
+  }
+}

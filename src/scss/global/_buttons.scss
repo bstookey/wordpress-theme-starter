@@ -1,0 +1,58 @@
+//--------------------------------------------------------------
+// Buttons
+//--------------------------------------------------------------
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  margin: 0;
+  padding: 8px 20px;
+
+  appearance: none;
+  background-color: clr(red);
+  border: none;
+  border-radius: 0;
+  border-width: 0;
+  box-shadow: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: inherit;
+  height: auto;
+  line-height: normal;
+  overflow: visible;
+  text-decoration: none;
+  @include global-transition();
+  user-select: none;
+  vertical-align: bottom;
+
+  &::-moz-focus-inner {
+    border: none;
+    padding: 0;
+  }
+
+  &:hover,
+  &:active {
+    color: clr(secondary);
+    opacity: 0.6;
+  }
+
+  &:focus {
+    color: clr(secondary);
+  }
+
+  &:visited {
+    color: clr(secondary);
+
+    &:hover,
+    &:active {
+      color: clr(secondary);
+      opacity: 0.6;
+    }
+
+    &:focus {
+      color: clr(secondary);
+    }
+  }
+}

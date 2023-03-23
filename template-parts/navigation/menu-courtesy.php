@@ -1,4 +1,4 @@
-<?php if (has_nav_menu('courtesy-menu')) : ?>
+<?php if (has_nav_menu('courtesy')) : ?>
     <!-- courtesy-navigation -->
     <nav id="courtesy-navigation" role="navigation" aria-label="Courtesy Navigation">
 
@@ -8,7 +8,7 @@
                 'fallback_cb'    => false,
                 'theme_location' => 'courtesy',
                 'menu_id'        => 'courtesy-menu',
-                'menu_class'     => 'menu dropdown container',
+                'menu_class'     => 'courtesy-menu',
                 'container'      => false,
             )
         );

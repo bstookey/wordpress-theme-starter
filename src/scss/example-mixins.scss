@@ -1,0 +1,9 @@
+/* The following are example mixins/finctions with references */
+
+// mixins > global > grid > breakpoints
+@include media-breakpoint-up(xs) {
+  display: block;
+}
+
+// grid > res_font-sizing
+@include res-font-size(1.6, "", 1.8, 2.4, 3.6, 5);

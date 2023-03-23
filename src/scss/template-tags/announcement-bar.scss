@@ -1,12 +1,11 @@
 .announcement-banner {
-  background-color: map-get($colors, ss-black);
-  text-align: center;
+  background-color: clr(red);
+  font-weight: 700;
   color: #fff;
   position: relative;
   max-height: 0;
   overflow: hidden;
   @include global-transition();
-  @include res-font-size(1.8, "", "", 2.3, "");
 
   &.active {
     max-height: 300px;

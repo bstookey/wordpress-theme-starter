@@ -3,20 +3,23 @@
 /***** Document/Base *****/
 
 html {
+  cursor: default;
   box-sizing: border-box;
   font-size: $base-font-size; // Sets the base document font size
-  margin-top: 0 !important;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-body,
-html {
   max-width: 100%;
+  margin: 0 !important;
+  line-height: 1.15;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-word;
+  scroll-behavior: smooth;
 }
 
 *,
 *:after,
 *:before {
   box-sizing: inherit;
+  background-repeat: no-repeat;
 }

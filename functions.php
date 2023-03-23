@@ -39,11 +39,10 @@ function theme_init()
             'inc/functions/', // Custom functions that are independent of the theme templates.
             'inc/hooks/', // Load custom filters and hooks.
             'inc/post-types/', // Load custom post types.
-            'inc/setup/', // Theme setup.
+            'inc/setup/', // Theme setup, menu, widgets, etc.
             'inc/template-tags/', // Custom template tags for this theme.
             'inc/ACF/', // Custom template tags for this theme.
             'inc/WOO/', // Custom functions/actions for Woocommerce.
-            'inc/menu/', // Custom menus for this theme.
             'inc/ip-patterns/block-patterns.php', // Custom patterns for this theme.
         ];
 

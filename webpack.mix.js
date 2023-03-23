@@ -25,7 +25,7 @@ mix.webpackConfig({
   plugins: [
     new SVGSpritemapPlugin("src/images/icons/*.svg", {
       output: {
-        filename: "assets/images/icons/sprite.svg",
+        filename: `${staticAssetsDir}/images/icons/sprite.svg`,
       },
       sprite: {
         prefix: false,
@@ -44,11 +44,15 @@ mix
     `${staticAssetsDir}/js/`
   )
   //.copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
-  //.js("src/js/apps/*.js", `${staticAssetsDir}/js/apps.js`) // concat, in order, all files in dir top to bottom
-  .scripts(
-    ["src/js/apps/jquery.touchSwipe.js", "src/js/apps/js.cookie.js"],
-    `${staticAssetsDir}/js/apps.js`
-  ) // concat in custom order, file choices
+  // .scripts(
+  //   [
+  //     "src/js/apps/jquery.touchSwipe.js",
+  //     "src/js/apps/js.cookie.js",
+  //     "src/js/apps/header-search.js",
+  //   ],
+  //   `${staticAssetsDir}/js/apps.js`
+  // ) // concat in custom order, file choices
+  .scripts("src/js/apps/", `${staticAssetsDir}/js/apps.js`)
   .js(["src/js/starter.js"], `${staticAssetsDir}/js/starter.js`)
   //.copy("node_modules/bootstrap/scss", "src/scss/bootstrap")
   .sass("src/scss/starter.scss", `${staticAssetsDir}/css/`)

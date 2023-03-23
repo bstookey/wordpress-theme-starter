@@ -1,5 +1,5 @@
 // Based off of the following design:
-// https://xd.adobe.com/view/ca974c20-6b2d-428e-b654-7e161546eaa3-9fc4/screen/604f146b-9ccc-45ff-b35c-343257fc2b05/specs/
+// Add link to design XD file
 
 // Variables
 
@@ -7,14 +7,14 @@ $image-path: "../images/";
 $icon-path: "../images/icons/";
 $web-font-path: "../webfonts/";
 
-// global element padding to match the Knowall theme
+// global element padding to match the theme
 $global-gutter: 2.4rem;
 
 // Transition global-transition
 $transition: 0.25s ease-in-out;
 
 // Font stuff
-$base-font: "acumin-pro,sans-serif"; // Sets the base font family
+$base-font: "Open Sans", sans-serif; // Sets the base font family
 //$base-font-size: 62.5%; // Sets the base font size to 10px
 $base-font-size: 10px; // Sets the base font size to 10px. This should always stay 10 to make things easy on your self.
 $global-font-size: 1.8rem; // base font size in the design
@@ -59,7 +59,7 @@ $colors: (
   twitter: #00aced,
   youtube: #b00,
 );
-// Note: Knowall theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
+// Note: Theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
 // the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
 
 $grid-breakpoints: (

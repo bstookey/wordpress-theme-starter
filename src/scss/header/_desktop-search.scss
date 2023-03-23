@@ -1,0 +1,52 @@
+.form-container,
+.desktop-search {
+  flex-basis: 100%;
+  max-width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: all 0.5s ease;
+  position: absolute;
+  left: -9999px;
+  margin: 2.35294rem auto 1.64706rem;
+  transition: margin-top 0.1s ease, opacity 0.4s ease, transform 0.4s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  .search-form-visible & {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .search-form {
+    display: flex;
+    justify-content: center;
+
+    label {
+      width: 60%;
+    }
+
+    .button,
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      background-color: clr(red);
+      transition: all 0.5s ease 0s;
+      margin-top: 0px;
+      &:hover,
+      &:focus {
+        background-color: clr(secondary);
+        color: #fff;
+      }
+    }
+
+    input[type="search"] {
+      width: calc(100% - 10px);
+      height: 100%;
+    }
+  }
+}

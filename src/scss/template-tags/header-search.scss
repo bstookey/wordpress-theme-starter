@@ -1,0 +1,26 @@
+.site-header-action {
+  flex: 0 0 auto;
+  text-align: right;
+  width: 50%;
+
+  @include media-breakpoint-up(md) {
+    width: 25%;
+  }
+
+  // Span the button the full width.
+  .button-link,
+  .cta-button {
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    background-color: clr(red);
+    transition: all 0.5s ease 0s;
+    &:hover {
+      background-color: clr(secondary);
+    }
+    i {
+      position: inherit;
+    }
+  } // .button-link, .cta-button
+}

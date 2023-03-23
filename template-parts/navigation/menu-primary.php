@@ -1,5 +1,5 @@
 <!-- primary-navigation -->
-<?php if (has_nav_menu('primary-menu')) : ?>
+<?php if (has_nav_menu('primary')) : ?>
     <nav id="primary-navigation" role="navigation" aria-label="Primary Navigation">
         <?php
         wp_nav_menu(
