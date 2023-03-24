@@ -3,18 +3,10 @@
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @package fs_dev
+ * @package IP
  */
 
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- *
- *
- */
+
 function setup()
 {
 	// Add theme support for selective refresh for widgets.
@@ -25,6 +17,7 @@ function setup()
 
 	// Gutenberg editor styles support.
 	add_theme_support('editor-styles');
+	add_editor_style('style-editor.css');
 
 	// Gutenberg responsive embed support.
 	add_theme_support('responsive-embeds');

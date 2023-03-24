@@ -3,7 +3,7 @@
 /**
  * Display the customizer footer scripts.
  *
- * @package fs_dev
+ * @package IP
  *
  * @author Greg Rickaby
  *

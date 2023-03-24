@@ -3,7 +3,7 @@
 /**
  * Displays numeric pagination on archive pages.
  *
- * @package fs_dev
+ * @package IP
  *
  * @param array    $args  Array of params to customize output.
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.

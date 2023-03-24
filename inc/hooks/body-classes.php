@@ -3,7 +3,7 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @package fs_dev
+ * @package IP
  *
  * @param array $classes Classes for the body element.
  *

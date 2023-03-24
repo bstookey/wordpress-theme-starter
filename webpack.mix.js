@@ -43,7 +43,23 @@ mix
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
     `${staticAssetsDir}/js/`
   )
-  //.copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
+  .copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
+  .copy(
+    "node_modules/slick-carousel/slick/slick.css",
+    `${staticAssetsDir}/slick-carousel/slick/`
+  )
+  .copy(
+    "node_modules/slick-carousel/slick/slick-theme.css",
+    `${staticAssetsDir}/slick-carousel/slick/`
+  )
+  .copy(
+    "node_modules/slick-carousel/slick/slick.min.js",
+    `${staticAssetsDir}/slick-carousel/slick/`
+  )
+  .copy(
+    "node_modules/slick-carousel/slick/ajax-loader.gif",
+    `${staticAssetsDir}/slick-carousel/slick/`
+  )
   // .scripts(
   //   [
   //     "src/js/apps/jquery.touchSwipe.js",

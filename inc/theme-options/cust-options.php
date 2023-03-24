@@ -3,7 +3,7 @@
 /**
  * Custom theme class
  *
- * @package WordPress Starter
+ * @package IP
  * @since 1.0
  * 
  * 

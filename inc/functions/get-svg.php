@@ -3,7 +3,7 @@
 /**
  * Return SVG markup.
  *
- * @package fs_dev
+ * @package IP
  */
 
 

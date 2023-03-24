@@ -3,7 +3,7 @@
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @package fs_dev
+ * @package IP
  */
 
 

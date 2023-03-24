@@ -3,7 +3,7 @@
 /**
  * Bootstrap row
  *
- * @package fs_dev
+ * @package IP
  */
 
 return array(

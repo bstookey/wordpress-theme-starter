@@ -5,7 +5,7 @@
  * 
  * See src > js directory for block-styles.js
  *
- * @package fs_dev
+ * @package IP
  */
 
 if (function_exists('register_block_style')) {

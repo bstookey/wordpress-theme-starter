@@ -3,7 +3,7 @@
 /**
  * Enable custom mime types.
  *
- * @package fs_dev
+ * @package IP
  *
  * @param array $mimes Current allowed mime types.
  *

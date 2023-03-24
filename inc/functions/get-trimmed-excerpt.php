@@ -3,7 +3,7 @@
 /**
  * Limit the excerpt length.
  *
- * @package fs_dev
+ * @package IP
  *
  * @param array $args Parameters include length and more.
  *

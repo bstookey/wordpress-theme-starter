@@ -3,7 +3,7 @@
 /**
  * Get cutom logo url.
  *
- * @package fs_dev
+ * @package IP
  *
  * @return string The logo url.
  */

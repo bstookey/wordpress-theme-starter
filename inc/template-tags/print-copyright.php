@@ -5,7 +5,7 @@
  *
  * @param string  $year
  * 
- * @package fs_dev
+ * @package IP
  */
 
 function auto_copyright($year = 'auto')

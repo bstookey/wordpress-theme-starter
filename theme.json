@@ -42,19 +42,7 @@
       "customGradient": false,
       "defaultPalette": false,
       "defaultGradients": false,
-      "gradients": [],
-      "palette": [
-        {
-          "name": "Red",
-          "slug": "red",
-          "color": "#d31020"
-        },
-        {
-          "name": "Theme Black",
-          "slug": "theme-black",
-          "color": "#192232"
-        }
-      ]
+      "gradients": []
     }
   }
 }

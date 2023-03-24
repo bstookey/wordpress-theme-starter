@@ -3,8 +3,8 @@
 /**
  * The template for displaying author info below posts.
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  */
 

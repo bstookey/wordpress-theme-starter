@@ -1,8 +1,8 @@
 /*
  * Starter Theme styles
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+  * @package IP Theme
  * @since  1.0
  *
 */
@@ -20,7 +20,11 @@
 @import "header/index";
 @import "navigation/index";
 
+@import "content-blocks/index";
+
 @import "forms/index";
+
+@import "footer/index";
 
 @import "utilities/index";
 

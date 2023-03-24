@@ -3,7 +3,7 @@
 /**
  * Display post taxonomies template function.
  *
- * @package fs_dev
+ * @package IP
  */
 
 

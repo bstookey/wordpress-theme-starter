@@ -3,7 +3,7 @@
 /**
  * disable_editor_gradients.
  * 
- * @package fs_dev
+ * @package IP
  */
 
 function disable_editor_gradients()

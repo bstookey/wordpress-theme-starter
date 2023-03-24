@@ -7,8 +7,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  */
 ?>
@@ -16,15 +16,17 @@
 
 <footer id="footer_anchor" class="site-footer">
   <div class="container">
-    <div class="footer-nav">
-      <?php get_template_part('/template-parts/navigation/menu', 'footer'); ?>
-    </div>
-    <div class="address">
-      <?php get_template_part('template-parts/footer/address', 'schema'); ?>
-    </div>
-    <div class="social"><?php print_social_network_links(); ?></div>
-    <div class="footer-social-nav">
-      <?php get_template_part('/template-parts/navigation/menu', 'footer-social'); ?>
+    <div class="footer">
+      <div class="footer-nav">
+        <?php get_template_part('/template-parts/navigation/menu', 'footer'); ?>
+      </div>
+      <div class="address">
+        <?php get_template_part('template-parts/footer/address', 'schema'); ?>
+      </div>
+      <div class="social"><?php print_social_network_links(); ?></div>
+      <div class="footer-social-nav">
+        <?php get_template_part('/template-parts/navigation/menu', 'footer-social'); ?>
+      </div>
     </div>
     <div class="copyright">
       <?php printf('&copy; Copyright %s.', auto_copyright(2022)); ?> <?php display_copyright_text(); ?>

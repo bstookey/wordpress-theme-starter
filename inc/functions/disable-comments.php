@@ -3,7 +3,7 @@
 /**
  * Disable comments
  * 
- * @package fs_dev
+ * @package IP
  */
 
 add_action('admin_init', function () {

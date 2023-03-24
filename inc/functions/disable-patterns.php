@@ -3,7 +3,7 @@
 /**
  * Disable block patterns
  * 
- * @package fs_dev
+ * @package IP
  */
 
 add_action('init', 'removeCorePatterns');

@@ -3,7 +3,7 @@
 /**
  * Filters WYSIWYG content with the_content filter.
  *
- * @package fs_dev
+ * @package IP
  *
  * @param string $content content dump from WYSIWYG.
  *

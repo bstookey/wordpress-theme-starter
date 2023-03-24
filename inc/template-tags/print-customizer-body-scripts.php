@@ -3,7 +3,7 @@
 /**
  * Display the customizer header scripts.
  *
- * @package fs_dev
+ * @package IP
  *
  * @return string Header scripts.
  */

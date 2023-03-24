@@ -3,7 +3,7 @@
 /**
  * Bootstrap 50/50
  *
- * @package fs_dev
+ * @package IP
  */
 
 return array(

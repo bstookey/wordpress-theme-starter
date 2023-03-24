@@ -3,7 +3,7 @@
 /**
  * Register widget area.
  *
- * @package fs_dev
+ * @package IP
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  *

@@ -37,6 +37,7 @@ $colors: (
   red: #d31020,
   secondary: #6e6c6c,
   theme-black: #192232,
+  black: #192232,
   white: #fff,
   blue: #20739a,
   light-yellow: #fff9c0,
@@ -51,13 +52,13 @@ $colors: (
   silver: #ccc,
   tundora: #454545,
   whitesmoke: #f1f1f1,
-  facebook: #3b5998,
-  instagram: #517fa4,
-  linkedin: #007bb6,
-  pinterest: #cb2027,
+  facebook: #1877f2,
+  instagram: #e4405f,
+  linkedin: #0a66c2,
+  pinterest: #bd081c,
   rss: #f90,
-  twitter: #00aced,
-  youtube: #b00,
+  twitter: #1da1f2,
+  youtube: #ff0000,
 );
 // Note: Theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
 // the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid

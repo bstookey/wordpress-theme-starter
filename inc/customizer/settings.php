@@ -3,7 +3,7 @@
 /**
  * Customizer settings.
  *
- * @package fs_dev
+ * @package IP
  */
 
 /**

@@ -3,7 +3,7 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @package fs_dev
+ * @package IP
  */
 
 
@@ -36,8 +36,8 @@ function print_social_network_links()
 			// Only display the list item if a URL is set.
 			if (!empty($network_url)) :
 		?>
-				<li class="social-icon <?php echo esc_attr($network); ?> mr-2">
-					<a href="<?php echo esc_url($network_url); ?>" title="<?php echo ucwords(esc_attr($network)); ?> ">
+				<li>
+					<a href="<?php echo esc_url($network_url); ?>" title="<?php echo ucwords(esc_attr($network)); ?> " class="social-icon <?php echo esc_attr($network); ?>">
 						<?php
 						print_svg(
 							[

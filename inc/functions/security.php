@@ -5,7 +5,7 @@
  *
  * Enable or disable certain functionality to harden WordPress.
  *
- * @package fs_dev
+ * @package IP
  */
 
 /**

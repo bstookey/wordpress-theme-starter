@@ -3,7 +3,7 @@
 /**
  * Enqueue scripts and styles.
  *
- * @package fs_dev
+ * @package IP
  */
 
 define('STARTER_THEME_VERSION', '1.0');

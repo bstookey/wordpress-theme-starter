@@ -5,8 +5,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  * 
  */
@@ -34,6 +34,7 @@ function theme_init()
     function include_inc_files()
     {
         $files = [
+            'inc/helper_functions.php', // Globally used functions.
             'inc/customizer/customizer.php', // Customizer additions.
             'inc/theme-options/cust-options.php', // Theme options for address, alert, etc.
             'inc/functions/', // Custom functions that are independent of the theme templates.
@@ -41,7 +42,7 @@ function theme_init()
             'inc/post-types/', // Load custom post types.
             'inc/setup/', // Theme setup, menu, widgets, etc.
             'inc/template-tags/', // Custom template tags for this theme.
-            'inc/ACF/', // Custom template tags for this theme.
+            'inc/ACF/', // Custom block setup.
             'inc/WOO/', // Custom functions/actions for Woocommerce.
             'inc/ip-patterns/block-patterns.php', // Custom patterns for this theme.
         ];

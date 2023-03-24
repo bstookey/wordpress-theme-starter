@@ -3,8 +3,8 @@
 /**
  * Displays the site header
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  */
 

@@ -1,0 +1,115 @@
+//--------------------------------------------------------------
+// Carousel Block
+//--------------------------------------------------------------
+$slide-height: 500px;
+
+.carousel-block {
+  // Removes padding.
+  &.content-block {
+    padding: 0;
+  } // &.content-block
+
+  // Arbitrary <div> inserted by Slick.
+  .slick-slide div {
+    height: $slide-height; // force slick to set a height.
+  } // .slick-slide div
+
+  // Navigation buttons.
+  .slick-arrow {
+    position: absolute;
+    top: 45%;
+
+    z-index: 10;
+  } // .sick-arrow
+
+  // Next button.
+  .slick-next {
+    right: $global-gutter;
+    display: none !important;
+
+    @include media-breakpoint-up(lg) {
+      display: block !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      right: 0;
+    }
+  } // .slick-next
+
+  // Previous button.
+  .slick-prev {
+    left: $global-gutter;
+    display: none !important;
+
+    @include media-breakpoint-up(lg) {
+      display: block !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 0;
+    }
+  } // .slick-prev
+
+  // Navigation dots/numbers.
+  .slick-dots {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    z-index: 1;
+
+    // Each dot.
+    li {
+      flex-direction: row;
+      justify-content: center;
+    } // li
+  } // .slick-dots
+} // .carousel-block
+
+.slide {
+  margin-bottom: 0;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 1;
+
+  // Content container.
+  &-content {
+    margin: 0 auto;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: $slide-height;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+  } // .slide-content
+
+  // Add padding to description.
+  &-description {
+    padding-bottom: $global-gutter * 2;
+  } // .slide-description
+
+  // Remove any text decoration.
+  .button-slide {
+    text-decoration: none;
+  } // a.button-slide
+} // .slide
+
+//-----------------------------------------
+// IE Fixes
+//-----------------------------------------
+.ie .slide {
+  // IE seems to have some width issues with flexbox,
+  // the text is rendered wider than its container
+  // and doesn't wrap. This fixes that.
+  .slide-title,
+  .slide-description {
+    width: 100%;
+  } // .slide-title, .slide-description
+} // .ie .slide

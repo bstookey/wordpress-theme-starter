@@ -5,8 +5,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  */
 $content = get_the_content();

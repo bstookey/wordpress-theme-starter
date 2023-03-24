@@ -1,4 +1,4 @@
-<?php if (has_nav_menu('footer-menu')) : ?>
+<?php if (has_nav_menu('footer')) : ?>
     <!-- footer-navigation -->
     <nav id="footer-navigation" role="navigation" aria-label="Footer Navigation">
         <?php

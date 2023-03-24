@@ -3,7 +3,7 @@
 /**
  * Display header search.
  *
- * @package fs_dev
+ * @package IP
  */
 
 function ip_master_display_header_search()

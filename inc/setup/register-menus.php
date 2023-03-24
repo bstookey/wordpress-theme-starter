@@ -3,7 +3,7 @@
 /**
  * Register Menus
  *
- * @package fs_dev
+ * @package IP
  */
 
 register_nav_menus(

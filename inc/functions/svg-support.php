@@ -3,7 +3,7 @@
 /**
  * Set SVG support as noted by WP Engine.
  *
- * @package fs_dev
+ * @package IP
  */
 
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {

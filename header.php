@@ -4,8 +4,8 @@
  * The header for our theme
  *
  *
- * @package WordPress Starter
- * @subpackage Starter Theme
+ * @package IP
+ * @package IP Theme
  * @since  1.0
  */
 
@@ -14,18 +14,11 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/favicon-16x16.png">
-	<link rel="mask-icon" href="/<?php echo esc_url(get_template_directory_uri()); ?>assets/icons/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#bfbfbf">
-	<meta name="msapplication-config" content="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/browserconfig.xml">
-	<link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/favicon.ico?" type="image/x-icon" />
-	<link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/favicon.ico?" type="image/x-icon" />
+
 	<?php wp_head(); ?>
 </head>
 

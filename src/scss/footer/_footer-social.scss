@@ -1,0 +1,39 @@
+.site-footer {
+  .social {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 20px;
+      right: 0;
+    }
+
+    .social-icons {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+
+      > li {
+        > a {
+          &:hover {
+            opacity: 1;
+            &.facebook {
+              color: clr(facebook);
+            }
+            &.instagram {
+              color: clr(instagram);
+            }
+            &.linkedin {
+              color: clr(linkedin);
+            }
+            &.twitter {
+              color: clr(twitter);
+            }
+            &.youtube {
+              color: clr(youtube);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,32 +1,19 @@
 <?php
 
 /**
- * Get the theme colors for this project. Set these first in the Global variables partial then migrate them over here.
- *
+ * Get the theme colors for this project in src > scss > global > variables.
+ * Copy the colors into inc > hekper_functions.php
+ * 
  * @return array The array of our color names and hex values.
  * 
  */
 
-function get_theme_colors()
-{
-    return array(
-        esc_html__('Red', THEME_DOMAIN)  => '#d31020',
-        esc_html__('Theme Black', THEME_DOMAIN)   => '#192232',
-        esc_html__('White', THEME_DOMAIN)   => '#FFF',
-    );
-}
-
-/**
- * Copies our ACF color settings into an array readable by Gutenberg's color picker.
- *
- * @return array $gutenberg_colors The Gutenberg-ready array
- * 
- */
-function get_theme_colors_gutenberg()
+function ip_master_get_theme_colors_gutenberg()
 {
 
-    // Grab our ACF theme colors.
-    $colors = get_theme_colors();
+    // Grab our theme colors from the inc > helper_functions.
+    $colors = ip_master_get_theme_colors();
+    //print_r($colors);
 
     if (!$colors) {
         return array();
@@ -44,4 +31,4 @@ function get_theme_colors_gutenberg()
 }
 
 // Gutenberg color palette support.
-add_theme_support('editor-color-palette', get_theme_colors_gutenberg());
+add_theme_support('editor-color-palette', ip_master_get_theme_colors_gutenberg());

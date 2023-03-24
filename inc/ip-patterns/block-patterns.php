@@ -3,7 +3,7 @@
 /**
  * Adds custom pattern category and registers patterns.
  *
- * @package fs_dev
+ * @package IP
  *
  */
 

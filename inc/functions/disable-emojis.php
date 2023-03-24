@@ -3,7 +3,7 @@
 /**
  * Disable emojis
  * 
- * @package fs_dev
+ * @package IP
  */
 
 function disable_emojis()

@@ -5,5 +5,18 @@ nav {
     @include media-breakpoint-up(md) {
       display: block;
     }
+
+    .primary-menu {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+
+      > li {
+        > a {
+          text-decoration: none;
+          color: clr(theme-black);
+        }
+      }
+    }
   }
 }

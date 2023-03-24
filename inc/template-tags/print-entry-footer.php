@@ -3,7 +3,7 @@
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @package fs_dev
+ * @package IP
  *
  */
 function print_entry_footer()

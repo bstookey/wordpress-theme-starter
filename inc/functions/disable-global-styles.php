@@ -5,7 +5,7 @@
  * Note: Some of the custom configuration in the theme.json file could be lost.
  * Some attributes configured in theme.json could be used in the theme stylesheet.
  *
- * @package fs_dev
+ * @package IP
  */
 
 function wps_deregister_styles()
