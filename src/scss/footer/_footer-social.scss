@@ -17,19 +17,48 @@
           &:hover {
             opacity: 1;
             &.facebook {
-              color: clr(facebook);
-            }
-            &.instagram {
-              color: clr(instagram);
-            }
-            &.linkedin {
-              color: clr(linkedin);
+              color: $facebook;
             }
             &.twitter {
-              color: clr(twitter);
+              color: $twitter;
+            }
+            &.linkedin {
+              color: $linkedin;
+            }
+            &.instagram {
+              color: $instagrammagenta;
             }
             &.youtube {
-              color: clr(youtube);
+              color: $youtube;
+            }
+            &.pinterest {
+              color: $pinterest;
+            }
+            &.reddit {
+              color: $reddit;
+            }
+            &.snapchat,
+            &.snap-chat {
+              color: $snapchat;
+            }
+            &.vimeo {
+              color: $vimeoblue;
+            }
+            &.whatsapp,
+            &.whats-app {
+              color: $whatsappgreen;
+            }
+            &.tiktok {
+              color: $tiktokblack;
+            }
+            &.telegram {
+              color: $telegram;
+            }
+            &.quora {
+              color: $quora;
+            }
+            &.skype {
+              color: $skypeblue;
             }
           }
         }
