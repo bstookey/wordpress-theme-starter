@@ -33,13 +33,11 @@ input[type="submit"] {
   }
 
   &:hover,
-  &:active {
-    color: clr(secondary);
-    opacity: 0.6;
-  }
-
+  &:active,
   &:focus {
     color: clr(secondary);
+    color: #fff;
+    opacity: 0.6;
   }
 
   &:visited {
@@ -48,11 +46,13 @@ input[type="submit"] {
     &:hover,
     &:active {
       color: clr(secondary);
+      color: #fff;
       opacity: 0.6;
     }
 
     &:focus {
       color: clr(secondary);
+      color: #fff;
     }
   }
 }

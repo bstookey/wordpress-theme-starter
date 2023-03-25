@@ -18,13 +18,17 @@
   .is-style-#{"" + $container} {
     width: 100%;
     max-width: $value + px;
-    @include bs-gutter($global-gutter, "pos");
+    //@include bs-gutter($global-gutter, "pos");
     margin: 0 auto;
+    left: auto;
+    right: auto;
   }
   .#{"" + $container} {
     width: 100%;
     max-width: $value + px;
     @include bs-gutter($global-gutter, "pos");
     margin: 0 auto;
+    left: auto;
+    right: auto;
   }
 }

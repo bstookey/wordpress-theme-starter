@@ -23,7 +23,11 @@ $slide-height: 500px;
 
   .slick-next,
   .slick-prev {
-    background-color: clr(dove-gray);
+    background-color: clr(dovegray);
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   .slick-next {
@@ -70,7 +74,7 @@ $slide-height: 500px;
       justify-content: center;
 
       button {
-        background-color: clr(dove-gray);
+        background-color: clr(dovegray);
       }
 
       &.slick-active {

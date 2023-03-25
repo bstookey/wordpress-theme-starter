@@ -2,7 +2,7 @@
 
 $radius: 6px;
 $thickness: 4px;
-$burger-color: clr(theme-black);
+$burger-color: clr(themeblack);
 $width: 40px;
 $height: 30px;
 
@@ -32,6 +32,7 @@ $height: 30px;
     -moz-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
+    pointer-events: none;
   }
 }
 

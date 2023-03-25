@@ -1,6 +1,13 @@
 /* eslint-disable */
 $ = window.jQuery;
 /* eslint-enable */
+const debug = true;
+
+function consoleLog(logMessage) {
+  if (debug) {
+    console.log(logMessage);
+  }
+}
 
 $(document).ready(function () {
   var siteHeaderAction = $(".site-header-action");
@@ -39,9 +46,13 @@ $(document).ready(function () {
   }
 
   function hideSearchForm(event) {
-    var isTargetInside = siteHeaderAction.has(event.target).length;
+    var isTargetInside = headerSearchForm.has(event.target).length;
 
-    if (!isTargetInside) {
+    if (
+      !isTargetInside &&
+      $(event.target).closest(headerSearchToggle).length !==
+        $(headerSearchToggle).length
+    ) {
       $("body").removeClass("search-form-visible");
       toggleAriaLabels();
     }
