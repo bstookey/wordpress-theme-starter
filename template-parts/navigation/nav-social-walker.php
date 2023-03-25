@@ -37,11 +37,15 @@ class IP_Nav_Social_Walker extends Walker_Nav_Menu
         $attributes .= !empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
         $item_output = $args->before;
         if (strpos($item->url, 'facebook') !== false) {
-            $item_output .= '<a' . $attributes . '><i class="fab fa-facebook-f"></i>';
+            $item_output .= '<a' . $attributes . '><i class="fab fa-facebook"></i>';
             $item_output .= '</a>';
             $item_output .= $args->after;
         } elseif (strpos($item->url, 'twitter') !== false) {
             $item_output .= '<a' . $attributes . '><i class="fab fa-twitter">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'linkedin') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-linkedin">';
             $item_output .= '</i></a>';
             $item_output .= $args->after;
         } elseif (strpos($item->url, 'instagram') !== false) {
@@ -49,7 +53,15 @@ class IP_Nav_Social_Walker extends Walker_Nav_Menu
             $item_output .= '</i></a>';
             $item_output .= $args->after;
         } elseif (strpos($item->url, 'youtube') !== false) {
-            $item_output .= '<a' . $attributes . '><i class="fab fa-youtube-play">';
+            $item_output .= '<a' . $attributes . '><i class="fab fa-youtube">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'pinterest') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-pinterest">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'reddit') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-reddit">';
             $item_output .= '</i></a>';
             $item_output .= $args->after;
         } elseif (strpos($item->url, 'snapchat') !== false) {
@@ -57,7 +69,27 @@ class IP_Nav_Social_Walker extends Walker_Nav_Menu
             $item_output .= '</i></a>';
             $item_output .= $args->after;
         } elseif (strpos($item->url, 'vimeo') !== false) {
-            $item_output .= '<a' . $attributes . '><i class="fab fa-vimeo-v">';
+            $item_output .= '<a' . $attributes . '><i class="fab fa-vimeo">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'whatsapp') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-whatsapp">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'tiktok') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-tiktok">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'telegram') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-telegram">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'quora') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-quora">';
+            $item_output .= '</i></a>';
+            $item_output .= $args->after;
+        } elseif (strpos($item->url, 'skype') !== false) {
+            $item_output .= '<a' . $attributes . '><i class="fab fa-skype">';
             $item_output .= '</i></a>';
             $item_output .= $args->after;
         }

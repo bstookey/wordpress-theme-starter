@@ -45,6 +45,7 @@ function theme_init()
             'inc/ACF/', // Custom block setup.
             'inc/WOO/', // Custom functions/actions for Woocommerce.
             'inc/ip-patterns/block-patterns.php', // Custom patterns for this theme.
+            'template-parts/navigation/nav-social-walker.php', // Custom navigation walker for social media links.
         ];
 
         foreach ($files as $include) {
