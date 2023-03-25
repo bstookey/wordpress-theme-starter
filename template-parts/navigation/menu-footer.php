@@ -1,6 +1,6 @@
 <?php if (has_nav_menu('footer')) : ?>
     <!-- footer-navigation -->
-    <nav id="footer-navigation" role="navigation" aria-label="Footer Navigation">
+    <nav id="footer-navigation" role="navigation" aria-label="<?php esc_attr_e('Footer Navigation', 'ip_master'); ?>">
         <?php
         wp_nav_menu(
             array(

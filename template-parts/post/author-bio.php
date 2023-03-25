@@ -4,7 +4,7 @@
  * The template for displaying author info below posts.
  *
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  */
 

@@ -5,7 +5,7 @@
  * Adds IP theme custom blocks
  *
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  * 
  */
@@ -19,9 +19,9 @@ if (!function_exists('acf_register_block_type')) {
  * Init Custom blocks.
  */
 
-add_action('acf/init', 'fs_master_acf_init');
+add_action('acf/init', 'ip_master_acf_init');
 
-function fs_master_acf_init()
+function ip_master_acf_init()
 {
   $mode_default = 'preview';
   $acf_block_path = '/template-parts/acf-custom-blocks/';

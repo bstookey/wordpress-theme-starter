@@ -1,7 +1,6 @@
 <?php if (has_nav_menu('courtesy')) : ?>
     <!-- courtesy-navigation -->
-    <nav id="courtesy-navigation" role="navigation" aria-label="Courtesy Navigation">
-
+    <nav id="courtesy-navigation" role="navigation" aria-label="<?php esc_attr_e('Courtesy Navigation', 'ip_master'); ?>">
         <?php
         wp_nav_menu(
             array(

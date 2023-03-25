@@ -12,7 +12,7 @@
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Class.
  */
 
-function fs_master_customize_panels($wp_customize)
+function ip_master_customize_panels($wp_customize)
 {
 
 	// Register a new panel.
@@ -27,4 +27,4 @@ function fs_master_customize_panels($wp_customize)
 		)
 	);
 }
-add_action('customize_register', 'fs_master_customize_panels');
+add_action('customize_register', 'ip_master_customize_panels');

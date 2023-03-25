@@ -6,39 +6,39 @@
  * @package IP
  */
 
-define('STARTER_THEME_VERSION', '1.0');
+define('IP_THEME_VERSION', '1.0');
 
 // Enqueue Styles
 
-function starter_enqueue_styles()
+function ip_enqueue_styles()
 {
 	if (!is_admin()) {
-		wp_enqueue_style('starter-styles', get_stylesheet_directory_uri() . '/assets/css/starter.css', array(), STARTER_THEME_VERSION, false);
+		wp_enqueue_style('ip-theme-styles', get_stylesheet_directory_uri() . '/assets/css/starter.css', array(), IP_THEME_VERSION, false);
 	}
 }
-add_action('wp_enqueue_scripts', 'starter_enqueue_styles', 100);
+add_action('wp_enqueue_scripts', 'ip_enqueue_styles', 100);
 
 // Custom Admin Styles
 function load_admin_style()
 {
 	if (is_admin()) {
-		wp_enqueue_style('admin_css', get_stylesheet_directory_uri() . '/assets/css/wp-admin.css', array(), STARTER_THEME_VERSION, false);
+		wp_enqueue_style('ip-admin-css', get_stylesheet_directory_uri() . '/assets/css/wp-admin.css', array(), IP_THEME_VERSION, false);
 	}
 }
 add_action('admin_enqueue_scripts', 'load_admin_style');
 
 // Enqueue Scripts
 
-function starter_enqueue_scripts()
+function ip_enqueue_scripts()
 {
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), STARTER_THEME_VERSION, false);
-		wp_enqueue_script('apps-theme', get_stylesheet_directory_uri() . '/assets/js/apps.js', array(), STARTER_THEME_VERSION, true);
-		wp_enqueue_script('theme-custom', get_stylesheet_directory_uri() . '/assets/js/starter.js', array(), STARTER_THEME_VERSION, true);
+		wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), IP_THEME_VERSION, false);
+		wp_enqueue_script('ip-theme-apps-js', get_stylesheet_directory_uri() . '/assets/js/apps.js', array(), IP_THEME_VERSION, true);
+		wp_enqueue_script('ip-theme-js', get_stylesheet_directory_uri() . '/assets/js/starter.js', array(), IP_THEME_VERSION, true);
 	}
 }
-add_action('wp_enqueue_scripts', 'starter_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'ip_enqueue_scripts');
 
 /**
  * Dequeue WordPress core Block Library styles.

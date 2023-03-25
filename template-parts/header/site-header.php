@@ -4,7 +4,7 @@
  * Displays the site header
  *
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  */
 

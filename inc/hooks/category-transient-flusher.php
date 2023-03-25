@@ -15,7 +15,7 @@ function category_transient_flusher()
 	}
 
 	// Like, beat it. Dig?
-	return delete_transient('fs_categories');
+	return delete_transient('ip_categories');
 }
 
 add_action('delete_category', 'category_transient_flusher');

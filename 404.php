@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  * 
  */

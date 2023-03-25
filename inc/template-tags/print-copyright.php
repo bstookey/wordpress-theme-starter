@@ -30,7 +30,7 @@ function auto_copyright($year = 'auto')
 function display_copyright_text()
 {
     // Grab our customizer settings.
-    $copyright_text = get_theme_mod('fs_master_copyright_text');
+    $copyright_text = get_theme_mod('ip_master_copyright_text');
 
     // Stop if there's nothing to display.
     if (!$copyright_text) {

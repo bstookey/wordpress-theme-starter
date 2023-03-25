@@ -560,6 +560,14 @@ class Cust_Theme_Options
             'std' => '',
         );
 
+        $this->settings['footer_code'] = array(
+            'section' => 'codes',
+            'title' => __('Body Scripts'),
+            'desc' => __('These scripts appear just after &lt;footer&gt; tag.'),
+            'type' => 'textarea',
+            'std' => '',
+        );
+
         /* Examples
         ================================================*/
 

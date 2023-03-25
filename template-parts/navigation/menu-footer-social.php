@@ -1,6 +1,6 @@
-<!-- site-navigation -->
-<nav role="navigation" aria-label="Footer Social Navigation">
-    <?php if (has_nav_menu('footer-social')) : ?>
+<?php if (has_nav_menu('footer-social')) : ?>
+    <!-- footer-social-links -->
+    <nav role="navigation" aria-label="<?php esc_attr_e('Footer Social Navigation', 'ip_master'); ?>">
         <?php
         wp_nav_menu(
             array(
@@ -8,11 +8,12 @@
                 'menu_class'     => 'footer-social',
                 'menu_id'     => 'footer-social',
                 'items_wrap'     => '<ul id="%1$s" class="%2$s " role="menu-bar">%3$s</ul>',
+                'walker' => new IP_Nav_Social_Walker(),
                 'use_excerpt' => false,
                 'container'      => false,
             )
         );
         ?>
-    <?php endif; ?>
-</nav>
-<!-- #site-navigation -->
+    </nav>
+    <!-- #footer-social-links -->
+<?php endif; ?>

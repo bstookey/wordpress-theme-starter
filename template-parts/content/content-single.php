@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  */
 

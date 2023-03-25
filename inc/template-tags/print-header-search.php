@@ -10,7 +10,7 @@ function ip_master_display_header_search()
 {
 
     // Get our button setting.
-    $button_setting = get_theme_mod('fs_master_search_checkbox');
+    $button_setting = get_theme_mod('ip_master_search_checkbox');
 
     // If we have no button displayed, don't display the markup.
     if (!$button_setting) {

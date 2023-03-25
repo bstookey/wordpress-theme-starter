@@ -8,4 +8,11 @@ body {
   line-height: 1.55;
   color: clr(grey-md);
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

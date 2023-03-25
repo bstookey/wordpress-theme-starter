@@ -1,6 +1,6 @@
-<!-- primary-navigation -->
 <?php if (has_nav_menu('primary')) : ?>
-    <nav id="primary-navigation" role="navigation" aria-label="Primary Navigation">
+    <!-- primary-navigation -->
+    <nav id="primary-navigation" role="navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'ip_master'); ?>">
         <?php
         wp_nav_menu(
             array(

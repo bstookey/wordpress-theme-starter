@@ -4,12 +4,12 @@
  * Shortcode for WooCommerce Cart Icon for Menu Item
  */
 
-add_shortcode('fs_woocommerce_cart_icon', 'fs_woo_cart_icon');
+add_shortcode('ip_woocommerce_cart_icon', 'ip_woo_cart_icon');
 
 /**
  * Check if WooCommerce is activated
  */
-function fs_woo_cart_icon()
+function ip_woo_cart_icon()
 {
     if (class_exists('woocommerce')) {
 

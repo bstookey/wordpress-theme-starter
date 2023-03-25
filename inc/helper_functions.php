@@ -7,7 +7,7 @@ function ip_master_get_theme_colors()
         secondary: #6e6c6c,
         theme-black: #192232,
         black: #192232,
-        white: #fff,
+        white: #ffffff,
         blue: #20739a,
         light-yellow: #fff9c0,
         alto: #ddd,

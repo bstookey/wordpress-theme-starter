@@ -5,7 +5,7 @@
  *
  *
  * @package IP
- * @package IP Theme
+ * @subpackage IP Theme
  * @since  1.0
  */
 
@@ -23,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?> tabindex="0">
-	<?php print_customizer_body_scripts(); ?>
+	<?php ip_master_print_customizer_body_scripts(); ?>
 	<!--.site-wrapper-->
 	<div class="site-wrapper">
 		<div class="skip-links">

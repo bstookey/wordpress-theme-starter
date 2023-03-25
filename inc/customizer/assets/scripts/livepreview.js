@@ -50,7 +50,7 @@
   });
 
   // Copyright text.
-  api("fs_master_copyright_text", function (value) {
+  api("ip_master_copyright_text", function (value) {
     value.bind(function (to) {
       $(".site-info").text(to);
     });

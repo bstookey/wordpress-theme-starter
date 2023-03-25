@@ -60,7 +60,7 @@ add_action('customize_register', 'fs_master_include_custom_controls', -999);
  */
 function fs_master_customize_scripts()
 {
-	wp_enqueue_script('fs_master-customize-livepreview', get_stylesheet_directory() . '/inc/customizer/assets/scripts/livepreview.js', array('jquery', 'customize-preview'), '1.0.0', true);
+	wp_enqueue_script('fs_master-customize-livepreview', get_stylesheet_directory_uri() . '/inc/customizer/assets/scripts/livepreview.js', array('jquery', 'customize-preview'), '1.0.0', true);
 }
 add_action('customize_preview_init', 'fs_master_customize_scripts');
 
@@ -106,8 +106,7 @@ function fs_master_live_preview_support($wp_customize)
 		'blogname',
 		'blogdescription',
 		'header_textcolor',
-		'background_image',
-		'fs_master_copyright_text',
+		'background_image'
 	);
 
 	// Loop through and add the live preview to each setting.
