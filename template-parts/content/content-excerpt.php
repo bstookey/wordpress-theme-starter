@@ -10,7 +10,7 @@
  * @since  1.0
  */
 $content = get_the_content();
-$featured_img = (get_the_post_thumbnail_url($post->ID, 'full') != '') ? 'style="' . esc_attr(winterthur_background_image_style($id, 'full')) . ';"' : '';
+$featured_img = (get_the_post_thumbnail_url($post->ID, 'full') != '') ? 'style="' . esc_attr(ip_background_image_style($id, 'thumbnail')) . ';"' : '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -23,8 +23,8 @@ $featured_img = (get_the_post_thumbnail_url($post->ID, 'full') != '') ? 'style="
 					?>
 				</header><!-- .entry-header -->
 				<div class="post-summary">
-					<p><?= get_trimmed_excerpt(['length' => 220]); ?></p>
-					<p><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark" class="read-more text-green">Continue Reading</a></p>
+					<p><?= the_excerpt(); ?></p>
+					<!-- <p><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark" class="read-more text-green">Continue Reading</a></p> -->
 				</div>
 			</div>
 			<div class="post-col">

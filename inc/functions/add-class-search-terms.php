@@ -4,9 +4,12 @@ function highlight_results($text)
 {
     if (is_search() && !is_admin()) {
         $sr = get_query_var('s');
-        $keys = explode(" ", $sr);
-        $keys = array_filter($keys);
-        $text = preg_replace('/(' . $sr . ')/iu', '<span class="highlight">' . $sr . '</span>', $text);
+        if ($sr) {
+            $keys = explode(" ", $sr);
+            $keys = array_filter($keys);
+            $regEx = '\'(?!((<.*?)|(<a.*?)))(\b' . implode('|', $keys) . '\b)(?!(([^<>]*?)>)|([^>]*?</a>))\'iu';
+            $text = preg_replace($regEx, '<span class="search-highlight">\0</span>', $text);
+        }
     }
     return $text;
 }

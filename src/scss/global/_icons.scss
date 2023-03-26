@@ -1,0 +1,30 @@
+.down-arrow {
+  cursor: pointer;
+  display: block;
+  margin-left: 10px;
+  outline: none;
+  @include global-transition();
+
+  &::before,
+  &::after {
+    height: 2px;
+    width: 15px;
+
+    background: clr(red);
+    border-radius: 1px;
+    content: "";
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  &::before {
+    left: -10px;
+    top: 2px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-225deg);
+  }
+}

@@ -16,7 +16,7 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 
-		<div class="container pb-3 pb-md-4 pb-lg-6">
+		<div class="container">
 
 			<?php if (have_posts()) :
 				global $wp_query; ?>
@@ -30,7 +30,7 @@ get_header();
 					<?php
 					get_search_form(
 						array(
-							'label' => __('', 'winterthur'),
+							'label' => __('', 'ip-master'),
 						)
 					);
 					?>

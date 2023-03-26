@@ -2,6 +2,8 @@
 
 /**
  * Echo the announcement saved in the Customizer.
+ * 
+ * Uses cookies managed via src > js > starter.js: APP.Banner
  *
  * @return bool
  */

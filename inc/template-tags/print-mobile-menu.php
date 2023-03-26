@@ -6,16 +6,7 @@
  * @package IP
  */
 
-
-
-/**
- * Displays the mobile menu with off-canvas background layer.
- *
- *
- *
- * @return string An empty string if no menus are found at all.
- */
-function print_mobile_menu()
+function ip_master_display_mobile_menu()
 {
 	// Bail if no mobile or primary menus are set.
 	if (!has_nav_menu('mobile') && !has_nav_menu('primary')) {
@@ -31,23 +22,33 @@ function print_mobile_menu()
 	}
 ?>
 	<div class="off-canvas-screen"></div>
-	<nav class="off-canvas-container" aria-label="<?php esc_attr_e('Mobile Menu', THEME_DOMAIN); ?>" aria-hidden="true" tabindex="-1">
-		<?php
-		// Mobile menu args.
-		$mobile_args = [
-			'theme_location'  => $menu_location,
-			'container'       => 'div',
-			'container_class' => 'off-canvas-content',
-			'container_id'    => '',
-			'menu_id'         => 'site-mobile-menu',
-			'menu_class'      => 'mobile-menu',
-			'fallback_cb'     => false,
-			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-		];
+	<div class="off-canvas-container" aria-label="<?php esc_attr_e('Mobile Menu', THEME_DOMAIN); ?>" aria-hidden="true" tabindex="-1">
+		<div class="mobile-nav-header">
+			<a href="/" aria-label="<?= get_bloginfo('name') ?>" title="<?= get_bloginfo('name') ?>" style="background-image: url('<?= get_logo_url(); ?>');" class="logo">
+				<span class="sr-only"><?= get_bloginfo('name') ?> home page</span>
+			</a>
+			<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e('Close Menu', 'ip_master'); ?>">
+				<span class="close"></span>
+			</button>
+		</div>
 
-		// Display the mobile menu.
-		wp_nav_menu($mobile_args);
-		?>
-	</nav>
+		<nav class="mobile-navigation" role="navigation" aria-label="<?php esc_attr_e('Mobile Navigation', THEME_DOMAIN); ?>">
+
+			<?php
+			// Mobile menu args.
+			$mobile_args = [
+				'theme_location'  => $menu_location,
+				'container'       => false,
+				'menu_id'         => 'mobile-menu',
+				'menu_class'      => 'mobile-menu',
+				'fallback_cb'     => false,
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			];
+
+			// Display the mobile menu.
+			wp_nav_menu($mobile_args);
+			?>
+		</nav>
+	</div>
 <?php
 }

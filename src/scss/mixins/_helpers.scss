@@ -13,13 +13,13 @@
 // Gutter mixin for parent negative margin and child padding
 @mixin bs-gutter($bs-gutter, $sp: pos) {
   @if $sp == neg {
-    margin-left: -$bs-gutter !important;
-    margin-right: -$bs-gutter !important;
+    margin-left: -$bs-gutter;
+    margin-right: -$bs-gutter;
   }
 
   @if $sp == pos {
-    padding-left: $bs-gutter !important;
-    padding-right: $bs-gutter !important;
+    padding-left: $bs-gutter;
+    padding-right: $bs-gutter;
   }
 }
 
@@ -51,9 +51,9 @@
 }
 
 @mixin box-shadow(
-  $horiz: 0,
-  $vert: 0,
-  $blur: 12px,
+  $horiz: 3px,
+  $vert: 3px,
+  $blur: 5px,
   $spread: 2px,
   $color: rgba(0, 0, 0, 0.15) !important
 ) {

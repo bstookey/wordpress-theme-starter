@@ -3,7 +3,7 @@
 add_action(
     'after_setup_theme',
     function () {
-        add_theme_support('editor-font-sizes', []);
+        //add_theme_support('editor-font-sizes', []);
         add_filter(
             'block_editor_settings_all',
             function ($editor_settings, $context) {

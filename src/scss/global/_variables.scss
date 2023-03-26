@@ -17,13 +17,13 @@ $transition: 0.25s ease-in-out;
 $base-font: "Open Sans", sans-serif; // Sets the base font family
 //$base-font-size: 62.5%; // Sets the base font size to 10px
 $base-font-size: 10px; // Sets the base font size to 10px. This should always stay 10 to make things easy on your self.
-$global-font-size: 1.8rem; // base font size in the design
+$global-font-size: 1.6rem; // base font size in the design
 
 // Site sizes used in container-sizes mixin. Should also be set for registers block styles.
 // 1468 is the width of the global site content plus padding
 // 1548 is the width of the widest designed fixed width element in the xd
 $container-sizes: (
-  container: 1480,
+  container: 1200,
   container-xs: 700,
   container-sm: 900,
   container-md: 1200,
@@ -43,12 +43,12 @@ $colors: (
   lightyellow: #fff9c0,
   alto: #dddddd,
   codgray: #111111,
-  dovegray: #666,
+  dovegray: #666666,
   gallery: #eeeeee,
   grayalt: #929292,
   gray: #808080,
   mineshaft: #333333,
-  silver-chalice: #aaa,
+  silver-chalice: #aaaaaa,
   silver: #cccccc,
   tundora: #454545,
   whitesmoke: #f1f1f1,

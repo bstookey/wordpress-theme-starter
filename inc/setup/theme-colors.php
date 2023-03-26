@@ -2,7 +2,7 @@
 
 /**
  * Get the theme colors for this project in src > scss > global > variables.
- * Copy the colors into inc > hekper_functions.php
+ * Copy the colors into inc > helper_functions.php
  * 
  * @return array The array of our color names and hex values.
  * 

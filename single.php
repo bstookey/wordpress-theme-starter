@@ -1,51 +1,43 @@
 <?php
 
 /**
- * The template for displaying all single posts
+ * The template for displaying all single posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package IP
- * @subpackage IP Theme
- * @since  1.0
  */
 
-get_header();
+get_header(); ?>
 
-/* Start the Loop */
-while (have_posts()) :
-	the_post();
+<div class="display-flex grid-wrapper">
+	<main id="main" class="site-main single">
+		<div class="container">
+			<?php
+			while (have_posts()) :
+				the_post();
 
-	get_template_part('template-parts/content/content-single');
+				get_template_part('template-parts/content/content', get_post_format()); ?>
 
-	if (is_attachment()) {
-		// Parent post navigation.
-		the_post_navigation(
-			array(
-				/* translators: %s: Parent post link. */
-				'prev_text' => sprintf(__('<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'starter'), '%title'),
-			)
-		);
-	}
+				<?php if (function_exists('ip_social_sharing_buttons')) : ?>
+					<div class="post__social container">
+						<?php ip_social_sharing_buttons(); ?>
+					</div>
+				<?php endif; ?>
 
-	// If comments are open or there is at least one comment, load up the comment template.
-	if (comments_open() || get_comments_number()) {
-		comments_template();
-	}
+			<?php the_post_navigation(array(
+					'prev_text'                  => __('Previous Post'),
+					'next_text'                  => __('Next Post'),
+				));
 
-	// Previous/next post navigation.
-	$next = is_rtl() ? twenty_twenty_one_get_icon_svg('ui', 'arrow_left') : twenty_twenty_one_get_icon_svg('ui', 'arrow_right');
-	$prev = is_rtl() ? twenty_twenty_one_get_icon_svg('ui', 'arrow_right') : twenty_twenty_one_get_icon_svg('ui', 'arrow_left');
+				// If comments are open or we have at least one comment, load up the comment template.
+				if (comments_open() || get_comments_number()) :
+					comments_template();
+				endif;
 
-	$next_label     = esc_html__('Next post', 'starter');
-	$previous_label = esc_html__('Previous post', 'starter');
-
-	the_post_navigation(
-		array(
-			'next_text' => '<p class="meta-nav">' . $next_label . $next . '</p><p class="post-title">%title</p>',
-			'prev_text' => '<p class="meta-nav">' . $prev . $previous_label . '</p><p class="post-title">%title</p>',
-		)
-	);
-endwhile; // End of the loop.
-
-get_footer();
+			endwhile; // End of the loop.
+			?>
+		</div>
+	</main><!-- #main -->
+</div><!-- .grid-wrapper -->
+<?php get_footer(); ?>

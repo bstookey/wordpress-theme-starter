@@ -16,13 +16,12 @@ input[type="color"],
 select,
 textarea {
   padding: 6px 10px;
-
   appearance: none;
   background-color: #fff;
   border: 1px solid clr(silver);
   border-radius: 0;
   color: clr(silver);
-  line-height: 1.5;
+  line-height: 2.2;
   max-width: 100%;
   min-width: rem(250);
 
@@ -49,3 +48,23 @@ textarea {
     color: clr(cod-grey);
   } // &:focus
 }
+
+//-----------------------------------------
+// Search Form Input + Button
+//-----------------------------------------
+.search-form {
+  // Input.
+  .search-field {
+    min-width: 0;
+    width: calc(100% - 0.625rem);
+  } // .search-field
+
+  .search-submit {
+    width: 100px;
+  } // .search-submit
+
+  .button,
+  .search-submit {
+    margin-top: 10px;
+  }
+} // .search-form

@@ -7,14 +7,60 @@ nav {
     }
 
     .primary-menu {
+      margin: 0;
+      padding: 0;
       display: flex;
       gap: 20px;
       justify-content: flex-start;
 
       > li {
+        position: relative;
         > a {
+          display: block;
           text-decoration: none;
           color: clr(theme-black);
+          padding: 20px 0;
+        }
+
+        > ul {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: max-content;
+          background-color: clr(white);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          @include global-transition();
+
+          @include box-shadow();
+          > li {
+            border-bottom: 1px solid clr(secondary);
+
+            &:last-child {
+              border: none;
+            }
+            > a {
+              display: block;
+              padding: 10px;
+              text-decoration: none;
+              color: clr(themeblack);
+              @include global-transition();
+
+              &:hover {
+                color: clr(red);
+                background-color: clr(gallery);
+              }
+            }
+          }
+        }
+
+        &:hover {
+          > ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
         }
       }
     }

@@ -5,7 +5,7 @@ $ = window.jQuery;
 // CREATE APP
 var APP = (window.APP = window.APP || {});
 
-const debug = true;
+var debug = true;
 
 function consoleLog(logMessage) {
   if (debug) {
@@ -27,34 +27,15 @@ APP.Utilities = (function () {
       });
   };
 
-  // Improved Text Widow Eliminator
+  // Improved Text Widow Eliminator using widowadjust.js
   const noWidows = (ele) => {
-    console.log(ele);
-    $(ele).each(function () {
-      // Save original text - replacing any nbsp from previous iteration
-      const originText = $(this)
-        .html()
-        .replace(/&nbsp;/, " ");
-      let newText = originText;
-
-      // Replace last space in text string
-      newText = newText.replace(/\s([^\s]*)$/, "&nbsp;$1");
-      $(this).html(newText);
-
-      // Get DOM parent of this text element
-      const parent = $(this).parent().get(0);
-      const parentWidths = [parent.offsetWidth, parent.scrollWidth];
-
-      // If offsetWidth less than scrollWidth set originText
-      if (parentWidths[0] < parentWidths[1]) {
-        $(this).html(originText);
-      }
+    consoleLog(ele);
+    wt.fix({
+      elements: "p",
+      chars: 10,
+      method: "nbsp",
+      event: "resize",
     });
-    // $(ele).each(function () {
-    //     $(ele).widowFix({
-    //         letterLimit: 18
-    //     });
-    // });
   };
 
   var backgroundImage = function () {
@@ -72,7 +53,7 @@ APP.Utilities = (function () {
   var init = function () {
     markSup();
     backgroundImage();
-    //noWidows($("p"));
+    noWidows("p");
     consoleLog("APP.Utilities");
   };
 
@@ -129,83 +110,8 @@ APP.Banner = (function () {
   };
 })();
 
-APP.Nav = (function () {
-  var timer, $body, $mainNav, $navTrigger, $hasChildren, $hasChildrenMain;
-
-  var initEvents = function () {
-    $navTrigger.on("click", function () {
-      var $this = $(this);
-      if ($body.hasClass("mobile-nav-active")) {
-        clearNav();
-      } else {
-        setNav();
-      }
-    });
-
-    $(".mobile-nav")
-      .find($hasChildren)
-      .on("click", function (e) {
-        e.preventDefault();
-      });
-
-    $hasChildrenMain.on("click", function (e) {
-      var $this = $(this);
-      e.preventDefault();
-      if ($this.attr("aria-expanded") === "true") {
-        $this.parent().removeClass("active");
-        $this.attr("aria-expanded", false);
-      } else {
-        $hasChildren
-          .attr("aria-expanded", false)
-          .parent()
-          .removeClass("active");
-        $this.parent().addClass("active");
-        $this.attr("aria-expanded", true);
-      }
-    });
-  };
-
-  var setNav = function () {
-    $navTrigger.addClass("open").attr("aria-expanded", true);
-    $body.addClass("mobile-nav-active");
-  };
-
-  var clearNav = function () {
-    $navTrigger.removeClass("open").attr("aria-expanded", false);
-    $body.removeClass("mobile-nav-active");
-    $hasChildren.attr("aria-expanded", false).parent().removeClass("active");
-  };
-
-  $(window).on("load resize orientationchange", function () {
-    clearTimeout(timer);
-    timer = setTimeout(function () {
-      var $resWidth = $(window).innerWidth();
-      if ($resWidth >= 992) {
-        clearNav();
-      }
-    }, 200);
-  });
-
-  var init = function () {
-    consoleLog("APP.MobileNav");
-
-    $mainNav = $(".mobile-nav .main-nav");
-    $navTrigger = $(".off-canvas-open");
-    $body = $("body");
-    $hasChildren = $(".menu-item-has-children > a");
-    $hasChildrenMain = $mainNav.find(
-      ".main-menu > .menu-item-has-children > a"
-    );
-    initEvents();
-  };
-
-  return {
-    init: init,
-  };
-})();
-
 document.addEventListener("DOMContentLoaded", function () {
   APP.Utilities.init();
   APP.Banner.init();
-  APP.Nav.init();
+  //APP.Nav.init();
 });

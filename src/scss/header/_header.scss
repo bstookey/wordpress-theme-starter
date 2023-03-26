@@ -2,15 +2,18 @@
 // Header.
 //--------------------------------------------------------------
 .site-header {
-  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  padding: 0px 0px 20px 0px;
   background-color: clr(gallery);
+  position: relative;
+  z-index: 100;
 
   button.off-canvas-open {
-    top: 0px;
-    left: 0px;
-    position: relative;
+    left: 24px;
+    bottom: 24px;
+    position: absolute;
     display: block;
 
     @include media-breakpoint-up(md) {
@@ -24,6 +27,8 @@
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
+    align-items: center;
+    position: relative;
 
     @import "desktop-search";
   }

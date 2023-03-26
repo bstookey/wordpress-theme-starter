@@ -1,0 +1,53 @@
+main.single {
+  article {
+    &.format-standard {
+      .post-content {
+        .entry-header {
+          margin-top: 20px;
+          .entry-title {
+            margin-bottom: 0px;
+          }
+          .entry-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 0 30px;
+            padding: 20px 0 30px 0;
+            border-bottom: 1px solid clr(silver);
+
+            .posted-on {
+              > div {
+                display: flex;
+                gap: 10px;
+
+                .entry-date {
+                  font-size: inherit;
+                }
+
+                .published {
+                  font-size: inherit;
+                }
+              }
+            }
+
+            .byline {
+              font-size: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  .post__social {
+    margin: 30px 0px;
+    @include media-breakpoint-up(lg) {
+      margin: 40px auto;
+    }
+    .social-share {
+      a {
+        margin-left: 5px;
+      }
+    }
+  }
+}

@@ -33,7 +33,7 @@ function get_trimmed_excerpt($args = [])
  * 
  */
 
-function get_custom_excerpt($id, $word_count = 13, $more = '...')
+function ip_get_custom_excerpt($id, $word_count = 13, $more = '...')
 {
 
 	$text = get_the_excerpt($id);
@@ -49,4 +49,4 @@ function get_custom_excerpt($id, $word_count = 13, $more = '...')
 
 	return $text . $more;
 }
-add_filter('custom_excerpt', 'custom_excerpt');
+add_filter('custom_excerpt', 'ip_custom_excerpt');

@@ -41,18 +41,19 @@
 			</div><!-- .container -->
 
 			<div class="bottom container">
-				<?php if (has_nav_menu('primary') || has_nav_menu('mobile')) : ?>
-					<button type="button" class="mobile-menu off-canvas-open nav-icon2" aria-expanded="false" aria-controls="mobile-navigation-menu" aria-label="<?php esc_html_e('Open Menu', 'ip_master'); ?>">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
-				<?php endif; ?>
 
 				<?php get_template_part('template-parts/navigation/menu', 'primary'); ?>
 
 				<?php ip_master_display_header_search(); ?>
 			</div><!-- #bottom -->
+			<?php if (has_nav_menu('primary') || has_nav_menu('mobile')) : ?>
+				<button type="button" class="mobile-menu off-canvas-open nav-icon2" aria-expanded="false" aria-controls="mobile-navigation-menu" aria-label="<?php esc_html_e('Open Menu', 'ip_master'); ?>">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			<?php endif; ?>
+
 		</header>
 		<!-- *site-header-->

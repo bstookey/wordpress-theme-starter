@@ -1,29 +1,21 @@
 .form-container,
 .desktop-search {
   flex-basis: 100%;
-  max-width: 100%;
+  width: 100%;
   opacity: 0;
+  max-height: 0;
   visibility: hidden;
-  transform: scale(0);
-  transition: all 0.5s ease;
   position: absolute;
-  left: -9999px;
-  margin: 2.35294rem auto 1.64706rem;
-  transition: margin-top 0.1s ease, opacity 0.4s ease, transform 0.4s ease;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-
-  .search-form-visible & {
-    visibility: visible;
-    transform: scale(1);
-    opacity: 1;
-    position: relative;
-    left: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-  }
+  left: 0;
+  top: 100%;
+  background-color: clr(gallery);
+  @include global-transition();
 
   .search-form {
     display: flex;
     justify-content: center;
+    transform: scale(0);
+    @include global-transition();
 
     label {
       width: 60%;
@@ -47,6 +39,17 @@
     input[type="search"] {
       width: calc(100% - 10px);
       height: 100%;
+    }
+  }
+
+  .search-form-visible & {
+    padding: 20px 0;
+    max-height: 200px;
+    visibility: visible;
+    opacity: 1;
+
+    .search-form {
+      transform: scale(1);
     }
   }
 }

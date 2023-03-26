@@ -16,4 +16,8 @@ a {
     color: clr(secondary);
     opacity: 0.6;
   }
+
+  &.more-link {
+    white-space: nowrap;
+  }
 }
