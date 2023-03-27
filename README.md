@@ -24,7 +24,7 @@ Support for multi-language is in progress as well as a review for meeting WCAG 2
 
 It features some of the web's most proven technologies like:, [npm](https://www.npmjs.com/), [webpack](https://webpack.js.org/), [LaravelMix](https://laravel-mix.com/docs/6.0/mixjs), and [Sass](http://sass-lang.com/). To help you write clean code (that meets [WordPress standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)), we tap into [@wordpress/scripts](https://developer.wordpress.org/block-editor/packages/packages-scripts/) for linting CSS and JavaScript.
 
-I also support [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
+It also supports [Selective Refresh](https://make.wordpress.org/core/2016/03/22/implementing-selective-refresh-support-for-widgets/) and [Live Preview](https://codex.wordpress.org/Theme_Customization_API#Part_3:_Configure_Live_Preview_.28Optional.29) in the Theme Customizer.
 
 Not to mention, I use [Browsersync](https://www.browsersync.io/) so you can watch your project update in real-time while you work.
 
@@ -68,13 +68,15 @@ From the command line, type any of the following to perform an action: (Note: th
 | `npm run dev`   | Builds assets without minification                           |
 | `npm run prod`  | Builds minified production-ready assets for a deployment     |
 
-Generally it is good practice to run `npm run dev` first and once the required assets are coppied from the node_modules folder, the .copy command can be commented in the webpack.mix.js file. Feel free to play around with this and get a feel for using this configuration.
+Generally it is good practice to run `npm run dev` first and once the required assets are copied from the node_modules folder, the .copy command can be commented in the webpack.mix.js file. Feel free to play around with this and get a feel for using this configuration.
 
 Documentation can be found here.
 [LaravelMix](https://laravel-mix.com/docs/6.0/mixjs)
 
 ## Documentation
 
-Features removed from original boilerplate and moved or added to theme root dir > inc
+Features/Plugins removed from original boilerplate and moved or added to theme root > inc or INC dir.
 
-- IP Framework
+- Updated function.php file for simpler management of dependency files. The theme INC dir inc will contain all theme core management files.
+- IP Framework - Custom Post Types and Taxonomies are managed in INC dir > post-types using a cpt-maker class.
+- Hide Notifications -
