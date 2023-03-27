@@ -338,7 +338,7 @@ function ip_master_customize_social_icons($wp_customize)
 			'type' => 'checkbox',
 			'section' => 'ip_master_social_links_section',
 			'label'    => sprintf(
-				esc_html__('Use the social menu, not thesse settings. Social menu can be found/created <a href="%s">here</a>', THEME_DOMAIN),
+				esc_html__('Use the footer social menu, not thesse settings.', THEME_DOMAIN),
 				esc_url('/nav-menus.php')
 			),
 		)

@@ -18,6 +18,10 @@
 
 /***** Theme specific utility colors  *****/
 
+@if type-of($colors) != "map" {
+  @error "Sorry, $colors is not a Sass map!";
+}
+
 @each $color, $value in $colors {
   .color-#{"" + $color} {
     // comment this out to use only the WP specs for color
