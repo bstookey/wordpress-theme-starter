@@ -75,8 +75,18 @@ Documentation can be found here.
 
 ## Documentation
 
-Features/Plugins removed from original boilerplate and moved or added to theme root > inc or INC dir.
+Features/Plugins removed, or deactivated, from original boilerplate and moved or added to theme root > inc, or INC dir.
 
-- Updated function.php file for simpler management of dependency files. The theme INC dir inc will contain all theme core management files.
-- IP Framework - Custom Post Types and Taxonomies are managed in INC dir > post-types using a cpt-maker class.
-- Hide Notifications -
+- Updated functions.php file for simpler management of dependency files. The theme INC dir will contain all theme core management files.
+- IP Framework(plugin) - Custom Post Types and Taxonomies are managed in INC dir > post-types > cpt-models using a cpt-maker class.
+- Hide Dashboard Notifications(plugin) - mangeged in INC dir > functions > disable-notices
+- Fontawesome(plugin) - managed via src > scss > fontawesome using Fontawesome Pro 6.3.0 sass. The switch is 100% seemless.
+- Temporarily does not generate the Languages Pot file.
+
+Features added or updated.
+
+- Updated customizer with new Announcement Banner, Header Customizations, Footer Customizations, Social Media, Default Images(currently only used in the custom cover block pattern), and Additional Scripts(I think these are a bad idea and should be removed)
+- IP Block Patterns - sample registered block-patterns in INC dir ip-patterns.
+- Custom Theme Options - Theme Options in the admin sidebar currently only being used for the org schema address. Can easily create new tabs and new fields in INC dir > theme-options.
+
+### Theme setup

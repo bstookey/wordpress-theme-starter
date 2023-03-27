@@ -8,13 +8,24 @@ $icon-path: "../images/icons/";
 $web-font-path: "../webfonts/";
 
 // global element padding to match the theme
-$global-gutter: 2.4rem;
+$gutter: 2.4rem;
 
 // Transition global-transition
 $transition: 0.25s ease-in-out;
 
 // Font stuff
-$base-font: "Open Sans", sans-serif; // Sets the base font family
+/// Define sans font.
+$font-sans: "Open Sans", sans-serif;
+
+/// Define serif font.
+$font-serif: roboto, georgia, times, "Times New Roman", serif;
+
+/// Define monospace font.
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+/// Define pre font.
+$font-pre: "Courier 10 Pitch", courier, monospace;
+
 //$base-font-size: 62.5%; // Sets the base font size to 10px
 $base-font-size: 10px; // Sets the base font size to 10px. This should always stay 10 to make things easy on your self.
 $global-font-size: 1.6rem; // base font size in the design
@@ -29,6 +40,18 @@ $container-sizes: (
   container-md: 1200,
   container-lg: 1548,
 );
+
+// Note: Theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
+// the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
 
 // colors, used in colors mixin. Should match theme colors in inc/setup
 //the mixin @ mixins > colors will create the appropriate color classes for Gutenburg colors
@@ -53,18 +76,6 @@ $colors: (
   tundora: #454545,
   whitesmoke: #f1f1f1,
 );
-
-// Note: Theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
-// the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-) !default;
 
 /**
  * Sass Variables 

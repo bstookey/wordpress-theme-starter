@@ -70,7 +70,7 @@ mix
   // ) // concat in custom order, file choices
   .scripts("src/js/apps/", `${staticAssetsDir}/js/apps.js`)
   .js(["src/js/starter.js"], `${staticAssetsDir}/js/starter.js`)
-  //.copy("node_modules/bootstrap/scss", "src/scss/bootstrap")
+  .copy("node_modules/bootstrap/scss", "src/scss/bootstrap")
   .sass("src/scss/starter.scss", `${staticAssetsDir}/css/`)
   .options({
     processCssUrls: false,
