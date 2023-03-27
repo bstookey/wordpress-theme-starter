@@ -18,7 +18,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // change this to 'your_domain'
-define('THEME_DOMAIN', 'fs_master');
+define('THEME_DOMAIN', 'ip_master');
 
 // set up the path to your svg sprite declared in your webpack.mix.js file
 define('ICON_PATH', '/assets/images/icons/sprite.svg#');

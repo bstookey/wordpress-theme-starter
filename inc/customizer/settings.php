@@ -154,6 +154,9 @@ function ip_master_customize_header_announcement($wp_customize)
 			'description'     => esc_html__('Enter the text to be displayed in the button in the announcement.', THEME_DOMAIN),
 			'section'         => 'ip_master_announcement_section',
 			'type'            => 'text',
+			'input_attrs' => array(
+				'placeholder' => __('Learn More'),
+			),
 			'active_callback' => 'ip_master_customizer_is_header_announcement_link', // Only displays if the Link option is selected above.
 		)
 	);

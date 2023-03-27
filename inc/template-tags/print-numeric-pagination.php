@@ -9,7 +9,7 @@
  * @param WP_Query $query The Query object; only passed if a custom WP_Query is used.
  */
 
-function print_numeric_pagination($args = [], $query = null)
+function ip_master_display_numeric_pagination($args = [], $query = null)
 {
 	if (!$query) {
 		global $wp_query;

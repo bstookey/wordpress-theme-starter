@@ -2,7 +2,7 @@
 
 A Wordpress Starter theme from Inverse Paradox. <https://inverseparadox.com>
 
-[![Inverse Paradox. From ideation to profitability.](https://www.inverseparadox.com/wp-content/uploads/2020/08/ip-icon.svg)](https://webdevstudios.com/contact/)
+[![Inverse Paradox. From ideation to profitability.](https://www.inverseparadox.com/wp-content/uploads/2020/08/ip-icon.svg)](https://inverseparadox.com/contact/)
 
 ## Table of Contents <!-- omit in toc -->
 

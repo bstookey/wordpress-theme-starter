@@ -14,18 +14,21 @@ function display_announcement_text()
 
     // Grab our customizer settings.
     $announcement_show = get_theme_mod('ip_master_announcement_checkbox');
-    $announcement_text = get_theme_mod('ip_master_announcement_text') ?: cust_theme_option('alertbar_copy');
-    $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id'));
+    $announcement_text = get_theme_mod('ip_master_announcement_text'); //?: cust_theme_option('alertbar_copy');
+    $announcement_name = get_theme_mod('ip_master_cookie_name'); //?: cust_theme_option('alertbar_id');
+    $announcement_duration = get_theme_mod('ip_master_cookie_duration');
+    $announcement_link_text =  get_theme_mod('ip_master_link_type_text');  //?: cust_theme_option('alertbar_cookie_time');
+    $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id')); //?: cust_theme_option('alertbar_link') ;
     $type =  get_theme_mod('ip_master_link_type');
 
     $announce_link = '';
     switch ($type) {
 
         case 'link':
-            $announce_link = '<a href="' . get_theme_mod('ip_master_link_type_url') . '" target="_blank" class="cb-link">' .  get_theme_mod('ip_master_link_type_text') . '</a>';
+            $announce_link = '<a href="' . get_theme_mod('ip_master_link_type_url') . '" target="_blank" class="cb-link">' .  $announcement_link_text . '</a>';
             break;
         case 'page':
-            $announce_link = '<a href="' . $selected_page_url . '" class="cb-link">' .  get_theme_mod('ip_master_link_type_text') . '</a>';
+            $announce_link = '<a href="' . $selected_page_url . '" class="cb-link">' .  $announcement_link_text . '</a>';
             break;
     }
 
@@ -35,7 +38,7 @@ function display_announcement_text()
         return false;
     } ?>
 
-    <div id="announcement-banner" class="announcement-banner" data-id="<?= get_theme_mod('ip_master_cookie_name') ?>" data-days="<?= get_theme_mod('ip_master_cookie_duration') ?>">
+    <div id="announcement-banner" class="announcement-banner" data-id="<?= $announcement_name ?>" data-days="<?= $announcement_duration ?>">
         <div class="container">
             <div class="announcement">
                 <?php printf('%s', $announcement_text); ?>

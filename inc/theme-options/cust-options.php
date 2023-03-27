@@ -36,8 +36,8 @@ class Cust_Theme_Options
         $this->get_settings();
 
         $this->sections['general'] = __('General');
-        $this->sections['alertbar'] = __('Alert Bar');
-        $this->sections['codes'] = __('Codes');
+        //$this->sections['alertbar'] = __('Alert Bar');
+        //$this->sections['codes'] = __('Codes');
         $this->sections['examples'] = __('Examples');
         //$this->sections['reset'] = __('Reset to Defaults');
         //$this->sections['about'] = __('About');
@@ -469,14 +469,6 @@ class Cust_Theme_Options
             'section' => 'general'
         );
 
-        $this->settings['copyright_text'] = array(
-            'title' => __('Copyright Text'),
-            'desc' => __('Enter the copyright text to be displyed in the footer. Do not include date'),
-            'std' => 'All rights reserved',
-            'type' => 'textarea',
-            'section' => 'general'
-        );
-
         /* Alert Bar
 						==========================================*/
         $this->settings['display_alertbar'] = array(
@@ -669,7 +661,7 @@ class Cust_Theme_Options
 
         $default_settings = array();
         foreach ($this->settings as $id => $setting) {
-            if ($setting['type'] != 'heading') $default_settings[$id] = $setting['std'];
+            if ($setting['type'] != 'heading') $default_settings[$id] = $setting[$id];
         }
 
         update_option('cust_theme_options', $default_settings);

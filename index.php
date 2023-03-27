@@ -20,13 +20,13 @@ get_header(); ?>
 	if (have_posts()) :
 		if (is_home() && !is_front_page()) :
 	?>
-			<header>
+			<header class="page-header container">
 				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 			</header>
 		<?php
 		endif; ?>
 
-		<div class="single-index container">
+		<div class="posts-index container">
 			<div class="sidebar">
 				<div class="block">
 					<h2>Categories</h2>
@@ -49,7 +49,7 @@ get_header(); ?>
 				</div><!--block-->
 			</div><!--sidebar-->
 
-			<div class="blog-content">
+			<div class="blog-content post-content">
 				<?php
 				/* Start the Loop */
 				while (have_posts()) :
@@ -59,7 +59,7 @@ get_header(); ?>
 
 				endwhile;
 
-				print_numeric_pagination();
+				ip_master_display_numeric_pagination();
 
 			else :
 				get_template_part('template-parts/content', 'none'); ?>

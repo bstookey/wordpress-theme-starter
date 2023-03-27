@@ -6,7 +6,7 @@ main.posts {
     margin: 0px auto;
   }
 
-  .single-index {
+  .posts-index {
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
@@ -61,7 +61,7 @@ main.posts {
         }
       }
     }
-    .blog-content {
+    .post-content {
       width: 100%;
       order: 1;
 
