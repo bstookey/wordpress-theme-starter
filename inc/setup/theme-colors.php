@@ -8,11 +8,11 @@
  * 
  */
 
-function ip_master_get_theme_colors_gutenberg()
+function astrolab_master_get_theme_colors_gutenberg()
 {
 
     // Grab our theme colors from the inc > helper_functions.
-    $colors = ip_master_get_theme_colors();
+    $colors = astrolab_master_get_theme_colors();
     //print_r($colors);
 
     if (!$colors) {
@@ -31,4 +31,4 @@ function ip_master_get_theme_colors_gutenberg()
 }
 
 // Gutenberg color palette support.
-add_theme_support('editor-color-palette', ip_master_get_theme_colors_gutenberg());
+add_theme_support('editor-color-palette', astrolab_master_get_theme_colors_gutenberg());

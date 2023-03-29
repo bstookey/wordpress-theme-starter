@@ -13,19 +13,19 @@ function display_announcement_text()
 {
 
     // Grab our customizer settings.
-    $announcement_show = get_theme_mod('ip_master_announcement_checkbox');
-    $announcement_text = get_theme_mod('ip_master_announcement_text'); //?: cust_theme_option('alertbar_copy');
-    $announcement_name = get_theme_mod('ip_master_cookie_name'); //?: cust_theme_option('alertbar_id');
-    $announcement_duration = get_theme_mod('ip_master_cookie_duration');
-    $announcement_link_text =  get_theme_mod('ip_master_link_type_text');  //?: cust_theme_option('alertbar_cookie_time');
+    $announcement_show = get_theme_mod('astrolab_master_announcement_checkbox');
+    $announcement_text = get_theme_mod('astrolab_master_announcement_text'); //?: cust_theme_option('alertbar_copy');
+    $announcement_name = get_theme_mod('astrolab_master_cookie_name'); //?: cust_theme_option('alertbar_id');
+    $announcement_duration = get_theme_mod('astrolab_master_cookie_duration');
+    $announcement_link_text =  get_theme_mod('astrolab_master_link_type_text');  //?: cust_theme_option('alertbar_cookie_time');
     $selected_page_url = get_the_permalink(get_theme_mod('ip_announcement_selected_page_id')); //?: cust_theme_option('alertbar_link') ;
-    $type =  get_theme_mod('ip_master_link_type');
+    $type =  get_theme_mod('astrolab_master_link_type');
 
     $announce_link = '';
     switch ($type) {
 
         case 'link':
-            $announce_link = '<a href="' . get_theme_mod('ip_master_link_type_url') . '" target="_blank" class="cb-link">' .  $announcement_link_text . '</a>';
+            $announce_link = '<a href="' . get_theme_mod('astrolab_master_link_type_url') . '" target="_blank" class="cb-link">' .  $announcement_link_text . '</a>';
             break;
         case 'page':
             $announce_link = '<a href="' . $selected_page_url . '" class="cb-link">' .  $announcement_link_text . '</a>';

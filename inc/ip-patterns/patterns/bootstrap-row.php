@@ -3,7 +3,7 @@
 /**
  * Bootstrap row
  *
- * @package IP
+ * @package Astrolab
  */
 
 return array(

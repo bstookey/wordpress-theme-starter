@@ -1,5 +1,5 @@
 <?php
-function ip_master_get_theme_colors()
+function astrolab_master_get_theme_colors()
 {
     // these colors are copied from src > scss > global > variables
     $colors = '$colors: (

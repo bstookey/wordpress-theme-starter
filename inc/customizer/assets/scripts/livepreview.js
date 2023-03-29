@@ -50,7 +50,7 @@
   });
 
   // Copyright text.
-  api("ip_master_copyright_text", function (value) {
+  api("astrolab_master_copyright_text", function (value) {
     value.bind(function (to) {
       $(".site-info").text(to);
     });

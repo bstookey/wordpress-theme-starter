@@ -5,7 +5,7 @@
  *
  * A place to custom functionality related to Advanced Custom Fields.
  *
- * @package IP
+ * @package Astrolab
  */
 
 // If ACF isn't activated, then bail.
@@ -18,7 +18,7 @@ if (!class_exists('acf')) {
  *
  * @param  array $args Possible arguments.
  */
-function ip_master_display_block_options($args = array())
+function astrolab_master_display_block_options($args = array())
 {
 
 	// Get block background options.
@@ -47,7 +47,7 @@ function ip_master_display_block_options($args = array())
 	}
 
 	// Get the block ID.
-	$block_id = ip_master_get_block_id($args['block']);
+	$block_id = astrolab_master_get_block_id($args['block']);
 
 	// Setup defaults.
 	$defaults = array(
@@ -64,7 +64,7 @@ function ip_master_display_block_options($args = array())
 	$background_video_markup = $background_image_markup = '';
 
 	// Show overlay class, if it exists.
-	$has_show_overlay = ip_master_has_array_key('show_overlay', $background_options) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
+	$has_show_overlay = astrolab_master_has_array_key('show_overlay', $background_options) && true === $background_options['show_overlay'] ? ' has-overlay' : '';
 
 	// Only try to get the rest of the settings if the background type is set to anything.
 	if ($args['background_type']) {
@@ -93,7 +93,7 @@ function ip_master_display_block_options($args = array())
 			$background_title      = $background_options['background_video_title'];
 			$args['class']        .= ' has-background video-as-background' . esc_attr($has_show_overlay);
 			// Translators: get the title of the video.
-			$background_alt = $background_title ? sprintf(esc_attr('Video Background of %s', 'ip_master'), esc_attr($background_options['background_video_title'])) : __('Video Background', 'ip_master');
+			$background_alt = $background_title ? sprintf(esc_attr('Video Background of %s', 'astrolab_master'), esc_attr($background_options['background_video_title'])) : __('Video Background', 'astrolab_master');
 
 			ob_start();
 		?>
@@ -106,7 +106,7 @@ function ip_master_display_block_options($args = array())
 					<source src="<?php echo esc_url($background_video['url']); ?>" type="video/mp4">
 				<?php endif; ?>
 			</video>
-			<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e('Toggle video playback', 'ip_master'); ?></span></button>
+			<button class="video-toggle"><span class="screen-reader-text"><?php esc_html_e('Toggle video playback', 'astrolab_master'); ?></span></button>
 		<?php
 			$background_video_markup = ob_get_clean();
 		}
@@ -147,7 +147,7 @@ function ip_master_display_block_options($args = array())
  *
  * @return bool
  */
-function ip_master_has_block_expired($args = array())
+function astrolab_master_has_block_expired($args = array())
 {
 
 	// Setup defaults.
@@ -190,7 +190,7 @@ function ip_master_has_block_expired($args = array())
  *
  * @return string new ACF title.
  */
-function ip_master_acf_flexible_content_layout_title($block_title, $field, $layout, $i)
+function astrolab_master_acf_flexible_content_layout_title($block_title, $field, $layout, $i)
 {
 
 	// Current ACF field name.
@@ -213,7 +213,7 @@ function ip_master_acf_flexible_content_layout_title($block_title, $field, $layo
 		$background_repeater = get_sub_field('carousel_slides')[0]['background_options']['background_type']['value'];
 		$background_type     = $background ? $background : $background_repeater;
 
-		$type = ip_master_return_flexible_content_layout_value($background_type);
+		$type = astrolab_master_return_flexible_content_layout_value($background_type);
 
 		// Load image from non-repeater sub field background image, if it exists else Load image from repeater sub field background image, if it exists - Hero.
 		if ('image' === $background_type) {
@@ -221,7 +221,7 @@ function ip_master_acf_flexible_content_layout_title($block_title, $field, $layo
 		}
 
 		if ('video' === $background_type) {
-			$block_heading .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__('Video', 'ip_master') . '</span></div>';
+			$block_heading .= '<div style="font-size: 30px; height: 26px; width: 30px;" class="dashicons dashicons-format-video acf-flexible-title-image"><span class="screen-reader-text">' . esc_html__('Video', 'astrolab_master') . '</span></div>';
 		}
 	}
 
@@ -236,13 +236,13 @@ function ip_master_acf_flexible_content_layout_title($block_title, $field, $layo
 	$end_date    = $other_options['end_date'];
 
 	// If the block has expired, add "(expired)" to the title.
-	if (ip_master_has_block_expired(
+	if (astrolab_master_has_block_expired(
 		array(
 			'start_date' => $start_date,
 			'end_date'   => $end_date,
 		)
 	)) {
-		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__('expired', 'ip_master') . ')</span>';
+		$expired .= '<span style="color: red;">&nbsp;(' . esc_html__('expired', 'astrolab_master') . ')</span>';
 	}
 
 	// Load title field text else Load headline text - Hero.
@@ -253,7 +253,7 @@ function ip_master_acf_flexible_content_layout_title($block_title, $field, $layo
 	// Return New Title.
 	return $block_heading . $expired;
 }
-add_filter('acf/fields/flexible_content/layout_title/name=content_blocks', 'ip_master_acf_flexible_content_layout_title', 10, 4);
+add_filter('acf/fields/flexible_content/layout_title/name=content_blocks', 'astrolab_master_acf_flexible_content_layout_title', 10, 4);
 
 /**
  * Return flexible content field value by type
@@ -261,7 +261,7 @@ add_filter('acf/fields/flexible_content/layout_title/name=content_blocks', 'ip_m
  * @param string $type field type.
  * @return string field value.
  */
-function ip_master_return_flexible_content_layout_value($type)
+function astrolab_master_return_flexible_content_layout_value($type)
 {
 
 	if (empty($type)) {
@@ -274,14 +274,14 @@ function ip_master_return_flexible_content_layout_value($type)
 	return $background_type ? $background_type : $background_type_repeater;
 }
 
-if (function_exists('ip_master_acf_flexible_content_layout_title')) {
+if (function_exists('astrolab_master_acf_flexible_content_layout_title')) {
 
 	/**
-	 * Set Admin Styles for Flexible Content Layout Image/Title in ip_master_acf_flexible_content_layout_title().
+	 * Set Admin Styles for Flexible Content Layout Image/Title in astrolab_master_acf_flexible_content_layout_title().
 	 *
 
 	 */
-	function ip_master_flexible_content_layout_title_acf_admin_head()
+	function astrolab_master_flexible_content_layout_title_acf_admin_head()
 	{
 		?>
 		<style type="text/css">
@@ -302,24 +302,24 @@ if (function_exists('ip_master_acf_flexible_content_layout_title')) {
 		</style>
 	<?php
 	}
-	add_action('acf/input/admin_head', 'ip_master_flexible_content_layout_title_acf_admin_head');
+	add_action('acf/input/admin_head', 'astrolab_master_flexible_content_layout_title_acf_admin_head');
 }
 
 /**
- * Load colors dynamically into select field from ip_master_get_theme_colors()
+ * Load colors dynamically into select field from astrolab_master_get_theme_colors()
  *
  * @param array $field field options.
  * @return array new field choices.
  *
  */
-function ip_master_acf_load_color_picker_field_choices($field)
+function astrolab_master_acf_load_color_picker_field_choices($field)
 {
 
 	// Reset choices.
 	$field['choices'] = array();
 
 	// Grab our colors array.
-	$colors = ip_master_get_theme_colors();
+	$colors = astrolab_master_get_theme_colors();
 
 	// Loop through colors.
 	foreach ($colors as $key => $color) {
@@ -334,7 +334,7 @@ function ip_master_acf_load_color_picker_field_choices($field)
 	// Return the field.
 	return $field;
 }
-add_filter('acf/load_field/name=color_picker', 'ip_master_acf_load_color_picker_field_choices');
+add_filter('acf/load_field/name=color_picker', 'astrolab_master_acf_load_color_picker_field_choices');
 
 
 
@@ -344,7 +344,7 @@ add_filter('acf/load_field/name=color_picker', 'ip_master_acf_load_color_picker_
  * @param string $block_title acf value.
  * @return void
  */
-function ip_master_display_hero_heading($block_title)
+function astrolab_master_display_hero_heading($block_title)
 {
 
 	// Bail if our title is empty.
@@ -365,9 +365,9 @@ function ip_master_display_hero_heading($block_title)
  * @param array $args defaults args - link array and whether or not to append button class.
  * @since NEXT
  */
-function ip_master_display_link($args = array())
+function astrolab_master_display_link($args = array())
 {
-	echo ip_master_get_link($args); // WPCS: XSS Ok.
+	echo astrolab_master_get_link($args); // WPCS: XSS Ok.
 }
 
 /**
@@ -378,7 +378,7 @@ function ip_master_display_link($args = array())
  *
  * @return string button markup.
  */
-function ip_master_get_link($args = array())
+function astrolab_master_get_link($args = array())
 {
 
 	// Defaults.
@@ -409,13 +409,13 @@ function ip_master_get_link($args = array())
 	$classes .= ' ' . $args['class'];
 
 	// Get title else default to "Read More".
-	$title = ip_master_has_array_key('title', $button_array) ? $button_array['title'] : esc_html__('Read More', 'ip_master');
+	$title = astrolab_master_has_array_key('title', $button_array) ? $button_array['title'] : esc_html__('Read More', 'astrolab_master');
 
 	// Get url.
-	$url = ip_master_has_array_key('url', $button_array) ? $button_array['url'] : '';
+	$url = astrolab_master_has_array_key('url', $button_array) ? $button_array['url'] : '';
 
 	// Get target, else default internal.
-	$target = ip_master_has_array_key('target', $button_array) ? $button_array['target'] : '_self';
+	$target = astrolab_master_has_array_key('target', $button_array) ? $button_array['target'] : '_self';
 	?>
 
 	<a href="<?php echo esc_url($url); ?>" class="<?php echo esc_attr($classes); ?>" target="<?php echo esc_attr($target); ?>"><?php echo esc_html($title); ?></a>

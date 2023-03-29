@@ -3,7 +3,7 @@
 /**
  * Disable block patterns
  * 
- * @package IP
+ * @package Astrolab
  */
 
 add_action('init', 'removeCorePatterns');

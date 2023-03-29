@@ -3,7 +3,7 @@
 /**
  * Set SVG support as noted by WP Engine.
  *
- * @package IP
+ * @package Astrolab
  */
 
 add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {

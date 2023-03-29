@@ -1,6 +1,6 @@
 <?php if (has_nav_menu('primary')) : ?>
     <!-- primary-navigation -->
-    <nav id="primary-navigation" role="navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'ip_master'); ?>">
+    <nav id="primary-navigation" role="navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'astrolab_master'); ?>">
         <?php
         wp_nav_menu(
             array(

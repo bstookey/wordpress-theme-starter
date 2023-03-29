@@ -3,7 +3,7 @@
 /**
  * Return SVG markup.
  *
- * @package IP
+ * @package Astrolab
  */
 
 

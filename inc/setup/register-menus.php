@@ -3,7 +3,7 @@
 /**
  * Register Menus
  *
- * @package IP
+ * @package Astrolab
  */
 
 register_nav_menus(

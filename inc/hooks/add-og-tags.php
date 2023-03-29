@@ -3,7 +3,7 @@
 /**
  * Adds OG tags to the head for better social sharing.
  *
- * @package IP
+ * @package Astrolab
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */

@@ -3,7 +3,7 @@
 /**
  * Register widget area.
  *
- * @package IP
+ * @package Astrolab
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  *

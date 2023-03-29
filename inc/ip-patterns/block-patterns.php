@@ -3,7 +3,7 @@
 /**
  * Adds custom pattern category and registers patterns.
  *
- * @package IP
+ * @package Astrolab
  *
  */
 

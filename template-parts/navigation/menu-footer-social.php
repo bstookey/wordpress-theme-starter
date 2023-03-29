@@ -1,6 +1,6 @@
 <?php if (has_nav_menu('footer-social')) : ?>
     <!-- footer-social-links -->
-    <nav role="navigation" aria-label="<?php esc_attr_e('Footer Social Navigation', 'ip_master'); ?>">
+    <nav role="navigation" aria-label="<?php esc_attr_e('Footer Social Navigation', 'astrolab_master'); ?>">
         <?php
         wp_nav_menu(
             array(

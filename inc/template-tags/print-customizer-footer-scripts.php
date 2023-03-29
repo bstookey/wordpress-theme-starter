@@ -3,7 +3,7 @@
 /**
  * Display the customizer footer scripts.
  *
- * @package IP
+ * @package Astrolab
  *
  * @return string Footer scripts.
  * 
@@ -12,10 +12,10 @@
  * 
  */
 
-function ip_master_print_customizer_footer_scripts()
+function astrolab_master_print_customizer_footer_scripts()
 {
 	// Check for footer scripts.
-	$scripts = get_theme_mod('ip_master_footer_scripts');
+	$scripts = get_theme_mod('astrolab_master_footer_scripts');
 
 	// None? Bail...
 	if (!$scripts) {
@@ -27,4 +27,4 @@ function ip_master_print_customizer_footer_scripts()
 	echo get_post_content($scripts);
 }
 
-add_action('wp_footer', 'ip_master_print_customizer_footer_scripts', 999);
+add_action('wp_footer', 'astrolab_master_print_customizer_footer_scripts', 999);

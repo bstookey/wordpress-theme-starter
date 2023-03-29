@@ -3,7 +3,7 @@
 /**
  * Bootstrap 50/50
  *
- * @package IP
+ * @package Astrolab
  */
 
 return array(

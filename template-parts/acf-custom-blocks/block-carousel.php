@@ -3,15 +3,15 @@
 /**
  * The template used for displaying a caroursel.
  *
- * @package IP
+ * @package Astrolab
  */
 
-$alignment    = ip_master_get_block_alignment($block);
-$classes      = ip_master_get_block_classes($block);
+$alignment    = astrolab_master_get_block_alignment($block);
+$classes      = astrolab_master_get_block_classes($block);
 $classnames[] = 'content-block carousel-block' . $alignment . $classes;
 $classnames[] = get_sub_field('block_width');
 
-ip_master_acf_gutenberg_display_admin_default_carousel($block);
+astrolab_master_acf_gutenberg_display_admin_default_carousel($block);
 
 // Start repeater markup...
 if (have_rows('carousel_slides')) :
@@ -27,10 +27,10 @@ if (have_rows('carousel_slides')) :
 		$text          = get_sub_field('text');
 		$button        = get_sub_field('button_link');
 		$other_options = get_sub_field('other_options') ? get_sub_field('other_options') : get_field('other_options')['other_options'];
-		$classname     = $color && ip_master_has_array_key('color_picker', $color) ? 'has-font-color color-' . esc_attr($color['color_picker']) : '';
+		$classname     = $color && astrolab_master_has_array_key('color_picker', $color) ? 'has-font-color color-' . esc_attr($color['color_picker']) : '';
 
 		// If the block has expired, then bail!
-		if (ip_master_has_block_expired(
+		if (astrolab_master_has_block_expired(
 			array(
 				'start_date' => $other_options['start_date'],
 				'end_date'   => $other_options['end_date'],
@@ -40,7 +40,7 @@ if (have_rows('carousel_slides')) :
 		}
 
 		// Start a <container> with possible block options.
-		ip_master_display_block_options(
+		astrolab_master_display_block_options(
 			array(
 				'block'     => $block,
 				'container' => 'section', // Any HTML5 container: section, div, etc...
@@ -60,7 +60,7 @@ if (have_rows('carousel_slides')) :
 			<?php endif; ?>
 
 			<?php
-			ip_master_display_link(
+			astrolab_master_display_link(
 				array(
 					'button' => true,
 					'class'  => 'button-slide',

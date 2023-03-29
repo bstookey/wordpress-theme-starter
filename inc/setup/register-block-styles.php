@@ -5,7 +5,7 @@
  * 
  * See src > js directory for block-styles.js
  *
- * @package IP
+ * @package Astrolab
  */
 
 if (function_exists('register_block_style')) {

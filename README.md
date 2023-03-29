@@ -18,7 +18,7 @@ A Wordpress Boilerplate theme from Inverse Paradox. <https://inverseparadox.com>
 
 ## Introduction
 
-This is a boilerplate theme domain `ip_master` based on the original IP Boilerplate theme, refactored, not redesigned, and upgraded to more modern technologies and simplified structure. This theme is currently under review and is meant to be evaluated and modified.
+This is a boilerplate theme domain `astrolab_master` based on the original IP Boilerplate theme, refactored, not redesigned, and upgraded to more modern technologies and simplified structure. This theme is currently under review and is meant to be evaluated and modified.
 
 Support for multi-language is in progress as well as a review for meeting WCAG 2.1AA and Section 508 standards.
 

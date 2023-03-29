@@ -3,7 +3,7 @@
 /**
  * disable_editor_gradients.
  * 
- * @package IP
+ * @package Astrolab
  */
 
 add_action('after_setup_theme', 'disable_editor_gradients');

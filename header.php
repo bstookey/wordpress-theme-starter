@@ -4,8 +4,8 @@
  * The header for our theme
  *
  *
- * @package IP
- * @subpackage IP Theme
+ * @package Astrolab
+ * @subpackage Astrolab Theme
  * @since  1.0
  */
 
@@ -23,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?> tabindex="0">
-	<?php ip_master_print_customizer_body_scripts(); ?>
+	<?php astrolab_master_print_customizer_body_scripts(); ?>
 	<!--.site-wrapper-->
 	<div class="site-wrapper">
 		<div class="skip-links">
@@ -44,10 +44,10 @@
 
 				<?php get_template_part('template-parts/navigation/menu', 'primary'); ?>
 
-				<?php ip_master_display_header_search(); ?>
+				<?php astrolab_master_display_header_search(); ?>
 			</div><!-- #bottom -->
 			<?php if (has_nav_menu('primary') || has_nav_menu('mobile')) : ?>
-				<button type="button" class="mobile-menu off-canvas-open nav-icon2" aria-expanded="false" aria-controls="mobile-navigation-menu" aria-label="<?php esc_html_e('Open Menu', 'ip_master'); ?>">
+				<button type="button" class="mobile-menu off-canvas-open nav-icon2" aria-expanded="false" aria-controls="mobile-navigation-menu" aria-label="<?php esc_html_e('Open Menu', 'astrolab_master'); ?>">
 					<span></span>
 					<span></span>
 					<span></span>

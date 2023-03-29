@@ -3,7 +3,7 @@
 /**
  * Disable emojis
  * 
- * @package IP
+ * @package Astrolab
  */
 
 function disable_emojis()

@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package IP
+ * @package Astrolab
  */
 
 ?>
@@ -30,7 +30,7 @@
 				?>
 					<div class="entry-meta">
 						<div class="posted-meta">
-							<?php ip_master_posted_on(); ?>
+							<?php astrolab_master_posted_on(); ?>
 						</div>
 
 
@@ -50,7 +50,7 @@
 						sprintf(
 							wp_kses(
 								/* translators: %s: Name of current post. */
-								__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'ip_master'),
+								__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'astrolab_master'),
 								array(
 									'span' => array(
 										'class' => array(),
@@ -63,7 +63,7 @@
 
 					wp_link_pages(
 						array(
-							'before' => '<div class="page-links">' . esc_html__('Pages:', 'ip_master'),
+							'before' => '<div class="page-links">' . esc_html__('Pages:', 'astrolab_master'),
 							'after'  => '</div>',
 						)
 					);
@@ -74,7 +74,7 @@
 						sprintf(
 							wp_kses(
 								/* translators: %s: Name of current post. */
-								__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'ip_master'),
+								__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'astrolab_master'),
 								array(
 									'span' => array(
 										'class' => array(),
@@ -87,7 +87,7 @@
 
 					wp_link_pages(
 						array(
-							'before' => '<div class="page-links">' . esc_html__('Pages:', 'ip_master'),
+							'before' => '<div class="page-links">' . esc_html__('Pages:', 'astrolab_master'),
 							'after'  => '</div>',
 						)
 					);

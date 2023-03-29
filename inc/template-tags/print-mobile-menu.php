@@ -3,10 +3,10 @@
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @package IP
+ * @package Astrolab
  */
 
-function ip_master_display_mobile_menu()
+function astrolab_master_display_mobile_menu()
 {
 	// Bail if no mobile or primary menus are set.
 	if (!has_nav_menu('mobile') && !has_nav_menu('primary')) {
@@ -27,7 +27,7 @@ function ip_master_display_mobile_menu()
 			<a href="/" aria-label="<?= get_bloginfo('name') ?>" title="<?= get_bloginfo('name') ?>" style="background-image: url('<?= get_logo_url(); ?>');" class="logo">
 				<span class="sr-only"><?= get_bloginfo('name') ?> home page</span>
 			</a>
-			<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e('Close Menu', 'ip_master'); ?>">
+			<button type="button" class="off-canvas-close" aria-label="<?php esc_html_e('Close Menu', 'astrolab_master'); ?>">
 				<span class="close"></span>
 			</button>
 		</div>

@@ -3,7 +3,7 @@
 /**
  * Customizer sections.
  *
- * @package IP
+ * @package Astrolab
  */
 
 /**
@@ -12,11 +12,11 @@
  * @param object $wp_customize Instance of WP_Customize_Class.
  */
 
-function ip_master_customize_sections($wp_customize)
+function astrolab_master_customize_sections($wp_customize)
 {
 	// Register a header section.
 	$wp_customize->add_section(
-		'ip_master_announcement_section',
+		'astrolab_master_announcement_section',
 		array(
 			'title'    => esc_html__('Site Announcement', THEME_DOMAIN),
 			'priority' => 10,
@@ -26,7 +26,7 @@ function ip_master_customize_sections($wp_customize)
 
 	// Register a header section.
 	$wp_customize->add_section(
-		'ip_master_header_section',
+		'astrolab_master_header_section',
 		array(
 			'title'    => esc_html__('Header Customizations', THEME_DOMAIN),
 			'priority' => 20,
@@ -36,7 +36,7 @@ function ip_master_customize_sections($wp_customize)
 
 	// Register a footer section.
 	$wp_customize->add_section(
-		'ip_master_footer_section',
+		'astrolab_master_footer_section',
 		array(
 			'title'    => esc_html__('Footer Customizations', THEME_DOMAIN),
 			'priority' => 30,
@@ -46,7 +46,7 @@ function ip_master_customize_sections($wp_customize)
 
 	// Register a social links section. 
 	$wp_customize->add_section(
-		'ip_master_social_links_section',
+		'astrolab_master_social_links_section',
 		array(
 			'title'       => esc_html__('Social Media', THEME_DOMAIN),
 			'description' => esc_html__('Links here power the display_social_network_links() template tag. Enter the url', THEME_DOMAIN),
@@ -57,7 +57,7 @@ function ip_master_customize_sections($wp_customize)
 
 	// Register deafult Images.
 	$wp_customize->add_section(
-		'ip_master_default_image_section',
+		'astrolab_master_default_image_section',
 		array(
 			'title'    => esc_html__('Default Images', THEME_DOMAIN),
 			'priority' => 50,
@@ -67,7 +67,7 @@ function ip_master_customize_sections($wp_customize)
 
 	// Register additional scripts section.
 	$wp_customize->add_section(
-		'ip_master_additional_scripts_section',
+		'astrolab_master_additional_scripts_section',
 		array(
 			'title'    => esc_html__('Additional Scripts', THEME_DOMAIN),
 			'priority' => 100,
@@ -75,4 +75,4 @@ function ip_master_customize_sections($wp_customize)
 		)
 	);
 }
-add_action('customize_register', 'ip_master_customize_sections');
+add_action('customize_register', 'astrolab_master_customize_sections');

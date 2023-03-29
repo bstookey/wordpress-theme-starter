@@ -3,7 +3,7 @@
 /**
  * Limit the excerpt length.
  *
- * @package IP
+ * @package Astrolab
  *
  * @param array $args Parameters include length and more.
  *

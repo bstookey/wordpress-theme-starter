@@ -4,8 +4,8 @@
  *
  * Adds IP theme custom blocks
  *
- * @package IP
- * @subpackage IP Theme
+ * @package Astrolab
+ * @subpackage Astrolab Theme
  * @since  1.0
  * 
  */
@@ -19,9 +19,9 @@ if (!function_exists('acf_register_block_type')) {
  * Init Custom blocks.
  */
 
-add_action('acf/init', 'ip_master_acf_init');
+add_action('acf/init', 'astrolab_master_acf_init');
 
-function ip_master_acf_init()
+function astrolab_master_acf_init()
 {
   $mode_default = 'preview';
   $acf_block_path = '/template-parts/acf-custom-blocks/';
@@ -43,14 +43,14 @@ function ip_master_acf_init()
     acf_register_block_type(
       array(
         'name'            => 'ip-carousel',
-        'title'           => esc_html__('Carousel', 'ip_master'),
-        'description'     => esc_html__('A carousel with a call to action for each slide.', 'ip_master'),
+        'title'           => esc_html__('Carousel', 'astrolab_master'),
+        'description'     => esc_html__('A carousel with a call to action for each slide.', 'astrolab_master'),
         'render_template' => $acf_block_path . 'block-carousel.php',
         'category'        => 'ip-blocks',
         'icon'            => 'slides',
         'keywords'        => array('carousel', 'slider', 'ip'),
         'mode'            => 'preview',
-        'enqueue_assets'  => 'ip_master_acf_enqueue_carousel_scripts',
+        'enqueue_assets'  => 'astrolab_master_acf_enqueue_carousel_scripts',
         'align'           => 'wide',
         'supports'        => $supports,
         'example'         => array(
@@ -98,7 +98,7 @@ function ip_master_acf_init()
  * @param object $post The current post.
  * @return array The updated array of categories.
  */
-function ip_master_add_block_categories($categories, $post)
+function astrolab_master_add_block_categories($categories, $post)
 {
 
   return array_merge(
@@ -106,12 +106,12 @@ function ip_master_add_block_categories($categories, $post)
     array(
       array(
         'slug'  => 'ip-blocks',
-        'title' => esc_html__('IP Blocks', 'ip_master'),
+        'title' => esc_html__('IP Blocks', 'astrolab_master'),
       ),
     )
   );
 }
-add_filter('block_categories_all', 'ip_master_add_block_categories', 10, 2);
+add_filter('block_categories_all', 'astrolab_master_add_block_categories', 10, 2);
 
 /**
  * Our callback function – this looks for the block based on its given name.
@@ -120,7 +120,7 @@ add_filter('block_categories_all', 'ip_master_add_block_categories', 10, 2);
  * @param array $block The block details.
  * @return void Bail if the block has expired.
  */
-function ip_master_acf_block_registration_callback($block)
+function astrolab_master_acf_block_registration_callback($block)
 {
 
   // Convert the block name into a handy slug.
@@ -131,7 +131,7 @@ function ip_master_acf_block_registration_callback($block)
   $end_date   = isset($block['data']['other_options_end_date']) ? $block['data']['other_options_end_date'] : '';
 
   // If the block has expired, then bail! But only on the frontend, so we can still see and edit the block in the backend.
-  if (!is_admin() && ip_master_has_block_expired(
+  if (!is_admin() && astrolab_master_has_block_expired(
     array(
       'start_date' => strtotime($start_date, true),
       'end_date'   => strtotime($end_date, true),
@@ -140,7 +140,7 @@ function ip_master_acf_block_registration_callback($block)
     return;
   }
 
-  ip_master_display_expired_block_message();
+  astrolab_master_display_expired_block_message();
 
   // Include our template part.
   if (file_exists(get_theme_file_path('/template-parts/content-blocks/block-' . $block_slug . '.php'))) {
@@ -153,7 +153,7 @@ function ip_master_acf_block_registration_callback($block)
  *
  * @return void Bail if we're not in the dashboard.
  */
-function ip_master_acf_enqueue_backend_block_styles()
+function astrolab_master_acf_enqueue_backend_block_styles()
 {
 
   if (!is_admin()) {
@@ -169,14 +169,14 @@ function ip_master_acf_enqueue_backend_block_styles()
  *
  * @return void
  */
-function ip_master_acf_enqueue_carousel_scripts()
+function astrolab_master_acf_enqueue_carousel_scripts()
 {
 
   if (!is_admin()) {
     //return;
   }
 
-  //ip_master_acf_enqueue_backend_block_styles();
+  //astrolab_master_acf_enqueue_backend_block_styles();
   wp_register_style('slick-carousel', get_template_directory_uri() . '/assets/slick-carousel/slick/slick.css', null, '1.8.1');
   wp_register_script('slick-carousel-js', get_template_directory_uri() . '/assets/slick-carousel/slick/slick.min.js', array('jquery'), '1.8.1', true);
   wp_enqueue_style('slick-carousel');
@@ -189,14 +189,14 @@ function ip_master_acf_enqueue_carousel_scripts()
  *
  * @return void
  */
-function ip_master_acf_enqueue_accordion_scripts()
+function astrolab_master_acf_enqueue_accordion_scripts()
 {
 
   if (!is_admin()) {
     //return;
   }
 
-  //ip_master_acf_enqueue_backend_block_styles();
+  //astrolab_master_acf_enqueue_backend_block_styles();
   wp_enqueue_script('ip-block-js', get_template_directory_uri() . '/assets/js/apps.js', array('jquery'), '1.0.0', true);
 }
 
@@ -206,7 +206,7 @@ function ip_master_acf_enqueue_accordion_scripts()
  * @param array $block The block settings.
  * @return string The class, if one is set.
  */
-function ip_master_get_block_alignment($block)
+function astrolab_master_get_block_alignment($block)
 {
 
   if (!$block) {
@@ -222,7 +222,7 @@ function ip_master_get_block_alignment($block)
  * @param array $block The block settings.
  * @return string The class, if one is set.
  */
-function ip_master_get_block_classes($block)
+function astrolab_master_get_block_classes($block)
 {
 
   if (!$block) {
@@ -230,7 +230,7 @@ function ip_master_get_block_classes($block)
   }
 
   $classes  = '';
-  $classes  = ip_master_get_block_expired_class();
+  $classes  = astrolab_master_get_block_expired_class();
   $classes .= !empty($block['className']) ? ' ' . esc_attr($block['className']) : '';
 
   return $classes;
@@ -241,7 +241,7 @@ function ip_master_get_block_classes($block)
  *
  * @return string The class, if one is set.
  */
-function ip_master_get_block_expired_class()
+function astrolab_master_get_block_expired_class()
 {
 
   if (!is_admin()) {
@@ -250,7 +250,7 @@ function ip_master_get_block_expired_class()
 
   $other_options = get_sub_field('other_options') ? get_sub_field('other_options') : get_field('other_options')['other_options'];
 
-  if (ip_master_has_block_expired(
+  if (astrolab_master_has_block_expired(
     array(
       'start_date' => $other_options['start_date'],
       'end_date'   => $other_options['end_date'],
@@ -265,16 +265,16 @@ function ip_master_get_block_expired_class()
  *
  * @return void Bail if the block isn't expired.
  */
-function ip_master_display_expired_block_message()
+function astrolab_master_display_expired_block_message()
 {
 
-  if (!ip_master_get_block_expired_class()) {
+  if (!astrolab_master_get_block_expired_class()) {
     return;
   }
 
 ?>
   <div class="block-expired-message">
-    <span class="block-expired-text"><?php esc_html_e('Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend.', 'ip_master'); ?></span>
+    <span class="block-expired-text"><?php esc_html_e('Your block has expired. Please change or remove the Start and End dates under Other Options to display your block on the frontend.', 'astrolab_master'); ?></span>
   </div>
   <?php
 }
@@ -285,7 +285,7 @@ function ip_master_display_expired_block_message()
  * @param array $block The block settings.
  * @return string The ID, if one is set.
  */
-function ip_master_get_block_id($block)
+function astrolab_master_get_block_id($block)
 {
 
   if (!$block) {
@@ -301,7 +301,7 @@ function ip_master_get_block_id($block)
  * @param array $block The block settings.
  * @return void Bail if we have to.
  */
-function ip_master_acf_gutenberg_display_admin_default_carousel($block)
+function astrolab_master_acf_gutenberg_display_admin_default_carousel($block)
 {
 
   // Only in the dashboard.
@@ -320,8 +320,8 @@ function ip_master_acf_gutenberg_display_admin_default_carousel($block)
   ?>
     <section class="slide">
       <div class="slide-content container">
-        <h2 class="slide-title"><?php esc_html_e('Slide Title', 'ip_master'); ?></h2>
-        <p class="slide-description"><?php esc_html_e('Slide Content', 'ip_master'); ?></p>
+        <h2 class="slide-title"><?php esc_html_e('Slide Title', 'astrolab_master'); ?></h2>
+        <p class="slide-description"><?php esc_html_e('Slide Content', 'astrolab_master'); ?></p>
       </div>
     </section>
 <?php

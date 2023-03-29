@@ -7,7 +7,7 @@
  *
  * @return string
  */
-function ip_master_font_url()
+function astrolab_master_font_url()
 {
 
     $fonts_url = '';
@@ -17,8 +17,8 @@ function ip_master_font_url()
      * supported by the following, translate this to 'off'. Do not translate
      * into your own language.
      */
-    $roboto    = esc_html_x('on', 'Roboto font: on or off', 'ip_master');
-    $open_sans = esc_html_x('on', 'Open Sans font: on or off', 'ip_master');
+    $roboto    = esc_html_x('on', 'Roboto font: on or off', 'astrolab_master');
+    $open_sans = esc_html_x('on', 'Open Sans font: on or off', 'astrolab_master');
 
     if ('off' !== $roboto || 'off' !== $open_sans) {
         $font_families = array();
@@ -44,10 +44,10 @@ function ip_master_font_url()
 function ip_google_fonts()
 {
     // Register google fonts.
-    wp_register_style('ip_master-google-font', ip_master_font_url(), array(), null);
+    wp_register_style('astrolab_master-google-font', astrolab_master_font_url(), array(), null);
 
     // Enqueue google fonts.
-    wp_enqueue_style('ip_master-google-font');
+    wp_enqueue_style('astrolab_master-google-font');
 }
 
 add_action('wp_enqueue_scripts', 'ip_google_fonts');

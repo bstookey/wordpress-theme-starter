@@ -3,7 +3,7 @@
 /**
  * Enqueue scripts and styles.
  *
- * @package IP
+ * @package Astrolab
  */
 
 define('IP_THEME_VERSION', '1.0');

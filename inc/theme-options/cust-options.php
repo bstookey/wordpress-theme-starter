@@ -3,7 +3,7 @@
 /**
  * Custom theme class
  *
- * @package IP
+ * @package Astrolab
  * @since 1.0
  * 
  * 

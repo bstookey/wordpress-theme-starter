@@ -1,6 +1,6 @@
 <?php if (has_nav_menu('footer')) : ?>
     <!-- footer-navigation -->
-    <nav id="footer-navigation" role="navigation" aria-label="<?php esc_attr_e('Footer Navigation', 'ip_master'); ?>">
+    <nav id="footer-navigation" role="navigation" aria-label="<?php esc_attr_e('Footer Navigation', 'astrolab_master'); ?>">
         <?php
         wp_nav_menu(
             array(

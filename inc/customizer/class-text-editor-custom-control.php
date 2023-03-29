@@ -3,7 +3,7 @@
 /**
  * Enable multiple WYSIWYG editors in the theme customizer.
  *
- * @package IP
+ * @package Astrolab
  * 
  * This is not working. It does not load the tinymce.js file and when it does, it does not provide tinymce to the customizer textareas. 
  * 

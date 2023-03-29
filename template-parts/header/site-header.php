@@ -3,8 +3,8 @@
 /**
  * Displays the site header
  *
- * @package IP
- * @subpackage IP Theme
+ * @package Astrolab
+ * @subpackage Astrolab Theme
  * @since  1.0
  */
 

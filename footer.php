@@ -7,8 +7,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package IP
- * @subpackage IP Theme
+ * @package Astrolab
+ * @subpackage Astrolab Theme
  * @since  1.0
  */
 ?>
@@ -25,7 +25,7 @@
       </div>
       <div class="footer-social-nav social">
         <?php
-        $social_menu = get_theme_mod('ip_master_social_menu_checkbox');
+        $social_menu = get_theme_mod('astrolab_master_social_menu_checkbox');
 
         if ($social_menu) {
           get_template_part('/template-parts/navigation/menu', 'footer-social');
@@ -38,7 +38,7 @@
     <div class="copyright">
       <?php printf('&copy; Copyright %s.', auto_copyright(2023)); ?> <?php display_copyright_text(); ?>
 
-      <?php if (get_theme_mod('ip_master_footer_checkbox') == 1) { ?><a href="https://www.inverseparadox.com/" target="_blank">Custom WordPress Development</a> by Inverse Paradox.<?php } ?>
+      <?php if (get_theme_mod('astrolab_master_footer_checkbox') == 1) { ?><a href="https://www.inverseparadox.com/" target="_blank">Custom WordPress Development</a> by Inverse Paradox.<?php } ?>
     </div>
   </div>
 </footer>
@@ -47,7 +47,7 @@
 <!--#siteWrapper-->
 <?php wp_footer(); ?>
 
-<?php ip_master_display_mobile_menu(); ?>
+<?php astrolab_master_display_mobile_menu(); ?>
 
 </body>
 

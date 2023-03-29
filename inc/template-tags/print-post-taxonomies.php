@@ -3,7 +3,7 @@
 /**
  * Display post taxonomies template function.
  *
- * @package IP
+ * @package Astrolab
  */
 
 

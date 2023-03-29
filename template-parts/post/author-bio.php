@@ -3,8 +3,8 @@
 /**
  * The template for displaying author info below posts.
  *
- * @package IP
- * @subpackage IP Theme
+ * @package Astrolab
+ * @subpackage Astrolab Theme
  * @since  1.0
  */
 

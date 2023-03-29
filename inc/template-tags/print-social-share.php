@@ -34,7 +34,7 @@ function ip_social_sharing_buttons()
  *
  * @return string
  */
-function ip_master_get_twitter_share_url()
+function astrolab_master_get_twitter_share_url()
 {
     return add_query_arg(
         array(
@@ -50,7 +50,7 @@ function ip_master_get_twitter_share_url()
  *
  * @return string
  */
-function ip_master_get_facebook_share_url()
+function astrolab_master_get_facebook_share_url()
 {
     return add_query_arg('u', rawurlencode(get_the_permalink()), 'https://www.facebook.com/sharer/sharer.php');
 }
@@ -61,7 +61,7 @@ function ip_master_get_facebook_share_url()
  * @author WDS
  * @return string
  */
-function ip_master_get_linkedin_share_url()
+function astrolab_master_get_linkedin_share_url()
 {
     return add_query_arg(
         array(

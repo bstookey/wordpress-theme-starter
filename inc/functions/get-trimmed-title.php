@@ -3,7 +3,7 @@
 /**
  * Trim the title length.
  *
- * @package IP
+ * @package Astrolab
  *
  * @param array $args Parameters include length and more.
  *

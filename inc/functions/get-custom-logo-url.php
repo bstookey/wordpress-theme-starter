@@ -3,7 +3,7 @@
 /**
  * Get cutom logo url.
  *
- * @package IP
+ * @package Astrolab
  *
  * @return string The logo url.
  */

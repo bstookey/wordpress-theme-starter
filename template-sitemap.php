@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package IP
+ * @package Astrolab
  */
 get_header(); ?>
 

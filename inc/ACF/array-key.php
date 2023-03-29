@@ -10,7 +10,7 @@
  *
  * @return bool
  */
-function ip_master_has_array_key($key, $array = array())
+function astrolab_master_has_array_key($key, $array = array())
 {
 
     if (!is_array($array) || (!$array || !$key)) {

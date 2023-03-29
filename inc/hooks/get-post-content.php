@@ -3,7 +3,7 @@
 /**
  * Filters WYSIWYG content with the_content filter.
  *
- * @package IP
+ * @package Astrolab
  *
  * @param string $content content dump from WYSIWYG.
  *

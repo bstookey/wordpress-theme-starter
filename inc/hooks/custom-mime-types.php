@@ -3,7 +3,7 @@
 /**
  * Enable custom mime types.
  *
- * @package IP
+ * @package Astrolab
  *
  * @param array $mimes Current allowed mime types.
  *

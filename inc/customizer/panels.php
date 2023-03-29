@@ -3,7 +3,7 @@
 /**
  * Customizer panels.
  *
- * @package IP
+ * @package Astrolab
  */
 
 /**
@@ -12,7 +12,7 @@
  * @param WP_Customize_Manager $wp_customize Instance of WP_Customize_Class.
  */
 
-function ip_master_customize_panels($wp_customize)
+function astrolab_master_customize_panels($wp_customize)
 {
 
 	// Register a new panel.
@@ -27,4 +27,4 @@ function ip_master_customize_panels($wp_customize)
 		)
 	);
 }
-add_action('customize_register', 'ip_master_customize_panels');
+add_action('customize_register', 'astrolab_master_customize_panels');

@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package IP
+ * @package Astrolab
  */
 
 ?>
@@ -21,7 +21,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'ip_master'),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'astrolab_master'),
 				'after'  => '</div>',
 			)
 		);
@@ -34,7 +34,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__('Edit %s', 'ip_master'),
+					esc_html__('Edit %s', 'astrolab_master'),
 					the_title('<span class="screen-reader-text">"', '"</span>', false)
 				),
 				'<span class="edit-link">',

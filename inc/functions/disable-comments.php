@@ -3,7 +3,7 @@
 /**
  * Disable comments
  * 
- * @package IP
+ * @package Astrolab
  * 
  * uncomment to disable comments
  * 

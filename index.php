@@ -10,7 +10,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package IP
+ * @package Astrolab
  */
 
 get_header(); ?>
@@ -59,7 +59,7 @@ get_header(); ?>
 
 				endwhile;
 
-				ip_master_display_numeric_pagination();
+				astrolab_master_display_numeric_pagination();
 
 			else :
 				get_template_part('template-parts/content', 'none'); ?>
