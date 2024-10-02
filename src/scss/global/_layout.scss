@@ -4,9 +4,7 @@
   width: 100%;
   //@include bs-gutter($global-gutter, "pos");
 
-  &.hide-title {
-    .entry-header {
-      display: none;
-    }
+  &.hidden-title {
+    margin-top: 0;
   }
 }

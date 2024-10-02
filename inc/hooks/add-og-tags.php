@@ -3,7 +3,7 @@
 /**
  * Adds OG tags to the head for better social sharing.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @return string An empty string if Yoast is not found, otherwise a block of meta tag HTML.
  */

@@ -7,8 +7,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 ?>

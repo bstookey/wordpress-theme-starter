@@ -3,7 +3,7 @@
 /**
  * Register widget area.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  *

@@ -5,8 +5,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 

@@ -3,7 +3,7 @@
 /**
  * Disables wpautop to remove empty p tags in rendered Gutenberg blocks.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 function disable_wpautop_for_gutenberg()

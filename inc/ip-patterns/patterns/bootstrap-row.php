@@ -3,7 +3,7 @@
 /**
  * Bootstrap row
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 return array(

@@ -1,0 +1,27 @@
+// IMPORTANT!!! These need to match the colors in Set Up theme-colors foe these to work
+//
+// Make WP specific classes for color variables
+//
+
+/***** Theme specific utility colors  *****/
+
+@if type-of($colors) != "map" {
+  @error "Sorry, $colors is not a Sass map!";
+}
+
+@each $color, $value in $colors {
+  .color-#{"" + $color} {
+    // comment this out to use only the WP specs for color
+    color: $value;
+  }
+  .has-#{"" + $color}-color {
+    color: $value;
+  }
+  .has-#{"" + $color}-background-color {
+    background-color: $value;
+  }
+}
+
+@function clr($color) {
+  @return map-get($colors, $color);
+}

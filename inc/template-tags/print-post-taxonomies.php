@@ -3,7 +3,7 @@
 /**
  * Display post taxonomies template function.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 

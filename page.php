@@ -10,14 +10,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 
 get_header(); ?>
 <!-- main -->
-<main id="main" class="site-main <?php if (get_field('hide_title')) : ?>hide-title<?php endif; ?>">
+<main id="main" class="site-main <?php if (get_field('hide_title')) : ?>hidden-title<?php endif; ?>">
 
     <?php
 

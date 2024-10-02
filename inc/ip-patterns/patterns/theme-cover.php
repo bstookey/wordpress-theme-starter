@@ -3,7 +3,7 @@
 /**
  * Theme Custom Cover
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 $default_banner = get_theme_mod('deafult_banner_image') ? '"url":"' . get_theme_mod('deafult_banner_image') . '",' : '';

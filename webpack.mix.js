@@ -39,27 +39,27 @@ mix
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
     `${staticAssetsDir}/js/`
   )
-  .copy(
-    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
-    `${staticAssetsDir}/js/`
-  )
-  .copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
-  .copy(
-    "node_modules/slick-carousel/slick/slick.css",
-    `${staticAssetsDir}/slick-carousel/slick/`
-  )
-  .copy(
-    "node_modules/slick-carousel/slick/slick-theme.css",
-    `${staticAssetsDir}/slick-carousel/slick/`
-  )
-  .copy(
-    "node_modules/slick-carousel/slick/slick.min.js",
-    `${staticAssetsDir}/slick-carousel/slick/`
-  )
-  .copy(
-    "node_modules/slick-carousel/slick/ajax-loader.gif",
-    `${staticAssetsDir}/slick-carousel/slick/`
-  )
+  // .copy(
+  //   "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+  //   `${staticAssetsDir}/js/`
+  // )
+  // .copy("node_modules/js-cookie/dist/js.cookie.js", "src/js/apps/")
+  // .copy(
+  //   "node_modules/slick-carousel/slick/slick.css",
+  //   `${staticAssetsDir}/slick-carousel/slick/`
+  // )
+  // .copy(
+  //   "node_modules/slick-carousel/slick/slick-theme.css",
+  //   `${staticAssetsDir}/slick-carousel/slick/`
+  // )
+  // .copy(
+  //   "node_modules/slick-carousel/slick/slick.min.js",
+  //   `${staticAssetsDir}/slick-carousel/slick/`
+  // )
+  // .copy(
+  //   "node_modules/slick-carousel/slick/ajax-loader.gif",
+  //   `${staticAssetsDir}/slick-carousel/slick/`
+  // )
   // .scripts(
   //   [
   //     "src/js/apps/jquery.touchSwipe.js",
@@ -70,7 +70,7 @@ mix
   // ) // concat in custom order, file choices
   .scripts("src/js/apps/", `${staticAssetsDir}/js/apps.js`)
   .js(["src/js/starter.js"], `${staticAssetsDir}/js/starter.js`)
-  .copy("node_modules/bootstrap/scss", "src/scss/bootstrap")
+  //.copy("node_modules/bootstrap/scss", "src/scss/bootstrap")
   .sass("src/scss/starter.scss", `${staticAssetsDir}/css/`)
   .options({
     processCssUrls: false,
@@ -80,7 +80,7 @@ mix
     extensions: ["js"],
   })
   .browserSync({
-    proxy: "http://localhost:8888/Wordpress-Starter/", // set to your local instance url
+    proxy: "http://localhost:8888/wordpress/", // set to your local instance url
   });
 
 if (!mix.inProduction()) {

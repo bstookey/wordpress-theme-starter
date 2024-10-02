@@ -5,8 +5,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  * 
  */
@@ -36,7 +36,7 @@ function theme_init()
         $files = [
             'inc/helper_functions.php', // Globally used functions.
             'inc/customizer/customizer.php', // Customizer additions.
-            'inc/theme-options/cust-options.php', // Theme options for address, alert, etc.
+            //'inc/theme-options/cust-options.php', // Theme options for address, alert, etc.
             'inc/functions/', // Custom functions that are independent of the theme templates.
             'inc/hooks/', // Load custom filters and hooks.
             'inc/post-types/', // Load custom post types.

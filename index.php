@@ -10,7 +10,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astrolab
+ * @package Wordpress
+ * @subpackage Astrolab
  */
 
 get_header(); ?>

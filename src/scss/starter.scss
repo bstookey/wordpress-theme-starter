@@ -1,17 +1,19 @@
 /*
  * Starter Theme styles
  *
- * @package Astrolab
-  * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  *
 */
 
-@import "global/variables";
-@import "mixins/functions";
-@import "mixins/helpers";
+@import "variables/variables"; // IMPORTANT! Required for theme
+@import "variables/mixins/helpers"; // IMPORTANT! Required for mixins
 
-@import "grid/index";
+@import "variables/breakpoints/index";
+
+@import "vendor/sanitize";
+
 @import "global/index";
 
 @import "template-tags/index";
@@ -33,4 +35,5 @@
 @import "utilities/index";
 
 @import "bootstrap";
-@import "mixins/index";
+
+@import "variables/index";

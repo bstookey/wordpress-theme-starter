@@ -3,7 +3,7 @@
 /**
  * Register Menus
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 register_nav_menus(

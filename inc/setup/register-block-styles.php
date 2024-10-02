@@ -5,7 +5,7 @@
  * 
  * See src > js directory for block-styles.js
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 if (function_exists('register_block_style')) {

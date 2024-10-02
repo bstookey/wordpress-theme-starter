@@ -2,7 +2,7 @@
   flex: 1 0 auto;
   text-align: right;
   width: 50%;
-  margin-bottom: $global-gutter;
+  margin-bottom: $gutter;
 
   @include media-breakpoint-up(md) {
     width: 25%;

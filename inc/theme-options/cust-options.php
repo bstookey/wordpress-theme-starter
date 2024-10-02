@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Custom theme class
- *
- * @package Astrolab
- * @since 1.0
- * 
- * 
- * 
+ * Plugin Name: Theme Options
+ * Plugin URI: https://github.com/rleeson/cpt-maker.git
+ * Description: WordPress plugin helps quickly create and initialize custom post types
+ * Version: 2.0.0
+ * Author: Ryan Leeson
+ * Author URI: http://ryanleeson.com
+ * License: GPLv2
  */
 
 // Include this in your functions file: require get_stylesheet_directory() . '/theme-options.cust-options.php';
@@ -225,9 +225,7 @@ class Cust_Theme_Options
      *
      * @since 1.0
      */
-    public function display_section()
-    {
-    }
+    public function display_section() {}
 
     /**
      * Description for About section

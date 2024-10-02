@@ -3,7 +3,7 @@
 /**
  * Limit the excerpt length.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @param array $args Parameters include length and more.
  *

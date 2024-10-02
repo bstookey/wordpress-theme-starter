@@ -5,13 +5,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
-	<header class="entry-header">
+	<header class="entry-header <?php if (get_field('hide_title')) : ?>visually-hidden<?php endif; ?>">
 		<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 	</header><!-- .entry-header -->
 

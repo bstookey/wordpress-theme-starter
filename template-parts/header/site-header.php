@@ -3,8 +3,8 @@
 /**
  * Displays the site header
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 

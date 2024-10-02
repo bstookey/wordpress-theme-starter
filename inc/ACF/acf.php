@@ -5,7 +5,7 @@
  *
  * A place to custom functionality related to Advanced Custom Fields.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 // If ACF isn't activated, then bail.

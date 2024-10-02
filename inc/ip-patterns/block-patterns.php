@@ -3,7 +3,7 @@
 /**
  * Adds custom pattern category and registers patterns.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  */
 

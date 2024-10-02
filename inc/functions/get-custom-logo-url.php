@@ -3,7 +3,7 @@
 /**
  * Get cutom logo url.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @return string The logo url.
  */

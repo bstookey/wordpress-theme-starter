@@ -3,7 +3,7 @@
 /**
  * Displays the mobile menu with off-canvas background layer.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 function astrolab_master_display_mobile_menu()

@@ -3,7 +3,7 @@
 /**
  * Customizer panels.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 /**

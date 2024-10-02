@@ -3,7 +3,7 @@
 /**
  * Display social sharing icons.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 ?>

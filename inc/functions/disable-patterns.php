@@ -3,7 +3,7 @@
 /**
  * Disable block patterns
  * 
- * @package Astrolab
+ * @package Wordpress
  */
 
 add_action('init', 'removeCorePatterns');

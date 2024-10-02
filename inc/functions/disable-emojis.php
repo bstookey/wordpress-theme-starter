@@ -3,7 +3,7 @@
 /**
  * Disable emojis
  * 
- * @package Astrolab
+ * @package Wordpress
  */
 
 function disable_emojis()

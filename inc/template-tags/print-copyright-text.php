@@ -3,7 +3,7 @@
 /**
  * Echo the copyright text saved in the Customizer.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 

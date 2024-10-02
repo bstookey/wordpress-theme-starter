@@ -3,7 +3,7 @@
 /**
  * Flush out the transients used in IP_categorized_blog.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @return bool Whether or not transients were deleted.
  */

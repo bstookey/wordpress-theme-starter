@@ -3,7 +3,7 @@
 /**
  * Display SVG Markup.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @param array $args The parameters needed to get the SVG.
  */

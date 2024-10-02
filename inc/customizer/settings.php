@@ -3,7 +3,7 @@
 /**
  * Customizer settings.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 /**
@@ -86,7 +86,7 @@ function astrolab_master_customize_header_announcement($wp_customize)
 		'astrolab_master_link_type',
 		array(
 			'label'       => esc_html__('Announcement Link', THEME_DOMAIN),
-			'description' => esc_html__('Display a custom button in the header.', THEME_DOMAIN),
+			'description' => esc_html__('Display a custom link at the end of the announcement text.', THEME_DOMAIN),
 			'section'     => 'astrolab_master_announcement_section',
 			'type'        => 'select',
 			'choices'     => array(
@@ -338,7 +338,7 @@ function astrolab_master_customize_social_icons($wp_customize)
 			'type' => 'checkbox',
 			'section' => 'astrolab_master_social_links_section',
 			'label'    => sprintf(
-				esc_html__('Use the footer social menu, not thesse settings.', THEME_DOMAIN),
+				esc_html__('Use the footer social menu, in place of customizer Social Media.', THEME_DOMAIN),
 				esc_url('/nav-menus.php')
 			),
 		)

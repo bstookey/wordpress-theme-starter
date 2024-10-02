@@ -1,0 +1,341 @@
+// Based off of the following design:
+// Add link to design XD file
+
+// Variables
+
+$image-path: "../images/";
+$icon-path: "../images/icons/";
+$web-font-path: "../webfonts/";
+
+// global element padding to match the theme
+$gutter: 2.4rem;
+
+// Transition global-transition
+$transition: 0.25s ease-in-out;
+
+// Font stuff
+/// Define sans font.
+$font-sans: "Open Sans", sans-serif;
+
+/// Define serif font.
+$font-serif: roboto, georgia, times, "Times New Roman", serif;
+
+/// Define monospace font.
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+/// Define pre font.
+$font-pre: "Courier 10 Pitch", courier, monospace;
+
+//$base-font-size: 62.5%; // Sets the base font size to 10px
+$base-font-size: 10px; // Sets the base font size to 10px. This should always stay 10 to make things easy on your self.
+$global-font-size: 1.6rem; // base font size in the design
+
+// Site sizes used in container-sizes mixin. Should also be set for registers block styles.
+// 1468 is the width of the global site content plus padding
+// 1548 is the width of the widest designed fixed width element in the xd
+$container-sizes: (
+  container: 1200,
+  container-xs: 700,
+  container-sm: 900,
+  container-md: 1200,
+  container-lg: 1548,
+);
+
+// Note: Theme breakpoints are 480,550(.hkb-subcats),580, 650(.hkb-archive),768,850,950
+// the below breakpoints are bootsrap breakpoints. To use these breakpoints see mixins > global > grid
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+//--------------------------------------------------------------
+// COLOR VARIABLES
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Theme Colors
+//-----------------------------------------
+$color-primary: #d31020;
+$color-secondary: #6e6c6c;
+$color-blue: #20739a;
+$color-light-yellow: #fff9c0;
+$theme-black: #192232;
+
+//-----------------------------------------
+// Base Colors
+//-----------------------------------------
+$color-black: #000;
+$color-white: #fff;
+
+//-----------------------------------------
+// Grayscale Colors
+//-----------------------------------------
+$color-alto: #ddd;
+$color-cod-gray: #111;
+$color-dove-gray: #666;
+$color-gallery: #eee;
+$color-gray-alt: #929292;
+$color-gray: #808080;
+$color-mineshaft: #333;
+$color-silver-chalice: #aaa;
+$color-silver: #ccc;
+$color-tundora: #454545;
+$color-whitesmoke: #f1f1f1;
+
+// colors, used in colors mixin. Should match theme colors in inc/setup
+//the mixin @ mixins > colors will create the appropriate color classes for Gutenburg colors
+// gutenburg colors used in the admin need to be added to theme.json color pallette
+$colors: (
+  red: $color-primary,
+  secondary: $color-secondary,
+  blue: $color-blue,
+  light-yellow: $color-light-yellow,
+  themeblack: $theme-black,
+  white: $color-white,
+  black: $color-black,
+  alto: $color-alto,
+  cod-gray: $color-cod-gray,
+  dove-gray: $color-dove-gray,
+  gallery: $color-gallery,
+  grayalt: $color-gray-alt,
+  gray: $color-gray,
+  mineshaft: $color-mineshaft,
+  silver-chalice: $color-silver-chalice,
+  silver: $color-silver,
+  tundora: $color-tundora,
+  whitesmoke: $color-whitesmoke,
+);
+
+// Sass Variables
+// Social Media Brand Colors
+//
+
+$facebook: #1877f2;
+$facebookold: #3b5998;
+$twitter: #1da1f2;
+$youtube: #ff0000;
+$instagrammagenta: #c32aa3;
+$instagramblue: #4c5fd7;
+$instagrampurple: #7232bd;
+$instagramorange: #f46f30;
+$instagramyellow: #ffdc7d;
+$googleblue: #4285f4;
+$googlered: #ea4335;
+$googleyellow: #fbbc05;
+$googlegreen: #34a853;
+$pinterest: #bd081c;
+$googleplus: #db4437;
+$linkedin: #0a66c2;
+$vimeoblue: #1ab7ea;
+$tumblr: #2c4762;
+$snapchat: #fffc00;
+$whatsappgreen: #25d366;
+$whatsappteal1: #075e54;
+$whatsappteal2: #128c7e;
+$tiktokblack: #010101;
+$tiktookblue: #69c9d0;
+$tiktokpink: #ee1d52;
+$tiktokwhite: #fff;
+$mastodon: #563acc;
+$apple: #a6b1b7;
+$amazon: #ff9900;
+$alexablue: #00a7ce;
+$alexadkblue: #232f3e;
+$microsoftred: #f35022;
+$microsoftgreen: #80bb03;
+$microsoftblue: #03a5f0;
+$microsoftyellow: #ffb903;
+$periscope: #40a4c4;
+$foursquarepink: #f94877;
+$foursquarenavy: #073282;
+$foursquareblue: #2d5be3;
+$yelp: #d32323;
+$swarm: #ffa633;
+$medium: #02b875;
+$skypeblue: #00aff0;
+$skypedkblue: #0078d7;
+$android: #a4c639;
+$stumbleupon: #e94826;
+$flickrpink: #f40083;
+$flickrblue: #006add;
+$yahoo: #430297;
+$twitch: #9146ff;
+$soundcloud: #ff5500;
+$spotifygreen: #1ed760;
+$spotifydarkgreen: #1db954;
+$dribbble: #ea4c89;
+$slackpurple: #4a154b;
+$slackblue: #36c5f0;
+$slackgreen: #2eb67d;
+$slackred: #e01e5a;
+$slackyellow: #ecb22e;
+$reddit: #ff5700;
+$deviantart: #05cc47;
+$pocket: #ee4056;
+$quora: #aa2200;
+$quorablue: #2b6dad;
+$slideshareorange: #e68523;
+$slideshareblue: #00a0dc;
+$fivehundredpx: #0099e5;
+$vk: #4a76a8;
+$listlyorange: #df6d46;
+$listlyblue: #52b1b3;
+$vine: #00b489;
+$steam: #171a21;
+$discord: #5865f2;
+$telegram: #0088cc;
+$clarity: #61bed9;
+$homeadvisor: #f89000;
+$houzz: #4dbc15;
+$angi: #ff6153;
+$glassdoor: #0caa41;
+
+//-----------------------------------------
+// Links
+//-----------------------------------------
+
+/// Links.
+$color-link: $color-primary;
+
+/// Visited Links.
+$color-link-visited: $color-black;
+
+/// Hovered Links.
+$color-link-hover: $color-secondary;
+
+/// Focus LInks.
+$color-link-focus: $color-secondary;
+
+//-----------------------------------------
+// Forms
+//-----------------------------------------
+
+/// Button background.
+$color-background-button: $color-dove-gray;
+
+/// Button background on hover.
+$color-background-button-hover: $color-mineshaft;
+
+/// Button text.
+$color-text-button: $color-white;
+
+/// Input border.
+$color-border-input: $color-silver;
+
+/// Input focused color.
+$color-focus-text-input: $color-cod-gray;
+
+/// Input text.
+$color-text-input: $color-dove-gray;
+
+//-----------------------------------------
+// Buttons
+//-----------------------------------------
+
+/// CTA Link Color.
+$color-cta-link: $color-white;
+
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+
+/// Table borders.
+$color-border-table: $color-silver;
+
+//-----------------------------------------
+// Modals
+//-----------------------------------------
+
+/// Modal Content Background.
+$color-background-modal: $color-white;
+
+/// Modal Close Background.
+$color-background-modal-close: $color-black;
+
+/// Modal Close Colors.
+$color-modal-close: $color-white;
+
+//-----------------------------------------
+// Icons
+//-----------------------------------------
+
+/// Close Icon Background.
+$color-background-icon-close: $color-cod-gray;
+
+/// Down Arrow Background Color.
+$color-background-down-arrow: $color-link;
+
+//-----------------------------------------
+// Comments
+//-----------------------------------------
+
+/// Comment border.
+$color-border-comment: $color-silver;
+
+/// Comment focus border.
+$color-border-comment-focus: $color-mineshaft;
+
+/// Comment even background.
+$color-background-even: $color-gallery;
+
+/// Comment odd background.
+$color-background-odd: $color-whitesmoke;
+
+/// Comment response background.
+$color-comment-response: $color-white;
+
+/// Comment meta links.
+$color-meta-links: $color-tundora;
+
+/// Comment post author background.
+$color-background-author: $color-light-yellow;
+
+//-----------------------------------------
+// WP/Gutenberg Blocks
+//-----------------------------------------
+
+/// Block button background.
+$color-background-block-button: $color-mineshaft;
+
+/// BLock pullquote.
+$color-border-block: $color-silver;
+
+//-----------------------------------------
+// Navigation Variables
+//-----------------------------------------
+
+/// Mobile menu link.
+$color-mobile-menu-link: $color-link;
+
+/// Hamburger background.
+$color-background-hamburger: $color-cod-gray;
+
+/// Off-canvas Container Background.
+$color-background-off-canvas: $color-whitesmoke;
+
+/// Off-canvas Screen Background.
+$color-background-off-canvas-screen: $color-black;
+
+/// Submenu Background.
+$color-background-submenu: $color-white;
+
+//-----------------------------------------
+// Scaffolding
+//-----------------------------------------
+
+/// Scaffolding header border.
+$color-border-scaffolding: $color-alto;
+
+/// Scaffolding swatch border.
+$color-border-scaffolding-swatch: $color-alto;
+
+/// Scaffolding color.
+$color-scaffolding: $color-alto;
+
+/// Scaffolding background color.
+$color-background-scaffolding: $color-white;

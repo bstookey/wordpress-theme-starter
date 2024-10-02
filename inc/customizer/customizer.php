@@ -3,7 +3,7 @@
 /**
  * Set up the theme customizer.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 /**

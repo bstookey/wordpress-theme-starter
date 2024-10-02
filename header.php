@@ -4,8 +4,8 @@
  * The header for our theme
  *
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 

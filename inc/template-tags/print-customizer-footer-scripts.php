@@ -3,7 +3,7 @@
 /**
  * Display the customizer footer scripts.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @return string Footer scripts.
  * 

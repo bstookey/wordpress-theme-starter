@@ -3,7 +3,7 @@
 /**
  * The template used for displaying a caroursel.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 $alignment    = astrolab_master_get_block_alignment($block);

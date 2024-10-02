@@ -3,7 +3,7 @@
 /**
  * Display the customizer header scripts.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @return string Header scripts.
  */

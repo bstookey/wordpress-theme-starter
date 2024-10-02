@@ -3,7 +3,7 @@
 /**
  * Return SVG markup.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 

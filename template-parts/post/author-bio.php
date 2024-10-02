@@ -3,8 +3,8 @@
 /**
  * The template for displaying author info below posts.
  *
- * @package Astrolab
- * @subpackage Astrolab Theme
+ * @package Wordpress
+ * @subpackage Astrolab
  * @since  1.0
  */
 

@@ -3,7 +3,7 @@
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  */
 function print_entry_footer()

@@ -3,7 +3,7 @@
 /**
  * Enable custom mime types.
  *
- * @package Astrolab
+ * @package Wordpress
  *
  * @param array $mimes Current allowed mime types.
  *

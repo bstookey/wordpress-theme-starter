@@ -31,7 +31,7 @@ $slide-height: 500px;
   }
 
   .slick-next {
-    right: $global-gutter;
+    right: $gutter;
     display: none !important;
 
     @include media-breakpoint-up(lg) {
@@ -44,7 +44,7 @@ $slide-height: 500px;
   }
 
   .slick-prev {
-    left: $global-gutter;
+    left: $gutter;
     display: none !important;
 
     @include media-breakpoint-up(lg) {
@@ -105,7 +105,7 @@ $slide-height: 500px;
   }
 
   &-description {
-    padding-bottom: $global-gutter * 2;
+    padding-bottom: $gutter * 2;
   }
 
   .button-slide {

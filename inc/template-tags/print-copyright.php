@@ -5,7 +5,7 @@
  *
  * @param string  $year
  * 
- * @package Astrolab
+ * @package Wordpress
  */
 
 function auto_copyright($year = 'auto')

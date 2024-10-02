@@ -3,7 +3,7 @@
 /**
  * Display header search.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 function astrolab_master_display_header_search()

@@ -3,7 +3,7 @@
 /**
  * Display the social links saved in the customizer.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 

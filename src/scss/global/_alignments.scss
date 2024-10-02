@@ -4,23 +4,21 @@
 
 // Left Align
 .alignleft {
-  margin: 0 $global-gutter 0 0;
-
+  margin: 0 $gutter 0 0;
   display: block;
   float: left;
 } // .alignleft
 
 // Right Align
 .alignright {
-  margin: 0 0 0 $global-gutter;
-
+  margin: 0 0 0 $gutter;
   display: block;
   float: right;
 } // .alignright
 
 // Center Align
 .aligncenter {
-  margin: 0auto;
+  margin: 0 auto;
 
   display: block;
 } // .aligncenter

@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Astrolab
+ * @package Wordpress
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */

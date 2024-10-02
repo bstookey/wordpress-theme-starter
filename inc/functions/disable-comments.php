@@ -3,7 +3,7 @@
 /**
  * Disable comments
  * 
- * @package Astrolab
+ * @package Wordpress
  * 
  * uncomment to disable comments
  * 

@@ -3,7 +3,7 @@
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
- * @package Astrolab
+ * @package Wordpress
  */
 
 if (!function_exists('astrolab_master_posted_on')) :
