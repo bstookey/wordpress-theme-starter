@@ -37,9 +37,14 @@
     </div>
     <div class="copyright">
       <?php printf('&copy; Copyright %s.', auto_copyright(2023)); ?> <?php display_copyright_text(); ?>
-
-      <?php if (get_theme_mod('astrolab_master_footer_checkbox') == 1) { ?><a href="https://www.inverseparadox.com/" target="_blank">Custom WordPress Development</a> by Inverse Paradox.<?php } ?>
     </div>
+    <!---Sub Copyright --->
+    <?php if (get_theme_mod('astrolab_master_footer_checkbox') == 1) { ?>
+      <div class="sub-copyright">
+        <a href="https://www.bradleystookey.com/" target="_blank">Custom WordPress Development</a> by Bradley Stookey.
+      </div>
+    <?php } ?>
+    <!--#Sub Copyright -->
   </div>
 </footer>
 <!--#Footer -->

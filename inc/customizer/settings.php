@@ -273,7 +273,7 @@ function astrolab_master_customize_footer_checkbox($wp_customize)
 		array(
 			'type' => 'checkbox',
 			'section' => 'astrolab_master_footer_section',
-			'label' => __('Show the Inverse Paradox Footer Copyright'),
+			'label' => __('Show the custom footer Copyright'),
 		)
 	);
 
